@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, BWWalkthroughViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,39 @@ class MainViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.setNavigationBarItem()
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if !userDefaults.boolForKey("walkthroughPresented") {
+            showWalkthrough()
+            userDefaults.setBool(true, forKey: "walkthroughPresented")
+            userDefaults.synchronize()
+        }
+    }
+    
+    @IBAction func showWalkthrough(){
+        
+        // Get view controllers and build the walkthrough
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let pageManager = storyboard.instantiateViewControllerWithIdentifier("WalkPageManager") as! BWWalkthroughViewController
+        let pageOne = storyboard.instantiateViewControllerWithIdentifier("WalkPage1")
+        let pageTwo = storyboard.instantiateViewControllerWithIdentifier("WalkPage2")
+        let pageThree = storyboard.instantiateViewControllerWithIdentifier("WalkPage3")
+        
+        // Attach the pages to the master
+        pageManager.delegate = self
+        pageManager.addViewController(pageOne)
+        pageManager.addViewController(pageTwo)
+        pageManager.addViewController(pageThree)
+        
+        self.presentViewController(pageManager, animated: true, completion: nil)
+    }
+    
+    func walkthroughPageDidChange(pageNumber: Int) {
+        print("Current Page \(pageNumber)")
+    }
+    
+    func walkthroughCloseButtonPressed() {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
 }

@@ -25,6 +25,8 @@
 		61AEBBA01BB320BC0034EFDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61AEBB9E1BB320BC0034EFDA /* LaunchScreen.storyboard */; };
 		61AEBBAB1BB320BC0034EFDA /* DoctorNearbyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AEBBAA1BB320BC0034EFDA /* DoctorNearbyTests.swift */; };
 		61AEBBB61BB320BC0034EFDA /* DoctorNearbyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AEBBB51BB320BC0034EFDA /* DoctorNearbyUITests.swift */; };
+		61B03F5B1BB4D9E40095E729 /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B03F591BB4D9E40095E729 /* BWWalkthroughPageViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		61B03F5C1BB4D9E40095E729 /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B03F5A1BB4D9E40095E729 /* BWWalkthroughViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D59ABB3B27D41706D30240F6 /* Pods_DoctorNearby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D042A87512E18A83E3A6754 /* Pods_DoctorNearby.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		61AEBBB11BB320BC0034EFDA /* DoctorNearbyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoctorNearbyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AEBBB51BB320BC0034EFDA /* DoctorNearbyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorNearbyUITests.swift; sourceTree = "<group>"; };
 		61AEBBB71BB320BC0034EFDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61B03F591BB4D9E40095E729 /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
+		61B03F5A1BB4D9E40095E729 /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughViewController.swift; sourceTree = "<group>"; };
 		7D042A87512E18A83E3A6754 /* Pods_DoctorNearby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoctorNearby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A25E8EAD04601C31F7716677 /* Pods-DoctorNearby.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoctorNearby.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoctorNearby/Pods-DoctorNearby.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,8 +205,9 @@
 		61AEBB911BB320BC0034EFDA /* DoctorNearby */ = {
 			isa = PBXGroup;
 			children = (
-				614C920A1BB427D200BC95C6 /* Creaters */,
+				61B03F571BB4D9C30095E729 /* Components */,
 				613B9F631BB4690500DF8DD9 /* Controllers */,
+				614C920A1BB427D200BC95C6 /* Creaters */,
 				613B9F6E1BB46ABB00DF8DD9 /* Extension */,
 				613B9F701BB46C3100DF8DD9 /* Properties */,
 				613B9F6F1BB46C1A00DF8DD9 /* UI */,
@@ -228,6 +233,23 @@
 				61AEBBB71BB320BC0034EFDA /* Info.plist */,
 			);
 			path = DoctorNearbyUITests;
+			sourceTree = "<group>";
+		};
+		61B03F571BB4D9C30095E729 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				61B03F581BB4D9CE0095E729 /* WalkThrough */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		61B03F581BB4D9CE0095E729 /* WalkThrough */ = {
+			isa = PBXGroup;
+			children = (
+				61B03F591BB4D9E40095E729 /* BWWalkthroughPageViewController.swift */,
+				61B03F5A1BB4D9E40095E729 /* BWWalkthroughViewController.swift */,
+			);
+			name = WalkThrough;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,9 +436,11 @@
 			files = (
 				613B9F6A1BB469C100DF8DD9 /* SettingsViewController.swift in Sources */,
 				613B9F6B1BB469C100DF8DD9 /* NonMenuController.swift in Sources */,
+				61B03F5C1BB4D9E40095E729 /* BWWalkthroughViewController.swift in Sources */,
 				613B9F6D1BB46AAD00DF8DD9 /* UIViewControllerExtension.swift in Sources */,
 				613B9F751BB46DEC00DF8DD9 /* UITableViewExtension.swift in Sources */,
 				614C92091BB4260100BC95C6 /* LoaderCreater.swift in Sources */,
+				61B03F5B1BB4D9E40095E729 /* BWWalkthroughPageViewController.swift in Sources */,
 				613B9F691BB469C100DF8DD9 /* SearchViewController.swift in Sources */,
 				613B9F721BB46D7F00DF8DD9 /* BaseTableViewCell.swift in Sources */,
 				614C92071BB422EF00BC95C6 /* ButtonCreater.swift in Sources */,
