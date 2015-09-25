@@ -1,0 +1,700 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		613B9F681BB469C100DF8DD9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F641BB469C100DF8DD9 /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		613B9F691BB469C100DF8DD9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F651BB469C100DF8DD9 /* SearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		613B9F6A1BB469C100DF8DD9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F661BB469C100DF8DD9 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		613B9F6B1BB469C100DF8DD9 /* NonMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F671BB469C100DF8DD9 /* NonMenuController.swift */; settings = {ASSET_TAGS = (); }; };
+		613B9F6D1BB46AAD00DF8DD9 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F6C1BB46AAD00DF8DD9 /* UIViewControllerExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		613B9F721BB46D7F00DF8DD9 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F711BB46D7F00DF8DD9 /* BaseTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		613B9F751BB46DEC00DF8DD9 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F741BB46DEC00DF8DD9 /* UITableViewExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		613B9F771BB46FDC00DF8DD9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F761BB46FDC00DF8DD9 /* StringExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		614C92071BB422EF00BC95C6 /* ButtonCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614C92061BB422EF00BC95C6 /* ButtonCreater.swift */; settings = {ASSET_TAGS = (); }; };
+		614C92091BB4260100BC95C6 /* LoaderCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614C92081BB4260100BC95C6 /* LoaderCreater.swift */; settings = {ASSET_TAGS = (); }; };
+		61AEBB931BB320BC0034EFDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AEBB921BB320BC0034EFDA /* AppDelegate.swift */; };
+		61AEBB951BB320BC0034EFDA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AEBB941BB320BC0034EFDA /* MainViewController.swift */; };
+		61AEBB981BB320BC0034EFDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61AEBB961BB320BC0034EFDA /* Main.storyboard */; };
+		61AEBB9B1BB320BC0034EFDA /* DoctorNearby.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 61AEBB991BB320BC0034EFDA /* DoctorNearby.xcdatamodeld */; };
+		61AEBB9D1BB320BC0034EFDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61AEBB9C1BB320BC0034EFDA /* Assets.xcassets */; };
+		61AEBBA01BB320BC0034EFDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61AEBB9E1BB320BC0034EFDA /* LaunchScreen.storyboard */; };
+		61AEBBAB1BB320BC0034EFDA /* DoctorNearbyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AEBBAA1BB320BC0034EFDA /* DoctorNearbyTests.swift */; };
+		61AEBBB61BB320BC0034EFDA /* DoctorNearbyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AEBBB51BB320BC0034EFDA /* DoctorNearbyUITests.swift */; };
+		D59ABB3B27D41706D30240F6 /* Pods_DoctorNearby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D042A87512E18A83E3A6754 /* Pods_DoctorNearby.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		61AEBBA71BB320BC0034EFDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61AEBB871BB320BC0034EFDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 61AEBB8E1BB320BC0034EFDA;
+			remoteInfo = DoctorNearby;
+		};
+		61AEBBB21BB320BC0034EFDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61AEBB871BB320BC0034EFDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 61AEBB8E1BB320BC0034EFDA;
+			remoteInfo = DoctorNearby;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3AE99F0619890AB054B48DCB /* Pods-DoctorNearby.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoctorNearby.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoctorNearby/Pods-DoctorNearby.debug.xcconfig"; sourceTree = "<group>"; };
+		613B9F641BB469C100DF8DD9 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		613B9F651BB469C100DF8DD9 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		613B9F661BB469C100DF8DD9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		613B9F671BB469C100DF8DD9 /* NonMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonMenuController.swift; sourceTree = "<group>"; };
+		613B9F6C1BB46AAD00DF8DD9 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		613B9F711BB46D7F00DF8DD9 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		613B9F741BB46DEC00DF8DD9 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		613B9F761BB46FDC00DF8DD9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		614C92061BB422EF00BC95C6 /* ButtonCreater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCreater.swift; sourceTree = "<group>"; };
+		614C92081BB4260100BC95C6 /* LoaderCreater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderCreater.swift; sourceTree = "<group>"; };
+		61AEBB8F1BB320BC0034EFDA /* DoctorNearby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoctorNearby.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		61AEBB921BB320BC0034EFDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		61AEBB941BB320BC0034EFDA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		61AEBB971BB320BC0034EFDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		61AEBB9A1BB320BC0034EFDA /* DoctorNearby.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DoctorNearby.xcdatamodel; sourceTree = "<group>"; };
+		61AEBB9C1BB320BC0034EFDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		61AEBB9F1BB320BC0034EFDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		61AEBBA11BB320BC0034EFDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61AEBBA61BB320BC0034EFDA /* DoctorNearbyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoctorNearbyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		61AEBBAA1BB320BC0034EFDA /* DoctorNearbyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorNearbyTests.swift; sourceTree = "<group>"; };
+		61AEBBAC1BB320BC0034EFDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61AEBBB11BB320BC0034EFDA /* DoctorNearbyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoctorNearbyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		61AEBBB51BB320BC0034EFDA /* DoctorNearbyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorNearbyUITests.swift; sourceTree = "<group>"; };
+		61AEBBB71BB320BC0034EFDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D042A87512E18A83E3A6754 /* Pods_DoctorNearby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoctorNearby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A25E8EAD04601C31F7716677 /* Pods-DoctorNearby.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoctorNearby.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoctorNearby/Pods-DoctorNearby.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		61AEBB8C1BB320BC0034EFDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D59ABB3B27D41706D30240F6 /* Pods_DoctorNearby.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61AEBBA31BB320BC0034EFDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61AEBBAE1BB320BC0034EFDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A0B41069E99D37689FBF78F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D042A87512E18A83E3A6754 /* Pods_DoctorNearby.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E7A414A9846E084597AFFFA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3AE99F0619890AB054B48DCB /* Pods-DoctorNearby.debug.xcconfig */,
+				A25E8EAD04601C31F7716677 /* Pods-DoctorNearby.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		613B9F631BB4690500DF8DD9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				61AEBB941BB320BC0034EFDA /* MainViewController.swift */,
+				613B9F641BB469C100DF8DD9 /* MenuViewController.swift */,
+				613B9F651BB469C100DF8DD9 /* SearchViewController.swift */,
+				613B9F661BB469C100DF8DD9 /* SettingsViewController.swift */,
+				613B9F671BB469C100DF8DD9 /* NonMenuController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		613B9F6E1BB46ABB00DF8DD9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				613B9F6C1BB46AAD00DF8DD9 /* UIViewControllerExtension.swift */,
+				613B9F741BB46DEC00DF8DD9 /* UITableViewExtension.swift */,
+				613B9F761BB46FDC00DF8DD9 /* StringExtension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		613B9F6F1BB46C1A00DF8DD9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				61AEBB961BB320BC0034EFDA /* Main.storyboard */,
+				61AEBB9E1BB320BC0034EFDA /* LaunchScreen.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		613B9F701BB46C3100DF8DD9 /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				61AEBB9C1BB320BC0034EFDA /* Assets.xcassets */,
+				61AEBBA11BB320BC0034EFDA /* Info.plist */,
+				61AEBB991BB320BC0034EFDA /* DoctorNearby.xcdatamodeld */,
+			);
+			name = Properties;
+			sourceTree = "<group>";
+		};
+		613B9F731BB46D8300DF8DD9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				613B9F711BB46D7F00DF8DD9 /* BaseTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		614C920A1BB427D200BC95C6 /* Creaters */ = {
+			isa = PBXGroup;
+			children = (
+				614C92061BB422EF00BC95C6 /* ButtonCreater.swift */,
+				614C92081BB4260100BC95C6 /* LoaderCreater.swift */,
+			);
+			name = Creaters;
+			sourceTree = "<group>";
+		};
+		61AEBB861BB320BC0034EFDA = {
+			isa = PBXGroup;
+			children = (
+				61AEBB911BB320BC0034EFDA /* DoctorNearby */,
+				61AEBBA91BB320BC0034EFDA /* DoctorNearbyTests */,
+				61AEBBB41BB320BC0034EFDA /* DoctorNearbyUITests */,
+				61AEBB901BB320BC0034EFDA /* Products */,
+				5E7A414A9846E084597AFFFA /* Pods */,
+				0A0B41069E99D37689FBF78F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		61AEBB901BB320BC0034EFDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				61AEBB8F1BB320BC0034EFDA /* DoctorNearby.app */,
+				61AEBBA61BB320BC0034EFDA /* DoctorNearbyTests.xctest */,
+				61AEBBB11BB320BC0034EFDA /* DoctorNearbyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		61AEBB911BB320BC0034EFDA /* DoctorNearby */ = {
+			isa = PBXGroup;
+			children = (
+				614C920A1BB427D200BC95C6 /* Creaters */,
+				613B9F631BB4690500DF8DD9 /* Controllers */,
+				613B9F6E1BB46ABB00DF8DD9 /* Extension */,
+				613B9F701BB46C3100DF8DD9 /* Properties */,
+				613B9F6F1BB46C1A00DF8DD9 /* UI */,
+				613B9F731BB46D8300DF8DD9 /* View */,
+				61AEBB921BB320BC0034EFDA /* AppDelegate.swift */,
+			);
+			path = DoctorNearby;
+			sourceTree = "<group>";
+		};
+		61AEBBA91BB320BC0034EFDA /* DoctorNearbyTests */ = {
+			isa = PBXGroup;
+			children = (
+				61AEBBAA1BB320BC0034EFDA /* DoctorNearbyTests.swift */,
+				61AEBBAC1BB320BC0034EFDA /* Info.plist */,
+			);
+			path = DoctorNearbyTests;
+			sourceTree = "<group>";
+		};
+		61AEBBB41BB320BC0034EFDA /* DoctorNearbyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				61AEBBB51BB320BC0034EFDA /* DoctorNearbyUITests.swift */,
+				61AEBBB71BB320BC0034EFDA /* Info.plist */,
+			);
+			path = DoctorNearbyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		61AEBB8E1BB320BC0034EFDA /* DoctorNearby */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61AEBBBA1BB320BC0034EFDA /* Build configuration list for PBXNativeTarget "DoctorNearby" */;
+			buildPhases = (
+				24CAA9F353A3746F3CBC2524 /* Check Pods Manifest.lock */,
+				61AEBB8B1BB320BC0034EFDA /* Sources */,
+				61AEBB8C1BB320BC0034EFDA /* Frameworks */,
+				61AEBB8D1BB320BC0034EFDA /* Resources */,
+				D3D9415A6373F00B979D42E9 /* Embed Pods Frameworks */,
+				756C93C4F86D0BC7712C0EA0 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DoctorNearby;
+			productName = DoctorNearby;
+			productReference = 61AEBB8F1BB320BC0034EFDA /* DoctorNearby.app */;
+			productType = "com.apple.product-type.application";
+		};
+		61AEBBA51BB320BC0034EFDA /* DoctorNearbyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61AEBBBD1BB320BC0034EFDA /* Build configuration list for PBXNativeTarget "DoctorNearbyTests" */;
+			buildPhases = (
+				61AEBBA21BB320BC0034EFDA /* Sources */,
+				61AEBBA31BB320BC0034EFDA /* Frameworks */,
+				61AEBBA41BB320BC0034EFDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				61AEBBA81BB320BC0034EFDA /* PBXTargetDependency */,
+			);
+			name = DoctorNearbyTests;
+			productName = DoctorNearbyTests;
+			productReference = 61AEBBA61BB320BC0034EFDA /* DoctorNearbyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		61AEBBB01BB320BC0034EFDA /* DoctorNearbyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61AEBBC01BB320BC0034EFDA /* Build configuration list for PBXNativeTarget "DoctorNearbyUITests" */;
+			buildPhases = (
+				61AEBBAD1BB320BC0034EFDA /* Sources */,
+				61AEBBAE1BB320BC0034EFDA /* Frameworks */,
+				61AEBBAF1BB320BC0034EFDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				61AEBBB31BB320BC0034EFDA /* PBXTargetDependency */,
+			);
+			name = DoctorNearbyUITests;
+			productName = DoctorNearbyUITests;
+			productReference = 61AEBBB11BB320BC0034EFDA /* DoctorNearbyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		61AEBB871BB320BC0034EFDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = AkhalTech;
+				TargetAttributes = {
+					61AEBB8E1BB320BC0034EFDA = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = G5QNQJ28E6;
+					};
+					61AEBBA51BB320BC0034EFDA = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 61AEBB8E1BB320BC0034EFDA;
+					};
+					61AEBBB01BB320BC0034EFDA = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 61AEBB8E1BB320BC0034EFDA;
+					};
+				};
+			};
+			buildConfigurationList = 61AEBB8A1BB320BC0034EFDA /* Build configuration list for PBXProject "DoctorNearby" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 61AEBB861BB320BC0034EFDA;
+			productRefGroup = 61AEBB901BB320BC0034EFDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				61AEBB8E1BB320BC0034EFDA /* DoctorNearby */,
+				61AEBBA51BB320BC0034EFDA /* DoctorNearbyTests */,
+				61AEBBB01BB320BC0034EFDA /* DoctorNearbyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		61AEBB8D1BB320BC0034EFDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61AEBBA01BB320BC0034EFDA /* LaunchScreen.storyboard in Resources */,
+				61AEBB9D1BB320BC0034EFDA /* Assets.xcassets in Resources */,
+				61AEBB981BB320BC0034EFDA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61AEBBA41BB320BC0034EFDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61AEBBAF1BB320BC0034EFDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24CAA9F353A3746F3CBC2524 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		756C93C4F86D0BC7712C0EA0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DoctorNearby/Pods-DoctorNearby-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3D9415A6373F00B979D42E9 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DoctorNearby/Pods-DoctorNearby-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		61AEBB8B1BB320BC0034EFDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				613B9F6A1BB469C100DF8DD9 /* SettingsViewController.swift in Sources */,
+				613B9F6B1BB469C100DF8DD9 /* NonMenuController.swift in Sources */,
+				613B9F6D1BB46AAD00DF8DD9 /* UIViewControllerExtension.swift in Sources */,
+				613B9F751BB46DEC00DF8DD9 /* UITableViewExtension.swift in Sources */,
+				614C92091BB4260100BC95C6 /* LoaderCreater.swift in Sources */,
+				613B9F691BB469C100DF8DD9 /* SearchViewController.swift in Sources */,
+				613B9F721BB46D7F00DF8DD9 /* BaseTableViewCell.swift in Sources */,
+				614C92071BB422EF00BC95C6 /* ButtonCreater.swift in Sources */,
+				61AEBB951BB320BC0034EFDA /* MainViewController.swift in Sources */,
+				613B9F681BB469C100DF8DD9 /* MenuViewController.swift in Sources */,
+				61AEBB931BB320BC0034EFDA /* AppDelegate.swift in Sources */,
+				613B9F771BB46FDC00DF8DD9 /* StringExtension.swift in Sources */,
+				61AEBB9B1BB320BC0034EFDA /* DoctorNearby.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61AEBBA21BB320BC0034EFDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61AEBBAB1BB320BC0034EFDA /* DoctorNearbyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61AEBBAD1BB320BC0034EFDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61AEBBB61BB320BC0034EFDA /* DoctorNearbyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		61AEBBA81BB320BC0034EFDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 61AEBB8E1BB320BC0034EFDA /* DoctorNearby */;
+			targetProxy = 61AEBBA71BB320BC0034EFDA /* PBXContainerItemProxy */;
+		};
+		61AEBBB31BB320BC0034EFDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 61AEBB8E1BB320BC0034EFDA /* DoctorNearby */;
+			targetProxy = 61AEBBB21BB320BC0034EFDA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		61AEBB961BB320BC0034EFDA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				61AEBB971BB320BC0034EFDA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		61AEBB9E1BB320BC0034EFDA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				61AEBB9F1BB320BC0034EFDA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		61AEBBB81BB320BC0034EFDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		61AEBBB91BB320BC0034EFDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		61AEBBBB1BB320BC0034EFDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AE99F0619890AB054B48DCB /* Pods-DoctorNearby.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = DoctorNearby/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.akhaltech.DoctorNearby;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		61AEBBBC1BB320BC0034EFDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A25E8EAD04601C31F7716677 /* Pods-DoctorNearby.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = DoctorNearby/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.akhaltech.DoctorNearby;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		61AEBBBE1BB320BC0034EFDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DoctorNearbyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.akhaltech.DoctorNearbyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DoctorNearby.app/DoctorNearby";
+			};
+			name = Debug;
+		};
+		61AEBBBF1BB320BC0034EFDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DoctorNearbyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.akhaltech.DoctorNearbyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DoctorNearby.app/DoctorNearby";
+			};
+			name = Release;
+		};
+		61AEBBC11BB320BC0034EFDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DoctorNearbyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.akhaltech.DoctorNearbyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DoctorNearby;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		61AEBBC21BB320BC0034EFDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DoctorNearbyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.akhaltech.DoctorNearbyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DoctorNearby;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		61AEBB8A1BB320BC0034EFDA /* Build configuration list for PBXProject "DoctorNearby" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61AEBBB81BB320BC0034EFDA /* Debug */,
+				61AEBBB91BB320BC0034EFDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61AEBBBA1BB320BC0034EFDA /* Build configuration list for PBXNativeTarget "DoctorNearby" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61AEBBBB1BB320BC0034EFDA /* Debug */,
+				61AEBBBC1BB320BC0034EFDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61AEBBBD1BB320BC0034EFDA /* Build configuration list for PBXNativeTarget "DoctorNearbyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61AEBBBE1BB320BC0034EFDA /* Debug */,
+				61AEBBBF1BB320BC0034EFDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61AEBBC01BB320BC0034EFDA /* Build configuration list for PBXNativeTarget "DoctorNearbyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61AEBBC11BB320BC0034EFDA /* Debug */,
+				61AEBBC21BB320BC0034EFDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		61AEBB991BB320BC0034EFDA /* DoctorNearby.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				61AEBB9A1BB320BC0034EFDA /* DoctorNearby.xcdatamodel */,
+			);
+			currentVersion = 61AEBB9A1BB320BC0034EFDA /* DoctorNearby.xcdatamodel */;
+			path = DoctorNearby.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 61AEBB871BB320BC0034EFDA /* Project object */;
+}
