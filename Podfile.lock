@@ -1,16 +1,22 @@
 PODS:
+  - Alamofire (2.0.2)
   - LiquidFloatingActionButton (0.1.2)
   - LiquidLoader (0.1.1)
   - SlideMenuControllerSwift (2.0.0)
+  - SwiftyJSON (2.3.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 2.0)
   - LiquidFloatingActionButton
   - LiquidLoader
   - SlideMenuControllerSwift
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
   LiquidFloatingActionButton: 12ed6f642365142f85c73eaebef8c40b6590511e
   LiquidLoader: cf49954a6643f610c06a7db45da2da81a68a154b
   SlideMenuControllerSwift: 85ce7142935a32e26de41aa90fac0cc9f60fb01c
+  SwiftyJSON: 8d6b61a70277ef2a5d710d372e06e7e2d87fb9e4
 
 COCOAPODS: 0.38.2

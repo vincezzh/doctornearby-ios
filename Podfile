@@ -6,6 +6,8 @@ target 'DoctorNearby' do
 pod "LiquidFloatingActionButton"
 pod "LiquidLoader"
 pod "SlideMenuControllerSwift"
+pod "SwiftyJSON"
+pod "Alamofire", "~> 2.0"
 end
 
 target 'DoctorNearbyTests' do

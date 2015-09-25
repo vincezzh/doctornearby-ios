@@ -194,7 +194,38 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eia-ug-sew">
+                                <rect key="frame" x="232" y="183" width="137" height="30"/>
+                                <state key="normal" title="Show Walk Through"/>
+                                <connections>
+                                    <action selector="showWalkthrough" destination="BYZ-38-t0r" eventType="touchUpInside" id="xg4-wk-a18"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MyZ-KB-gV3">
+                                <rect key="frame" x="242" y="240" width="116" height="30"/>
+                                <state key="normal" title="Get Doctor By ID"/>
+                                <connections>
+                                    <action selector="getDoctorById:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FJC-xI-HRH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foh-al-dFN">
+                                <rect key="frame" x="214" y="294" width="172" height="30"/>
+                                <state key="normal" title="Search Doctors By Name"/>
+                                <connections>
+                                    <action selector="searchDoctorsByName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tzy-oQ-IG4"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Eia-ug-sew" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="163" id="N0X-b8-UPK"/>
+                            <constraint firstItem="foh-al-dFN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V1j-XJ-5TC"/>
+                            <constraint firstItem="MyZ-KB-gV3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d8G-L0-kWq"/>
+                            <constraint firstItem="MyZ-KB-gV3" firstAttribute="top" secondItem="Eia-ug-sew" secondAttribute="bottom" constant="27" id="hQF-PL-zK8"/>
+                            <constraint firstItem="Eia-ug-sew" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wwW-GV-bte"/>
+                            <constraint firstItem="foh-al-dFN" firstAttribute="top" secondItem="MyZ-KB-gV3" secondAttribute="bottom" constant="24" id="yd7-jW-ieW"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

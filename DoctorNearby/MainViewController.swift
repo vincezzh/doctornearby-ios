@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class MainViewController: UIViewController, BWWalkthroughViewControllerDelegate {
     
@@ -62,5 +64,55 @@ class MainViewController: UIViewController, BWWalkthroughViewControllerDelegate 
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
+    @IBAction func getDoctorById(sender: AnyObject) {
+        
+        Alamofire.request(.GET, "http://localhost:9091/doctornearby/doctor/103559/detail", parameters: nil)
+            .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
+                
+                switch result {
+                case .Success(let data):
+                    let json = JSON(data: data)
+                    print(json["data"]["_id"])
+                    print(json["data"]["profile"]["surname"])
+                    print(json["data"]["registration"]["trainingList"][0]["medicalSchool"])
+                    print(json["data"]["specialtyList"][0]["name"])
+                case .Failure(let data, let error):
+                    print("Request failed with error: \(error)")
+                    if let data = data {
+                        print("Response data: \(NSString(data: data, encoding: NSUTF8StringEncoding)!)")
+                    }
+                }
+                
+        }
+    
+    }
+    
+    @IBAction func searchDoctorsByName(sender: AnyObject) {
+        
+        let parameters = [
+            "name": "zhang",
+            "language": "ENGLISH"
+        ]
+        
+        Alamofire.request(.POST, "http://localhost:9091/doctornearby/doctor/search", parameters: parameters, encoding: .JSON)
+            .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
+                
+                switch result {
+                case .Success(let data):
+                    let json = JSON(data: data)
+                    for index in 0...json["data"].count - 1 {
+                        let givenName = json["data"][index]["profile"]["givenName"]
+                        print("\(index): \(givenName)")
+                    }
+                case .Failure(let data, let error):
+                    print("Request failed with error: \(error)")
+                    if let data = data {
+                        print("Response data: \(NSString(data: data, encoding: NSUTF8StringEncoding)!)")
+                    }
+                }
+                
+        }
+        
+    }
 }
 

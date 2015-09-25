@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>LiquidFloatingActionButton-LiquidFloatingActionButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -34,15 +39,20 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>26CD7F04C109B7025412EDA4BADF056B</key>
+		<key>29F34D01FE79F35FF07B50E223CD4513</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6F93549BB2544095128ED20112E02A10</key>
+		<key>545A0589121F09E8F7DF251CFB7832D5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,17 +62,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7B3A06E030FF0488AE0E30EB754475E1</key>
+		<key>B9A04D3C9B208813656510FDA8ADAE02</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A079200BB3A0AD529149E886C96F7161</key>
+		<key>C9585B028A2DA7CCC2B4109D430B9896</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F7910A960A88D76ECED97D27FC5B8482</key>
+		<key>CA29F0487C1D44179EBC482927DB0CD3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F08EA6CA8E43EB40B5C1FECEA55244C3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F1B4E439A9C61950FF02321C568B4010</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "30ACE76B5CA01A93CABBA1A8"
-               BuildableName = "SlideMenuControllerSwift.framework"
-               BlueprintName = "SlideMenuControllerSwift"
+               BlueprintIdentifier = "6710D3AE5BD92D1B913F11D5"
+               BuildableName = "Alamofire.framework"
+               BlueprintName = "Alamofire"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
