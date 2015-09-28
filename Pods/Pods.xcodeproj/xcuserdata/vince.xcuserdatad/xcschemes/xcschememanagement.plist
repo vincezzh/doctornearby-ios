@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SAInboxViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SlideMenuControllerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,12 +52,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>29F34D01FE79F35FF07B50E223CD4513</key>
+		<key>2C13491059156A28EA9B002029AAC6BF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>545A0589121F09E8F7DF251CFB7832D5</key>
+		<key>4200E0152C23B62FC593ECF541414A84</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>78F779036AD7755CD25E2694F2F9B991</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,27 +72,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A064F8C3A035B20FBA541313E72FA6B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B9A04D3C9B208813656510FDA8ADAE02</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C9585B028A2DA7CCC2B4109D430B9896</key>
+		<key>C8195AE3FC5E5F61FB9CE37E9A0A30D4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CA29F0487C1D44179EBC482927DB0CD3</key>
+		<key>EA03E92F3F943ED80CC5865D941F32C1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F08EA6CA8E43EB40B5C1FECEA55244C3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F1B4E439A9C61950FF02321C568B4010</key>
+		<key>FBDAA18007F2F7B2522752FEA0BD99A0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

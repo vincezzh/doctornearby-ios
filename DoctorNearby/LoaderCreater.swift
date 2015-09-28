@@ -15,7 +15,7 @@ class LoaderCreater {
     func generateLoader(xPosition: CGFloat, yPosition: CGFloat) -> LiquidLoader {
         
         let lineColor = defaultColor
-        let lineFrame = CGRect(x: xPosition, y: yPosition, width: 100, height: 50)
+        let lineFrame = CGRect(x: xPosition, y: yPosition, width: 50, height: 26)
         let lineLoader = LiquidLoader(frame: lineFrame, effect: .GrowLine(lineColor))
         
         return lineLoader

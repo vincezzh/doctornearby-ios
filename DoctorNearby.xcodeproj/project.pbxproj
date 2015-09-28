@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		613051351BB5EFD400A6FC7D /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613051341BB5EFD400A6FC7D /* City.swift */; settings = {ASSET_TAGS = (); }; };
+		613051381BB5F00E00A6FC7D /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613051371BB5F00E00A6FC7D /* Hospital.swift */; settings = {ASSET_TAGS = (); }; };
+		6130513A1BB5F07F00A6FC7D /* Specialist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613051391BB5F07F00A6FC7D /* Specialist.swift */; settings = {ASSET_TAGS = (); }; };
 		613B9F681BB469C100DF8DD9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F641BB469C100DF8DD9 /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		613B9F691BB469C100DF8DD9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F651BB469C100DF8DD9 /* SearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		613B9F6A1BB469C100DF8DD9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F661BB469C100DF8DD9 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -17,6 +20,13 @@
 		613B9F771BB46FDC00DF8DD9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F761BB46FDC00DF8DD9 /* StringExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		614C92071BB422EF00BC95C6 /* ButtonCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614C92061BB422EF00BC95C6 /* ButtonCreater.swift */; settings = {ASSET_TAGS = (); }; };
 		614C92091BB4260100BC95C6 /* LoaderCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614C92081BB4260100BC95C6 /* LoaderCreater.swift */; settings = {ASSET_TAGS = (); }; };
+		615109111BB5F66C00315CEA /* KSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6151090D1BB5F66C00315CEA /* KSToken.swift */; settings = {ASSET_TAGS = (); }; };
+		615109121BB5F66C00315CEA /* KSTokenField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6151090E1BB5F66C00315CEA /* KSTokenField.swift */; settings = {ASSET_TAGS = (); }; };
+		615109131BB5F66C00315CEA /* KSTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6151090F1BB5F66C00315CEA /* KSTokenView.swift */; settings = {ASSET_TAGS = (); }; };
+		615109141BB5F66C00315CEA /* KSUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615109101BB5F66C00315CEA /* KSUtils.swift */; settings = {ASSET_TAGS = (); }; };
+		615109171BB6225300315CEA /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615109161BB6225300315CEA /* Language.swift */; settings = {ASSET_TAGS = (); }; };
+		615109191BB6241300315CEA /* GenderPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615109181BB6241300315CEA /* GenderPopupViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		6151091B1BB62E7600315CEA /* IGSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6151091A1BB62E7600315CEA /* IGSwitch.swift */; settings = {ASSET_TAGS = (); }; };
 		61AEBB931BB320BC0034EFDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AEBB921BB320BC0034EFDA /* AppDelegate.swift */; };
 		61AEBB951BB320BC0034EFDA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AEBB941BB320BC0034EFDA /* MainViewController.swift */; };
 		61AEBB981BB320BC0034EFDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61AEBB961BB320BC0034EFDA /* Main.storyboard */; };
@@ -51,6 +61,9 @@
 
 /* Begin PBXFileReference section */
 		3AE99F0619890AB054B48DCB /* Pods-DoctorNearby.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoctorNearby.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoctorNearby/Pods-DoctorNearby.debug.xcconfig"; sourceTree = "<group>"; };
+		613051341BB5EFD400A6FC7D /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		613051371BB5F00E00A6FC7D /* Hospital.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
+		613051391BB5F07F00A6FC7D /* Specialist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specialist.swift; sourceTree = "<group>"; };
 		613B9F641BB469C100DF8DD9 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		613B9F651BB469C100DF8DD9 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		613B9F661BB469C100DF8DD9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +74,13 @@
 		613B9F761BB46FDC00DF8DD9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		614C92061BB422EF00BC95C6 /* ButtonCreater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCreater.swift; sourceTree = "<group>"; };
 		614C92081BB4260100BC95C6 /* LoaderCreater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderCreater.swift; sourceTree = "<group>"; };
+		6151090D1BB5F66C00315CEA /* KSToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSToken.swift; sourceTree = "<group>"; };
+		6151090E1BB5F66C00315CEA /* KSTokenField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSTokenField.swift; sourceTree = "<group>"; };
+		6151090F1BB5F66C00315CEA /* KSTokenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSTokenView.swift; sourceTree = "<group>"; };
+		615109101BB5F66C00315CEA /* KSUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSUtils.swift; sourceTree = "<group>"; };
+		615109161BB6225300315CEA /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		615109181BB6241300315CEA /* GenderPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderPopupViewController.swift; sourceTree = "<group>"; };
+		6151091A1BB62E7600315CEA /* IGSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IGSwitch.swift; sourceTree = "<group>"; };
 		61AEBB8F1BB320BC0034EFDA /* DoctorNearby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoctorNearby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AEBB921BB320BC0034EFDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61AEBB941BB320BC0034EFDA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -126,12 +146,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		613051361BB5EFE400A6FC7D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				613051341BB5EFD400A6FC7D /* City.swift */,
+				613051371BB5F00E00A6FC7D /* Hospital.swift */,
+				615109161BB6225300315CEA /* Language.swift */,
+				613051391BB5F07F00A6FC7D /* Specialist.swift */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		613B9F631BB4690500DF8DD9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				61AEBB941BB320BC0034EFDA /* MainViewController.swift */,
 				613B9F641BB469C100DF8DD9 /* MenuViewController.swift */,
 				613B9F651BB469C100DF8DD9 /* SearchViewController.swift */,
+				615109181BB6241300315CEA /* GenderPopupViewController.swift */,
 				613B9F661BB469C100DF8DD9 /* SettingsViewController.swift */,
 				613B9F671BB469C100DF8DD9 /* NonMenuController.swift */,
 			);
@@ -184,6 +216,25 @@
 			name = Creaters;
 			sourceTree = "<group>";
 		};
+		615109151BB5F67500315CEA /* KSTokenView */ = {
+			isa = PBXGroup;
+			children = (
+				6151090D1BB5F66C00315CEA /* KSToken.swift */,
+				6151090E1BB5F66C00315CEA /* KSTokenField.swift */,
+				6151090F1BB5F66C00315CEA /* KSTokenView.swift */,
+				615109101BB5F66C00315CEA /* KSUtils.swift */,
+			);
+			name = KSTokenView;
+			sourceTree = "<group>";
+		};
+		6151091C1BB62E7A00315CEA /* IGSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				6151091A1BB62E7600315CEA /* IGSwitch.swift */,
+			);
+			name = IGSwitch;
+			sourceTree = "<group>";
+		};
 		61AEBB861BB320BC0034EFDA = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				61B03F571BB4D9C30095E729 /* Components */,
+				613051361BB5EFE400A6FC7D /* Constants */,
 				613B9F631BB4690500DF8DD9 /* Controllers */,
 				614C920A1BB427D200BC95C6 /* Creaters */,
 				613B9F6E1BB46ABB00DF8DD9 /* Extension */,
@@ -243,6 +295,8 @@
 		61B03F571BB4D9C30095E729 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				6151091C1BB62E7A00315CEA /* IGSwitch */,
+				615109151BB5F67500315CEA /* KSTokenView */,
 				61B03F581BB4D9CE0095E729 /* WalkThrough */,
 			);
 			name = Components;
@@ -450,14 +504,23 @@
 			files = (
 				613B9F6A1BB469C100DF8DD9 /* SettingsViewController.swift in Sources */,
 				613B9F6B1BB469C100DF8DD9 /* NonMenuController.swift in Sources */,
+				615109191BB6241300315CEA /* GenderPopupViewController.swift in Sources */,
+				6151091B1BB62E7600315CEA /* IGSwitch.swift in Sources */,
 				61B03F5C1BB4D9E40095E729 /* BWWalkthroughViewController.swift in Sources */,
 				613B9F6D1BB46AAD00DF8DD9 /* UIViewControllerExtension.swift in Sources */,
 				613B9F751BB46DEC00DF8DD9 /* UITableViewExtension.swift in Sources */,
 				614C92091BB4260100BC95C6 /* LoaderCreater.swift in Sources */,
 				61B03F5B1BB4D9E40095E729 /* BWWalkthroughPageViewController.swift in Sources */,
 				613B9F691BB469C100DF8DD9 /* SearchViewController.swift in Sources */,
+				615109121BB5F66C00315CEA /* KSTokenField.swift in Sources */,
+				6130513A1BB5F07F00A6FC7D /* Specialist.swift in Sources */,
 				613B9F721BB46D7F00DF8DD9 /* BaseTableViewCell.swift in Sources */,
+				615109171BB6225300315CEA /* Language.swift in Sources */,
+				613051381BB5F00E00A6FC7D /* Hospital.swift in Sources */,
+				615109111BB5F66C00315CEA /* KSToken.swift in Sources */,
 				614C92071BB422EF00BC95C6 /* ButtonCreater.swift in Sources */,
+				615109131BB5F66C00315CEA /* KSTokenView.swift in Sources */,
+				615109141BB5F66C00315CEA /* KSUtils.swift in Sources */,
 				61AEBB951BB320BC0034EFDA /* MainViewController.swift in Sources */,
 				613B9F681BB469C100DF8DD9 /* MenuViewController.swift in Sources */,
 				61AEBB931BB320BC0034EFDA /* AppDelegate.swift in Sources */,
@@ -465,6 +528,7 @@
 				61AEBB9B1BB320BC0034EFDA /* DoctorNearby.xcdatamodeld in Sources */,
 				61B4DCCA1BB592E8001D7530 /* JSonParse.swift in Sources */,
 				61B4DCCC1BB59304001D7530 /* HttpWrapper.swift in Sources */,
+				613051351BB5EFD400A6FC7D /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

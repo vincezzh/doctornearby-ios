@@ -21,7 +21,7 @@ class MainViewController: UIViewController, BWWalkthroughViewControllerDelegate 
         self.view.addSubview(testButton)
         
         let lc: LoaderCreater = LoaderCreater()
-        let testLoader = lc.generateLoader(self.view.frame.width * 0.5 - 50, yPosition: self.view.frame.height * 0.5 - 25)
+        let testLoader = lc.generateLoader(self.view.frame.width * 0.5 - 25, yPosition: self.view.frame.height * 0.5 - 13)
         self.view.addSubview(testLoader)
         
     }
@@ -114,5 +114,6 @@ class MainViewController: UIViewController, BWWalkthroughViewControllerDelegate 
         }
         
     }
+    
 }
 

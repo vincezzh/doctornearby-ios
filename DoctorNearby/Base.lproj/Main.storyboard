@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Walkthrough View Controller-->
@@ -196,21 +197,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eia-ug-sew">
-                                <rect key="frame" x="232" y="183" width="137" height="30"/>
+                                <rect key="frame" x="232" y="320" width="137" height="30"/>
                                 <state key="normal" title="Show Walk Through"/>
                                 <connections>
                                     <action selector="showWalkthrough" destination="BYZ-38-t0r" eventType="touchUpInside" id="xg4-wk-a18"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MyZ-KB-gV3">
-                                <rect key="frame" x="242" y="240" width="116" height="30"/>
+                                <rect key="frame" x="242" y="377" width="116" height="30"/>
                                 <state key="normal" title="Get Doctor By ID"/>
                                 <connections>
                                     <action selector="getDoctorById:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FJC-xI-HRH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foh-al-dFN">
-                                <rect key="frame" x="214" y="294" width="172" height="30"/>
+                                <rect key="frame" x="214" y="431" width="172" height="30"/>
                                 <state key="normal" title="Search Doctors By Name"/>
                                 <connections>
                                     <action selector="searchDoctorsByName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tzy-oQ-IG4"/>
@@ -219,7 +220,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Eia-ug-sew" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="163" id="N0X-b8-UPK"/>
+                            <constraint firstItem="Eia-ug-sew" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="300" id="N0X-b8-UPK"/>
                             <constraint firstItem="foh-al-dFN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V1j-XJ-5TC"/>
                             <constraint firstItem="MyZ-KB-gV3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d8G-L0-kWq"/>
                             <constraint firstItem="MyZ-KB-gV3" firstAttribute="top" secondItem="Eia-ug-sew" secondAttribute="bottom" constant="27" id="hQF-PL-zK8"/>
@@ -230,6 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="329" y="337"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="OBp-OD-wzu">
@@ -320,12 +322,160 @@
                     <view key="view" contentMode="scaleToFill" id="RoP-TZ-KU0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjn-Uu-dVZ">
+                                <rect key="frame" x="20" y="115" width="200" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="CVc-3R-ypA"/>
+                                    <constraint firstAttribute="width" constant="200" id="tvx-hj-bSC"/>
+                                </constraints>
+                                <state key="normal" title="Gender"/>
+                                <connections>
+                                    <segue destination="tG0-ua-cPe" kind="popoverPresentation" identifier="showGenderPopup" popoverAnchorView="kjn-Uu-dVZ" id="4iY-8O-3HI">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VkD-Ng-I3w" customClass="IGSwitch" customModule="DoctorNearby" customModuleProvider="target">
+                                <rect key="frame" x="20" y="189" width="320" height="32"/>
+                                <color key="backgroundColor" red="0.40000000596046448" green="0.40000000596046448" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="0yx-ez-h71"/>
+                                    <constraint firstAttribute="height" constant="32" id="16m-15-Arw"/>
+                                    <constraint firstAttribute="height" constant="32" id="FEl-cr-e67"/>
+                                    <constraint firstAttribute="width" constant="160" id="FpR-H1-j7J"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLeft" value="Family Doctor"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleRight" value="Specialist"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="sliderInset">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="FEl-cr-e67"/>
+                                        <exclude reference="FpR-H1-j7J"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="changeSelectedIndex:" destination="xah-sd-QW3" eventType="valueChanged" id="pzj-9p-bP5"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nfd-lL-aS8" customClass="KSTokenView" customModule="DoctorNearby" customModuleProvider="target">
+                                <rect key="frame" x="20" y="45" width="200" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9jF-tN-iUJ"/>
+                                    <constraint firstAttribute="width" constant="200" id="Q9Y-xP-0D9"/>
+                                    <constraint firstAttribute="height" constant="30" id="TL0-vq-BvP"/>
+                                    <constraint firstAttribute="width" constant="250" id="bnW-Uv-d5U"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9jF-tN-iUJ"/>
+                                        <exclude reference="bnW-Uv-d5U"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="VkD-Ng-I3w" firstAttribute="top" secondItem="kjn-Uu-dVZ" secondAttribute="bottom" constant="41" id="1GF-iF-vMh"/>
+                            <constraint firstItem="VkD-Ng-I3w" firstAttribute="leading" secondItem="RoP-TZ-KU0" secondAttribute="leading" constant="20" id="GbD-bn-2YO"/>
+                            <constraint firstAttribute="trailing" secondItem="Nfd-lL-aS8" secondAttribute="trailing" constant="380" id="ITB-7Z-cyM"/>
+                            <constraint firstItem="Nfd-lL-aS8" firstAttribute="top" secondItem="cad-xv-Pim" secondAttribute="bottom" constant="25" id="Ouv-8J-T8t"/>
+                            <constraint firstItem="Nfd-lL-aS8" firstAttribute="top" secondItem="cad-xv-Pim" secondAttribute="bottom" constant="8" id="WUg-u3-fwA"/>
+                            <constraint firstItem="VkD-Ng-I3w" firstAttribute="leading" secondItem="RoP-TZ-KU0" secondAttribute="leading" constant="20" id="bQX-R6-lTJ"/>
+                            <constraint firstItem="Nfd-lL-aS8" firstAttribute="leading" secondItem="RoP-TZ-KU0" secondAttribute="leading" constant="20" id="gsF-6i-sbW"/>
+                            <constraint firstItem="kjn-Uu-dVZ" firstAttribute="top" secondItem="Nfd-lL-aS8" secondAttribute="bottom" constant="40" id="hm7-eh-35b"/>
+                            <constraint firstItem="Nfd-lL-aS8" firstAttribute="top" secondItem="cad-xv-Pim" secondAttribute="bottom" constant="8" id="sF4-Yb-fhL"/>
+                            <constraint firstItem="Nfd-lL-aS8" firstAttribute="leading" secondItem="RoP-TZ-KU0" secondAttribute="leading" constant="20" id="t0H-Jt-pKH"/>
+                            <constraint firstItem="VkD-Ng-I3w" firstAttribute="top" secondItem="kjn-Uu-dVZ" secondAttribute="bottom" constant="44" id="uLl-Zv-YhA"/>
+                            <constraint firstItem="kjn-Uu-dVZ" firstAttribute="leading" secondItem="RoP-TZ-KU0" secondAttribute="leading" constant="20" id="vLo-hZ-Ggg"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Nfd-lL-aS8" secondAttribute="leading" id="zqz-yR-aaB"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ITB-7Z-cyM"/>
+                                <exclude reference="WUg-u3-fwA"/>
+                                <exclude reference="sF4-Yb-fhL"/>
+                                <exclude reference="t0H-Jt-pKH"/>
+                                <exclude reference="zqz-yR-aaB"/>
+                                <exclude reference="1GF-iF-vMh"/>
+                                <exclude reference="bQX-R6-lTJ"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="tokenView" destination="Nfd-lL-aS8" id="vtc-Ew-kVi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27W-sC-lOA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055" y="1065"/>
+            <point key="canvasLocation" x="1035" y="1065"/>
+        </scene>
+        <!--Gender Popup View Controller-->
+        <scene sceneID="Pon-Zu-bdi">
+            <objects>
+                <viewController id="tG0-ua-cPe" customClass="GenderPopupViewController" customModule="DoctorNearby" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tnL-2Q-5j2"/>
+                        <viewControllerLayoutGuide type="bottom" id="VWf-kQ-OA8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YkS-k8-pgR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03p-sl-pmc">
+                                <rect key="frame" x="200" y="27" width="200" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="CdS-6a-XJb"/>
+                                    <constraint firstAttribute="height" constant="40" id="gaJ-Jy-Ug6"/>
+                                </constraints>
+                                <state key="normal" title="Either"/>
+                                <connections>
+                                    <action selector="selectEither:" destination="tG0-ua-cPe" eventType="touchUpInside" id="0TU-Ga-WpC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geB-ZT-LC5">
+                                <rect key="frame" x="200" y="75" width="200" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1iQ-6P-rYs"/>
+                                    <constraint firstAttribute="width" constant="200" id="ZNt-xL-hrs"/>
+                                </constraints>
+                                <state key="normal" title="Female"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZk-wm-LPw">
+                                <rect key="frame" x="200.5" y="123" width="200" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Axh-uD-ZsD"/>
+                                    <constraint firstAttribute="width" constant="200" id="Vcw-L2-Yj6"/>
+                                </constraints>
+                                <state key="normal" title="Male"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="geB-ZT-LC5" firstAttribute="top" secondItem="03p-sl-pmc" secondAttribute="bottom" constant="8" id="Ko3-Sh-bdp"/>
+                            <constraint firstItem="03p-sl-pmc" firstAttribute="top" secondItem="tnL-2Q-5j2" secondAttribute="bottom" constant="7" id="Ozc-oz-NGc"/>
+                            <constraint firstItem="geB-ZT-LC5" firstAttribute="centerX" secondItem="YkS-k8-pgR" secondAttribute="centerX" id="b5L-I5-TvL"/>
+                            <constraint firstItem="QZk-wm-LPw" firstAttribute="centerX" secondItem="YkS-k8-pgR" secondAttribute="centerX" id="jZL-f5-4m1"/>
+                            <constraint firstItem="QZk-wm-LPw" firstAttribute="top" secondItem="geB-ZT-LC5" secondAttribute="bottom" constant="8" id="nEF-cG-OwZ"/>
+                            <constraint firstItem="03p-sl-pmc" firstAttribute="centerX" secondItem="YkS-k8-pgR" secondAttribute="centerX" id="sad-di-LdV"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u6h-NY-GTb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1785" y="1062"/>
         </scene>
     </scenes>
 </document>
