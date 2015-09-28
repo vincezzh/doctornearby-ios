@@ -8,7 +8,6 @@ pod "LiquidLoader"
 pod "SlideMenuControllerSwift"
 pod "SwiftyJSON"
 pod "Alamofire", "~> 2.0"
-pod "SAInboxViewController"
 end
 
 target 'DoctorNearbyTests' do

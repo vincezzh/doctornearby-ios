@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController") as! MainViewController
         let leftViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
-        let rightViewController = storyboard.instantiateViewControllerWithIdentifier("SearchViewController") as! SearchViewController
+        let rightViewController = storyboard.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
         
         let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
         

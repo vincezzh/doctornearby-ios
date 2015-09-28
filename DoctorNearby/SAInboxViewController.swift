@@ -24,7 +24,13 @@ public class SAInboxViewController: UIViewController {
         let closeButtonItem = UIBarButtonItem()
         var closeButtonAction: (() -> Void)? {
             didSet {
-                navigationItem.setLeftBarButtonItems([closeButtonItem], animated: false)
+                navigationItem.setRightBarButtonItems([closeButtonItem], animated: false)
+            }
+        }
+        let backButtonItem = UIBarButtonItem()
+        var backButtonAction: (() -> Void)? {
+            didSet {
+                navigationItem.setLeftBarButtonItems([backButtonItem], animated: false)
             }
         }
         
@@ -46,13 +52,17 @@ public class SAInboxViewController: UIViewController {
                 NSLayoutConstraint(item: navigationBar, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 0),
                 NSLayoutConstraint(item: navigationBar, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 0),
                 NSLayoutConstraint(item: navigationBar, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0)
-            ])
+                ])
             
             navigationBar.items?.append(navigationItem)
             
             closeButtonItem.target = self
             closeButtonItem.action = "didTapCloseButton:"
             closeButtonItem.title = "Close"
+            
+            backButtonItem.target = self
+            backButtonItem.action = "didTapBackButton:"
+            backButtonItem.title = "Back"
         }
         
         func applyAppearance(appearance: Appearance) {
@@ -74,6 +84,10 @@ public class SAInboxViewController: UIViewController {
         
         func didTapCloseButton(sender: AnyObject) {
             closeButtonAction?()
+        }
+        
+        func didTapBackButton(sender: AnyObject) {
+            backButtonAction?()
         }
     }
     
@@ -112,6 +126,11 @@ public extension SAInboxViewController {
                 self?.navigationController?.popViewControllerAnimated(true)
             }
         }
+        if navigationController?.viewControllers.count == 1 {
+            headerView.backButtonAction = { [weak self] in
+                self?.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
         
         headerView.applyAppearance(SAInboxViewController.appearance)
         headerView.translatesAutoresizingMaskIntoConstraints = false
@@ -123,7 +142,7 @@ public extension SAInboxViewController {
             NSLayoutConstraint(item: headerView, attribute: .Right, relatedBy: .Equal, toItem: view, attribute: .Right, multiplier: 1, constant: 0),
             headerViewHeightConstraint,
             headerViewTopSpaceConstraint
-        ])
+            ])
         self.headerViewHeightConstraint = headerViewHeightConstraint
         self.headerViewTopSpaceConstraint = headerViewTopSpaceConstraint
         
@@ -135,12 +154,12 @@ public extension SAInboxViewController {
             NSLayoutConstraint(item: tableView, attribute: .Left, relatedBy: .Equal, toItem: view, attribute: .Left, multiplier: 1, constant: 0),
             NSLayoutConstraint(item: tableView, attribute: .Right, relatedBy: .Equal, toItem: view, attribute: .Right, multiplier: 1, constant: 0),
             NSLayoutConstraint(item: tableView, attribute: .Bottom, relatedBy: .Equal, toItem: view, attribute: .Bottom, multiplier: 1, constant: 0)
-        ])
+            ])
     }
     
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         if enabledViewControllerBasedAppearance {
             headerView.applyAppearance(appearance)
         }

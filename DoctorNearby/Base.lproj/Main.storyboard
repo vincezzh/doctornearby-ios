@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Search List View Controller-->
+        <scene sceneID="23h-cZ-p8m">
+            <objects>
+                <viewController id="FxA-8L-qhF" customClass="SearchListViewController" customModule="DoctorNearby" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p69-Bp-fuf"/>
+                        <viewControllerLayoutGuide type="bottom" id="K8Y-0d-H4g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qCy-e3-7tT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pzg-Cf-h0B"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bk2-Pw-hQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1785" y="1792"/>
+        </scene>
         <!--Walkthrough View Controller-->
         <scene sceneID="vBO-Ni-3NX">
             <objects>
@@ -309,7 +328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vur-pO-fEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055" y="1791"/>
+            <point key="canvasLocation" x="1035" y="2536"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="D9R-DC-tlr">
@@ -382,6 +401,18 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uD-Oz-0D1">
+                                <rect key="frame" x="548" y="28" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="sbR-dB-Q9f"/>
+                                    <constraint firstAttribute="height" constant="32" id="vW2-mt-8wZ"/>
+                                </constraints>
+                                <state key="normal" image="search"/>
+                                <connections>
+                                    <action selector="search:" destination="xah-sd-QW3" eventType="touchUpInside" id="8Ei-wl-TN9"/>
+                                    <segue destination="PcZ-Ss-nVl" kind="presentation" identifier="showSearchResultList" id="hFo-3M-mrH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -389,6 +420,7 @@
                             <constraint firstItem="VkD-Ng-I3w" firstAttribute="leading" secondItem="RoP-TZ-KU0" secondAttribute="leading" constant="20" id="GbD-bn-2YO"/>
                             <constraint firstAttribute="trailing" secondItem="Nfd-lL-aS8" secondAttribute="trailing" constant="380" id="ITB-7Z-cyM"/>
                             <constraint firstItem="Nfd-lL-aS8" firstAttribute="top" secondItem="cad-xv-Pim" secondAttribute="bottom" constant="25" id="Ouv-8J-T8t"/>
+                            <constraint firstAttribute="trailing" secondItem="9uD-Oz-0D1" secondAttribute="trailing" constant="20" id="Ttb-d0-dMu"/>
                             <constraint firstItem="Nfd-lL-aS8" firstAttribute="top" secondItem="cad-xv-Pim" secondAttribute="bottom" constant="8" id="WUg-u3-fwA"/>
                             <constraint firstItem="VkD-Ng-I3w" firstAttribute="leading" secondItem="RoP-TZ-KU0" secondAttribute="leading" constant="20" id="bQX-R6-lTJ"/>
                             <constraint firstItem="Nfd-lL-aS8" firstAttribute="leading" secondItem="RoP-TZ-KU0" secondAttribute="leading" constant="20" id="gsF-6i-sbW"/>
@@ -396,6 +428,7 @@
                             <constraint firstItem="Nfd-lL-aS8" firstAttribute="top" secondItem="cad-xv-Pim" secondAttribute="bottom" constant="8" id="sF4-Yb-fhL"/>
                             <constraint firstItem="Nfd-lL-aS8" firstAttribute="leading" secondItem="RoP-TZ-KU0" secondAttribute="leading" constant="20" id="t0H-Jt-pKH"/>
                             <constraint firstItem="VkD-Ng-I3w" firstAttribute="top" secondItem="kjn-Uu-dVZ" secondAttribute="bottom" constant="44" id="uLl-Zv-YhA"/>
+                            <constraint firstItem="9uD-Oz-0D1" firstAttribute="top" secondItem="cad-xv-Pim" secondAttribute="bottom" constant="8" id="vDR-6F-Cpd"/>
                             <constraint firstItem="kjn-Uu-dVZ" firstAttribute="leading" secondItem="RoP-TZ-KU0" secondAttribute="leading" constant="20" id="vLo-hZ-Ggg"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Nfd-lL-aS8" secondAttribute="leading" id="zqz-yR-aaB"/>
                         </constraints>
@@ -417,7 +450,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27W-sC-lOA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1035" y="1065"/>
+            <point key="canvasLocation" x="1051" y="1065"/>
         </scene>
         <!--Gender Popup View Controller-->
         <scene sceneID="Pon-Zu-bdi">
@@ -477,5 +510,26 @@
             </objects>
             <point key="canvasLocation" x="1785" y="1062"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="s0h-SX-Hcq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PcZ-Ss-nVl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tmb-Tm-Koo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FxA-8L-qhF" kind="relationship" relationship="rootViewController" id="Xkl-CY-rXb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nYb-bq-wOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1035" y="1792"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="search" width="64" height="64"/>
+    </resources>
 </document>

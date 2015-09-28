@@ -8,13 +8,14 @@
 
 import UIKit
 
-class SearchViewController : UIViewController, UIPopoverPresentationControllerDelegate, KSTokenViewDelegate {
+class SearchViewController : UIViewController, UIPopoverPresentationControllerDelegate, KSTokenViewDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var tokenView: KSTokenView!
     let names: Array<String> = City.names()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setNavigationBarItem()
         
         tokenView.delegate = self
         tokenView.promptText = "City: "
@@ -42,10 +43,19 @@ class SearchViewController : UIViewController, UIPopoverPresentationControllerDe
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let popupView = segue.destinationViewController as? UIViewController {
-            if let popup = popupView.popoverPresentationController {
-                popup.delegate = self
+        if segue.identifier == "showGenderPopup" {
+            if let popupView = segue.destinationViewController as? UIViewController {
+                if let popup = popupView.popoverPresentationController {
+                    popup.delegate = self
+                }
             }
+        }else if segue.identifier == "showSearchResultList" {
+            SAInboxViewController.appearance.barTintColor = UIColor(red: 70/255, green: 136/255, blue: 241/255, alpha: 1)
+            SAInboxViewController.appearance.tintColor = .whiteColor()
+            SAInboxViewController.appearance.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+            
+            let destViewController = segue.destinationViewController as! UINavigationController
+            destViewController.delegate = self
         }
     }
     
@@ -56,6 +66,14 @@ class SearchViewController : UIViewController, UIPopoverPresentationControllerDe
     
     @IBAction func changeSelectedIndex(sender: IGSwitch) {
         print(sender.selectedIndex)
+    }
+    
+    @IBAction func search(sender: AnyObject) {
+        
+    }
+    
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return SAInboxAnimatedTransitioningController.sharedInstance.setOperation(operation)
     }
     
 }
