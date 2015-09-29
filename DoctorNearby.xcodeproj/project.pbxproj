@@ -10,6 +10,7 @@
 		613051351BB5EFD400A6FC7D /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613051341BB5EFD400A6FC7D /* City.swift */; settings = {ASSET_TAGS = (); }; };
 		613051381BB5F00E00A6FC7D /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613051371BB5F00E00A6FC7D /* Hospital.swift */; settings = {ASSET_TAGS = (); }; };
 		6130513A1BB5F07F00A6FC7D /* Specialist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613051391BB5F07F00A6FC7D /* Specialist.swift */; settings = {ASSET_TAGS = (); }; };
+		613910421BB9E11600A03493 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613910411BB9E11600A03493 /* Doctor.swift */; settings = {ASSET_TAGS = (); }; };
 		613B9F681BB469C100DF8DD9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F641BB469C100DF8DD9 /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		613B9F691BB469C100DF8DD9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F651BB469C100DF8DD9 /* SearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		613B9F6A1BB469C100DF8DD9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F661BB469C100DF8DD9 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -75,6 +76,7 @@
 		613051341BB5EFD400A6FC7D /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		613051371BB5F00E00A6FC7D /* Hospital.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
 		613051391BB5F07F00A6FC7D /* Specialist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specialist.swift; sourceTree = "<group>"; };
+		613910411BB9E11600A03493 /* Doctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		613B9F641BB469C100DF8DD9 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		613B9F651BB469C100DF8DD9 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		613B9F661BB469C100DF8DD9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,14 @@
 				613051391BB5F07F00A6FC7D /* Specialist.swift */,
 			);
 			name = Constants;
+			sourceTree = "<group>";
+		};
+		613910401BB9E0FA00A03493 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				613910411BB9E11600A03493 /* Doctor.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		613B9F631BB4690500DF8DD9 /* Controllers */ = {
@@ -321,6 +331,7 @@
 				613B9F631BB4690500DF8DD9 /* Controllers */,
 				614C920A1BB427D200BC95C6 /* Creaters */,
 				613B9F6E1BB46ABB00DF8DD9 /* Extension */,
+				613910401BB9E0FA00A03493 /* Model */,
 				613B9F701BB46C3100DF8DD9 /* Properties */,
 				613B9F6F1BB46C1A00DF8DD9 /* UI */,
 				61B4DCCD1BB5930C001D7530 /* Util */,
@@ -563,6 +574,7 @@
 			files = (
 				613B9F6A1BB469C100DF8DD9 /* SettingsViewController.swift in Sources */,
 				613B9F6B1BB469C100DF8DD9 /* NonMenuController.swift in Sources */,
+				613910421BB9E11600A03493 /* Doctor.swift in Sources */,
 				61A6A7A41BB97E59006B8FCC /* SAInboxDetailViewController.swift in Sources */,
 				61A474021BB8E65A007D59F7 /* ListViewCell.swift in Sources */,
 				615109191BB6241300315CEA /* GenderPopupViewController.swift in Sources */,

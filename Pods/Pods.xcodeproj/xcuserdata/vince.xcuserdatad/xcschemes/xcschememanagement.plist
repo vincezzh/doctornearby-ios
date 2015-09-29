@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>EGFloatingTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>LiquidFloatingActionButton-LiquidFloatingActionButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -34,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PureLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SlideMenuControllerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,17 +57,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>075DAFD99D67AD67C4A7D5D192BF15DA</key>
+		<key>0FF07E676A99318EDFE1DD38AF802ABE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>43588A262A51742080E952824842528C</key>
+		<key>2BE8045C39600657EA735CAB88C4028B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4C794B3E5F3D32C640D280DAB4B9E6AD</key>
+		<key>725D3E7D44A86E96EAE5915678832952</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,22 +77,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8240A687A12B3496C485DFBEB80E79E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>87986764FF8D567EF49E4492D6EA6B36</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>930A0F0D975ADE1B2954261674E5FA2D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A9F34DEB1DA0808F0887382CA267B4DC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B9A04D3C9B208813656510FDA8ADAE02</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C9FE41EE8825E67C4F9C2C38470E9D15</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CA29F0487C1D44179EBC482927DB0CD3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EBD15C7EE9A99494FBFFA057B0ED7F83</key>
+		<key>D040FB931B480CC155B9F4263B63BBB3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

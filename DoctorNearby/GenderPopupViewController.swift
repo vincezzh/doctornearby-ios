@@ -9,6 +9,24 @@
 import UIKit
 
 class GenderPopupViewController: UIViewController {
+    
+    @IBOutlet weak var eitherButton: UIButton!
+    @IBOutlet weak var femailButton: UIButton!
+    @IBOutlet weak var mailButton: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        eitherButton.layer.cornerRadius = 5
+        femailButton.layer.cornerRadius = 5
+        mailButton.layer.cornerRadius = 5
+    }
+    
+    var onDataAvailable : ((data: String) -> ())?
+    
+    func sendData(data: String) {
+        self.onDataAvailable?(data: data)
+    }
 
     override var preferredContentSize: CGSize {
         get {
@@ -20,6 +38,20 @@ class GenderPopupViewController: UIViewController {
     }
 
     @IBAction func selectEither(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissGenderViewController("Either")
+    }
+    
+    @IBAction func selectMale(sender: AnyObject) {
+        dismissGenderViewController("Male")
+    }
+    
+    @IBAction func selectFemale(sender: AnyObject) {
+        dismissGenderViewController("Female")
+    }
+    
+    func dismissGenderViewController(gender: String) {
+        self.dismissViewControllerAnimated(true) { () -> Void in
+            self.sendData(gender)
+        }
     }
 }

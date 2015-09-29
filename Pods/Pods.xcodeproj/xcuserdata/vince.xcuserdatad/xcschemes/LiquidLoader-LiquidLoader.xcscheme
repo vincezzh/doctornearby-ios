@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1FDD1DDA48F8583CD9334F8B"
+               BlueprintIdentifier = "CB54F70B308ADA99779284F4"
                BuildableName = "LiquidLoader.bundle"
                BlueprintName = "LiquidLoader-LiquidLoader"
                ReferencedContainer = "container:Pods.xcodeproj">

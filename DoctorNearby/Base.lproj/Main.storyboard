@@ -343,13 +343,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjn-Uu-dVZ">
-                                <rect key="frame" x="20" y="115" width="200" height="30"/>
+                                <rect key="frame" x="150" y="145" width="90" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="CVc-3R-ypA"/>
+                                    <constraint firstAttribute="height" constant="30" id="TmE-rs-bVS"/>
                                     <constraint firstAttribute="width" constant="200" id="tvx-hj-bSC"/>
+                                    <constraint firstAttribute="width" constant="90" id="yib-fo-0V7"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Gender"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="CVc-3R-ypA"/>
+                                        <exclude reference="tvx-hj-bSC"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <segue destination="tG0-ua-cPe" kind="popoverPresentation" identifier="showGenderPopup" popoverAnchorView="kjn-Uu-dVZ" id="4iY-8O-3HI">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -357,13 +366,17 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VkD-Ng-I3w" customClass="IGSwitch" customModule="DoctorNearby" customModuleProvider="target">
-                                <rect key="frame" x="20" y="189" width="320" height="32"/>
+                                <rect key="frame" x="150" y="238" width="300" height="32"/>
                                 <color key="backgroundColor" red="0.40000000596046448" green="0.40000000596046448" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="0yx-ez-h71"/>
                                     <constraint firstAttribute="height" constant="32" id="16m-15-Arw"/>
                                     <constraint firstAttribute="height" constant="32" id="FEl-cr-e67"/>
                                     <constraint firstAttribute="width" constant="160" id="FpR-H1-j7J"/>
+                                    <constraint firstAttribute="height" constant="32" id="fHV-TX-M3S"/>
+                                    <constraint firstAttribute="width" constant="300" id="uty-1M-oni"/>
+                                    <constraint firstAttribute="width" constant="320" id="vrU-4z-FhA"/>
+                                    <constraint firstAttribute="height" constant="32" id="zdi-g0-lV4"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="titleLeft" value="Family Doctor"/>
@@ -377,75 +390,235 @@
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="0yx-ez-h71"/>
+                                        <exclude reference="16m-15-Arw"/>
                                         <exclude reference="FEl-cr-e67"/>
                                         <exclude reference="FpR-H1-j7J"/>
+                                        <exclude reference="fHV-TX-M3S"/>
+                                        <exclude reference="vrU-4z-FhA"/>
                                     </mask>
                                 </variation>
                                 <connections>
                                     <action selector="changeSelectedIndex:" destination="xah-sd-QW3" eventType="valueChanged" id="pzj-9p-bP5"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nfd-lL-aS8" customClass="KSTokenView" customModule="DoctorNearby" customModuleProvider="target">
-                                <rect key="frame" x="20" y="45" width="200" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="9jF-tN-iUJ"/>
-                                    <constraint firstAttribute="width" constant="200" id="Q9Y-xP-0D9"/>
-                                    <constraint firstAttribute="height" constant="30" id="TL0-vq-BvP"/>
-                                    <constraint firstAttribute="width" constant="250" id="bnW-Uv-d5U"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="9jF-tN-iUJ"/>
-                                        <exclude reference="bnW-Uv-d5U"/>
-                                    </mask>
-                                </variation>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uD-Oz-0D1">
-                                <rect key="frame" x="548" y="28" width="32" height="32"/>
+                                <rect key="frame" x="530" y="28" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="sbR-dB-Q9f"/>
-                                    <constraint firstAttribute="height" constant="32" id="vW2-mt-8wZ"/>
+                                    <constraint firstAttribute="width" constant="50" id="sbR-dB-Q9f"/>
+                                    <constraint firstAttribute="height" constant="50" id="vW2-mt-8wZ"/>
                                 </constraints>
-                                <state key="normal" image="search"/>
+                                <state key="normal" image="search-btn"/>
                                 <connections>
                                     <action selector="search:" destination="xah-sd-QW3" eventType="touchUpInside" id="8Ei-wl-TN9"/>
                                     <segue destination="PcZ-Ss-nVl" kind="presentation" identifier="showSearchResultList" id="hFo-3M-mrH"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="83f-EV-fW5">
+                                <rect key="frame" x="150" y="90" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="3wa-y8-YAt"/>
+                                    <constraint firstAttribute="height" constant="30" id="9Zp-EE-YTD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Physician Information:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2J-ds-njt">
+                                <rect key="frame" x="150" y="61.5" width="168.5" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="169" id="Ebo-9T-qX6"/>
+                                    <constraint firstAttribute="height" constant="21" id="hni-sO-wEW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ebo-9T-qX6"/>
+                                        <exclude reference="hni-sO-wEW"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Physician Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEA-mQ-0An">
+                                <rect key="frame" x="150" y="209.5" width="119" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location of Practice:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfd-Zk-KyS">
+                                <rect key="frame" x="150" y="340.5" width="157.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hospital Where Physician has Privileges:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Al-ch-v9I">
+                                <rect key="frame" x="150" y="422.5" width="309" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPP-9v-0at" userLabel="Hospital View" customClass="KSTokenView" customModule="DoctorNearby" customModuleProvider="target">
+                                <rect key="frame" x="150" y="451" width="300" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5OH-Zu-f0r"/>
+                                    <constraint firstAttribute="height" constant="30" id="9pP-YB-wNu"/>
+                                    <constraint firstAttribute="height" constant="30" id="FWy-CF-nPD"/>
+                                    <constraint firstAttribute="width" constant="250" id="N3F-H1-azD"/>
+                                    <constraint firstAttribute="width" constant="300" id="POk-a4-33o"/>
+                                    <constraint firstAttribute="width" constant="320" id="cen-Am-Ps7"/>
+                                    <constraint firstAttribute="height" constant="30" id="dva-Ny-Sma"/>
+                                    <constraint firstAttribute="width" constant="200" id="jA9-l8-SZL"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5OH-Zu-f0r"/>
+                                        <exclude reference="FWy-CF-nPD"/>
+                                        <exclude reference="N3F-H1-azD"/>
+                                        <exclude reference="cen-Am-Ps7"/>
+                                        <exclude reference="dva-Ny-Sma"/>
+                                        <exclude reference="jA9-l8-SZL"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Stf-Dj-dGb" userLabel="City View" customClass="KSTokenView" customModule="DoctorNearby" customModuleProvider="target">
+                                <rect key="frame" x="150" y="369" width="300" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2hB-PU-x6X"/>
+                                    <constraint firstAttribute="height" constant="30" id="CvZ-7R-1aI"/>
+                                    <constraint firstAttribute="height" constant="30" id="HID-JH-iIC"/>
+                                    <constraint firstAttribute="width" constant="200" id="k2Z-S2-Hib"/>
+                                    <constraint firstAttribute="width" constant="300" id="k47-5S-3uZ"/>
+                                    <constraint firstAttribute="width" constant="250" id="rQB-yX-C9L"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2hB-PU-x6X"/>
+                                        <exclude reference="HID-JH-iIC"/>
+                                        <exclude reference="k2Z-S2-Hib"/>
+                                        <exclude reference="rQB-yX-C9L"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQE-H9-gDd" userLabel="Specialist View" customClass="KSTokenView" customModule="DoctorNearby" customModuleProvider="target">
+                                <rect key="frame" x="150" y="285" width="300" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="1VC-ht-w4d"/>
+                                    <constraint firstAttribute="height" constant="30" id="68G-Ne-Owx"/>
+                                    <constraint firstAttribute="width" constant="300" id="6RZ-z7-cgL"/>
+                                    <constraint firstAttribute="height" constant="30" id="78l-gR-5MD"/>
+                                    <constraint firstAttribute="width" constant="250" id="A1O-gd-ymE"/>
+                                    <constraint firstAttribute="height" constant="30" id="dDH-DC-3YM"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1VC-ht-w4d"/>
+                                        <exclude reference="68G-Ne-Owx"/>
+                                        <exclude reference="78l-gR-5MD"/>
+                                        <exclude reference="A1O-gd-ymE"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nfd-lL-aS8" userLabel="Language View" customClass="KSTokenView" customModule="DoctorNearby" customModuleProvider="target">
+                                <rect key="frame" x="250" y="145" width="200" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="4xH-3p-0cX"/>
+                                    <constraint firstAttribute="height" constant="30" id="9jF-tN-iUJ"/>
+                                    <constraint firstAttribute="width" constant="200" id="Q9Y-xP-0D9"/>
+                                    <constraint firstAttribute="height" constant="30" id="TL0-vq-BvP"/>
+                                    <constraint firstAttribute="width" constant="250" id="bnW-Uv-d5U"/>
+                                    <constraint firstAttribute="height" constant="30" id="hKp-Wa-pVy"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9jF-tN-iUJ"/>
+                                        <exclude reference="Q9Y-xP-0D9"/>
+                                        <exclude reference="TL0-vq-BvP"/>
+                                        <exclude reference="bnW-Uv-d5U"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="VkD-Ng-I3w" firstAttribute="top" secondItem="kjn-Uu-dVZ" secondAttribute="bottom" constant="41" id="1GF-iF-vMh"/>
+                            <constraint firstItem="S2J-ds-njt" firstAttribute="leading" secondItem="83f-EV-fW5" secondAttribute="leading" id="4RN-LH-jLg"/>
+                            <constraint firstItem="dQE-H9-gDd" firstAttribute="top" secondItem="VkD-Ng-I3w" secondAttribute="bottom" constant="15" id="4rK-iP-cJ6"/>
+                            <constraint firstItem="dQE-H9-gDd" firstAttribute="centerX" secondItem="RoP-TZ-KU0" secondAttribute="centerX" id="7X0-QS-BXE"/>
+                            <constraint firstItem="zEA-mQ-0An" firstAttribute="leading" secondItem="VkD-Ng-I3w" secondAttribute="leading" id="D2q-53-jxy"/>
                             <constraint firstItem="VkD-Ng-I3w" firstAttribute="leading" secondItem="RoP-TZ-KU0" secondAttribute="leading" constant="20" id="GbD-bn-2YO"/>
+                            <constraint firstItem="Kfd-Zk-KyS" firstAttribute="leading" secondItem="Stf-Dj-dGb" secondAttribute="leading" id="HWA-T8-8yU"/>
                             <constraint firstAttribute="trailing" secondItem="Nfd-lL-aS8" secondAttribute="trailing" constant="380" id="ITB-7Z-cyM"/>
+                            <constraint firstItem="83f-EV-fW5" firstAttribute="top" secondItem="cad-xv-Pim" secondAttribute="bottom" constant="70" id="MxM-kY-cE9"/>
                             <constraint firstItem="Nfd-lL-aS8" firstAttribute="top" secondItem="cad-xv-Pim" secondAttribute="bottom" constant="25" id="Ouv-8J-T8t"/>
+                            <constraint firstItem="kjn-Uu-dVZ" firstAttribute="top" secondItem="83f-EV-fW5" secondAttribute="bottom" constant="25" id="Psp-ah-MpO"/>
+                            <constraint firstItem="jPP-9v-0at" firstAttribute="top" secondItem="Stf-Dj-dGb" secondAttribute="bottom" constant="52" id="Q0C-Bd-d1u"/>
+                            <constraint firstItem="Stf-Dj-dGb" firstAttribute="centerX" secondItem="RoP-TZ-KU0" secondAttribute="centerX" id="QQD-is-IPD"/>
+                            <constraint firstItem="jPP-9v-0at" firstAttribute="centerX" secondItem="RoP-TZ-KU0" secondAttribute="centerX" id="S88-7k-sJn"/>
                             <constraint firstAttribute="trailing" secondItem="9uD-Oz-0D1" secondAttribute="trailing" constant="20" id="Ttb-d0-dMu"/>
                             <constraint firstItem="Nfd-lL-aS8" firstAttribute="top" secondItem="cad-xv-Pim" secondAttribute="bottom" constant="8" id="WUg-u3-fwA"/>
+                            <constraint firstItem="S2J-ds-njt" firstAttribute="leading" secondItem="83f-EV-fW5" secondAttribute="leading" id="Wld-Ki-YTi"/>
+                            <constraint firstItem="VkD-Ng-I3w" firstAttribute="centerX" secondItem="RoP-TZ-KU0" secondAttribute="centerX" id="YVv-WJ-S5L"/>
                             <constraint firstItem="VkD-Ng-I3w" firstAttribute="leading" secondItem="RoP-TZ-KU0" secondAttribute="leading" constant="20" id="bQX-R6-lTJ"/>
+                            <constraint firstItem="Nfd-lL-aS8" firstAttribute="trailing" secondItem="83f-EV-fW5" secondAttribute="trailing" id="c6K-6j-Xsv"/>
+                            <constraint firstItem="83f-EV-fW5" firstAttribute="top" secondItem="S2J-ds-njt" secondAttribute="bottom" constant="8" id="dDQ-lz-Tae"/>
+                            <constraint firstItem="VkD-Ng-I3w" firstAttribute="centerX" secondItem="RoP-TZ-KU0" secondAttribute="centerX" id="fLb-mZ-cAv"/>
                             <constraint firstItem="Nfd-lL-aS8" firstAttribute="leading" secondItem="RoP-TZ-KU0" secondAttribute="leading" constant="20" id="gsF-6i-sbW"/>
                             <constraint firstItem="kjn-Uu-dVZ" firstAttribute="top" secondItem="Nfd-lL-aS8" secondAttribute="bottom" constant="40" id="hm7-eh-35b"/>
+                            <constraint firstItem="VkD-Ng-I3w" firstAttribute="top" secondItem="83f-EV-fW5" secondAttribute="bottom" constant="118" id="q9l-DX-YFb"/>
+                            <constraint firstItem="VkD-Ng-I3w" firstAttribute="top" secondItem="zEA-mQ-0An" secondAttribute="bottom" constant="8" id="r5F-1J-Sf4"/>
+                            <constraint firstItem="Stf-Dj-dGb" firstAttribute="top" secondItem="Kfd-Zk-KyS" secondAttribute="bottom" constant="8" id="sCf-fE-Npw"/>
                             <constraint firstItem="Nfd-lL-aS8" firstAttribute="top" secondItem="cad-xv-Pim" secondAttribute="bottom" constant="8" id="sF4-Yb-fhL"/>
+                            <constraint firstItem="Stf-Dj-dGb" firstAttribute="top" secondItem="dQE-H9-gDd" secondAttribute="bottom" constant="54" id="sI7-XR-XHh"/>
+                            <constraint firstItem="kjn-Uu-dVZ" firstAttribute="leading" secondItem="83f-EV-fW5" secondAttribute="leading" id="sWa-YD-uuU"/>
                             <constraint firstItem="Nfd-lL-aS8" firstAttribute="leading" secondItem="RoP-TZ-KU0" secondAttribute="leading" constant="20" id="t0H-Jt-pKH"/>
+                            <constraint firstItem="8Al-ch-v9I" firstAttribute="leading" secondItem="jPP-9v-0at" secondAttribute="leading" id="tDw-JW-3wG"/>
+                            <constraint firstItem="jPP-9v-0at" firstAttribute="top" secondItem="8Al-ch-v9I" secondAttribute="bottom" constant="8" id="u5X-n4-6Z3"/>
+                            <constraint firstItem="jPP-9v-0at" firstAttribute="centerX" secondItem="RoP-TZ-KU0" secondAttribute="centerX" id="uJq-z4-KrT"/>
                             <constraint firstItem="VkD-Ng-I3w" firstAttribute="top" secondItem="kjn-Uu-dVZ" secondAttribute="bottom" constant="44" id="uLl-Zv-YhA"/>
+                            <constraint firstItem="Nfd-lL-aS8" firstAttribute="top" secondItem="83f-EV-fW5" secondAttribute="bottom" constant="25" id="v5x-Nw-1M2"/>
+                            <constraint firstItem="83f-EV-fW5" firstAttribute="top" secondItem="S2J-ds-njt" secondAttribute="bottom" constant="8" id="vAL-o2-EUy"/>
                             <constraint firstItem="9uD-Oz-0D1" firstAttribute="top" secondItem="cad-xv-Pim" secondAttribute="bottom" constant="8" id="vDR-6F-Cpd"/>
                             <constraint firstItem="kjn-Uu-dVZ" firstAttribute="leading" secondItem="RoP-TZ-KU0" secondAttribute="leading" constant="20" id="vLo-hZ-Ggg"/>
+                            <constraint firstItem="83f-EV-fW5" firstAttribute="centerX" secondItem="RoP-TZ-KU0" secondAttribute="centerX" id="vbE-20-Kpj"/>
+                            <constraint firstItem="VkD-Ng-I3w" firstAttribute="centerX" secondItem="RoP-TZ-KU0" secondAttribute="centerX" id="wRy-SC-hfa"/>
+                            <constraint firstItem="VkD-Ng-I3w" firstAttribute="leading" secondItem="83f-EV-fW5" secondAttribute="leading" id="y0g-cE-U8c"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Nfd-lL-aS8" secondAttribute="leading" id="zqz-yR-aaB"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="4RN-LH-jLg"/>
+                                <exclude reference="vAL-o2-EUy"/>
+                                <exclude reference="hm7-eh-35b"/>
+                                <exclude reference="vLo-hZ-Ggg"/>
+                                <exclude reference="1GF-iF-vMh"/>
+                                <exclude reference="GbD-bn-2YO"/>
+                                <exclude reference="YVv-WJ-S5L"/>
+                                <exclude reference="bQX-R6-lTJ"/>
+                                <exclude reference="fLb-mZ-cAv"/>
+                                <exclude reference="uLl-Zv-YhA"/>
+                                <exclude reference="y0g-cE-U8c"/>
                                 <exclude reference="ITB-7Z-cyM"/>
+                                <exclude reference="Ouv-8J-T8t"/>
                                 <exclude reference="WUg-u3-fwA"/>
+                                <exclude reference="gsF-6i-sbW"/>
                                 <exclude reference="sF4-Yb-fhL"/>
                                 <exclude reference="t0H-Jt-pKH"/>
                                 <exclude reference="zqz-yR-aaB"/>
-                                <exclude reference="1GF-iF-vMh"/>
-                                <exclude reference="bQX-R6-lTJ"/>
+                                <exclude reference="uJq-z4-KrT"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="tokenView" destination="Nfd-lL-aS8" id="vtc-Ew-kVi"/>
+                        <outlet property="cityView" destination="Stf-Dj-dGb" id="02r-De-b7f"/>
+                        <outlet property="genderButton" destination="kjn-Uu-dVZ" id="Mgb-f6-v3j"/>
+                        <outlet property="hospitalView" destination="jPP-9v-0at" id="Rc6-tJ-rO4"/>
+                        <outlet property="languageView" destination="Nfd-lL-aS8" id="gRQ-Xc-gbK"/>
+                        <outlet property="nameTextField" destination="83f-EV-fW5" id="1fz-oW-2TF"/>
+                        <outlet property="scrollView" destination="RoP-TZ-KU0" id="rSM-WJ-wR1"/>
+                        <outlet property="specialistView" destination="dQE-H9-gDd" id="8JM-F7-RtK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27W-sC-lOA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -466,33 +639,48 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03p-sl-pmc">
                                 <rect key="frame" x="200" y="27" width="200" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="CdS-6a-XJb"/>
                                     <constraint firstAttribute="height" constant="40" id="gaJ-Jy-Ug6"/>
                                 </constraints>
-                                <state key="normal" title="Either"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Either">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="selectEither:" destination="tG0-ua-cPe" eventType="touchUpInside" id="0TU-Ga-WpC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geB-ZT-LC5">
                                 <rect key="frame" x="200" y="75" width="200" height="40"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.49611528882251643" blue="0.88496446854222688" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1iQ-6P-rYs"/>
                                     <constraint firstAttribute="width" constant="200" id="ZNt-xL-hrs"/>
                                 </constraints>
-                                <state key="normal" title="Female"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Female">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectFemale:" destination="tG0-ua-cPe" eventType="touchUpInside" id="zZJ-iQ-JFi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZk-wm-LPw">
                                 <rect key="frame" x="200.5" y="123" width="200" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Axh-uD-ZsD"/>
                                     <constraint firstAttribute="width" constant="200" id="Vcw-L2-Yj6"/>
                                 </constraints>
-                                <state key="normal" title="Male"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Male">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectMale:" destination="tG0-ua-cPe" eventType="touchUpInside" id="6h6-5L-bOS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -505,6 +693,11 @@
                             <constraint firstItem="03p-sl-pmc" firstAttribute="centerX" secondItem="YkS-k8-pgR" secondAttribute="centerX" id="sad-di-LdV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="eitherButton" destination="03p-sl-pmc" id="XGU-Ja-IZ6"/>
+                        <outlet property="femailButton" destination="geB-ZT-LC5" id="RtV-Zb-NTa"/>
+                        <outlet property="mailButton" destination="QZk-wm-LPw" id="VDR-iM-bw2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6h-NY-GTb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -530,6 +723,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="search" width="64" height="64"/>
+        <image name="search-btn" width="256" height="256"/>
     </resources>
 </document>

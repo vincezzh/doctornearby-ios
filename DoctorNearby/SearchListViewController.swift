@@ -7,14 +7,13 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class SearchListViewController: SAInboxViewController {
     
-    private var contents: [DoctorContent] = [
-        DoctorContent(name: "Vince Zhang", contact: "Phone: 416-839-7036", address: "38 Lindisfarne Way, Markham, L3P3W9, Canada"),
-        DoctorContent(name: "Vince Zhang", contact: "Phone: 416-839-7036", address: "38 Lindisfarne Way, Markham, L3P3W9, Canada"),
-        DoctorContent(name: "Vince Zhang", contact: "Phone: 416-839-7036", address: "38 Lindisfarne Way, Markham, L3P3W9, Canada")
-    ]
+    var contents: [Doctor] = []
+    var parameters: [String: String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +34,34 @@ class SearchListViewController: SAInboxViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         setNeedsStatusBarAppearanceUpdate()
+        reloadData()
+    }
+    
+    func reloadData() {
+        Alamofire.request(.POST, "http://localhost:9091/doctornearby/doctor/search", parameters: parameters, encoding: .JSON)
+            .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
+                
+                switch result {
+                case .Success(let data):
+                    
+                    let json = JSON(data: data)
+                    if json["data"].count > 0 {
+                        for index in 0...json["data"].count - 1 {
+                            let doctor: Doctor = Doctor()
+                            doctor.name = json["data"][index]["profile"]["givenName"].stringValue
+                            self.contents.append(doctor)
+                        }
+                    }
+                    self.tableView.reloadData()
+                    
+                case .Failure(let data, let error):
+                    print("Request failed with error: \(error)")
+                    if let data = data {
+                        print("Response data: \(NSString(data: data, encoding: NSUTF8StringEncoding)!)")
+                    }
+                }
+                
+        }
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -44,12 +71,6 @@ class SearchListViewController: SAInboxViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    struct DoctorContent {
-        var name: String
-        var contact: String
-        var address: String
     }
 }
 
