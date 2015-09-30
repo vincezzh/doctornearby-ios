@@ -38,7 +38,7 @@ class SearchListViewController: SAInboxViewController {
     }
     
     func reloadData() {
-        Alamofire.request(.POST, "http://localhost:9091/doctornearby/doctor/search", parameters: parameters, encoding: .JSON)
+        Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/doctor/search", parameters: parameters, encoding: .JSON)
             .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
                 
                 switch result {
@@ -48,7 +48,12 @@ class SearchListViewController: SAInboxViewController {
                     if json["data"].count > 0 {
                         for index in 0...json["data"].count - 1 {
                             let doctor: Doctor = Doctor()
-                            doctor.name = json["data"][index]["profile"]["givenName"].stringValue
+                            let givenName = json["data"][index]["profile"]["givenName"].stringValue
+                            let surName = json["data"][index]["profile"]["surname"].stringValue
+                            doctor.name = "\(surName), \(givenName)"
+                            doctor.doctorId = json["data"][index]["_id"].stringValue
+                            doctor.contact = json["data"][index]["location"]["contactSummary"].stringValue
+                            doctor.address = json["data"][index]["location"]["addressSummary"].stringValue
                             self.contents.append(doctor)
                         }
                     }
@@ -80,8 +85,10 @@ extension SearchListViewController: UITableViewDataSource {
         
         if let cell = cell as? ListViewCell {
             let content = contents[indexPath.row]
-            cell.setUsername(content.name)
-            cell.setMainText(content.address)
+            cell.nameLabel.text = content.name
+            cell.idLabel.text = content.doctorId
+            cell.contactLabel.text = content.contact
+            cell.addressLabel.text = content.address
         }
         
         cell.layoutMargins = UIEdgeInsetsZero
@@ -110,8 +117,7 @@ extension SearchListViewController {
         }
         
         let content = contents[indexPath.row]
-        viewController.name = content.name
-        viewController.address = content.address
+        viewController.content = content
         
         navigationController?.pushViewController(viewController, animated: true)
     }

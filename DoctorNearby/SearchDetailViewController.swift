@@ -11,8 +11,7 @@ import QuartzCore
 
 class SearchDetailViewController: SAInboxDetailViewController {
     
-    var name: String?
-    var address: String?
+    var content: Doctor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +22,7 @@ class SearchDetailViewController: SAInboxDetailViewController {
         let nib = UINib(nibName: DetailViewCell.kCellIdentifier, bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: DetailViewCell.kCellIdentifier)
         
-        title = name
+        title = content?.name
         
         tableView.separatorInset = UIEdgeInsetsZero
         tableView.layoutMargins = UIEdgeInsetsZero
@@ -55,8 +54,12 @@ extension SearchDetailViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier(DetailViewCell.kCellIdentifier)!
         
         if let cell = cell as? DetailViewCell {
-            cell.usernameLabel.text = name
-            cell.textView.text = address
+            if let doctorAddress = content?.address {
+                cell.addressLabel.text = doctorAddress
+            }
+            if let doctorContact = content?.contact {
+                cell.contactLabel.text = doctorContact
+            }
         }
         
         cell.layoutMargins = UIEdgeInsetsZero

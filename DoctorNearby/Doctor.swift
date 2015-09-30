@@ -12,4 +12,5 @@ class Doctor {
     var name: String = ""
     var address: String = ""
     var contact: String = ""
+    var doctorId: String = ""
 }

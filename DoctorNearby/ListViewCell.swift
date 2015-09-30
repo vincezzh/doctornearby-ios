@@ -13,8 +13,11 @@ class ListViewCell: UITableViewCell {
 
     static let kCellIdentifier = "ListViewCell"
     
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var mainTextLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var contactLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,11 +34,4 @@ class ListViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setMainText(text: String) {
-        mainTextLabel.text = text
-    }
-    
-    func setUsername(name: String) {
-        usernameLabel.text = name
-    }
 }

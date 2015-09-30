@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,45 +14,82 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tyz-A4-TAv">
-                        <rect key="frame" x="10" y="10" width="80" height="80"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="101594" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KG1-Ke-jnq">
+                        <rect key="frame" x="8" y="31" width="71" height="17"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="tyz-A4-TAv" secondAttribute="height" multiplier="1:1" id="LTN-F5-91V"/>
+                            <constraint firstAttribute="width" constant="71" id="Lq4-zi-hsr"/>
+                            <constraint firstAttribute="height" constant="17" id="R86-LL-w7L"/>
                         </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7t-bd-eyM">
-                        <rect key="frame" x="100" y="15" width="210" height="16"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="16" id="GQK-eX-DPu"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="HiraKakuProN-W6" family="Hiragino Kaku Gothic ProN" pointSize="16"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" lineBreakMode="characterWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sff-d9-MyF">
-                        <rect key="frame" x="100" y="41" width="210" height="49"/>
-                        <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="16"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="38 Lindisfarne Way, Markham, ON, Canada, L3P3W9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bj5-gx-Yhe">
+                        <rect key="frame" x="8" y="75" width="307" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="R47-Ju-i63"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zhang, Zhehan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFU-sg-4Wv">
+                        <rect key="frame" x="8" y="9" width="245" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="6Zk-lr-dna"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info-btn" translatesAutoresizingMaskIntoConstraints="NO" id="ZcD-eg-aPk">
+                        <rect key="frame" x="280" y="9" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="e23-qs-FFV"/>
+                            <constraint firstAttribute="height" constant="32" id="k6Z-x2-eE0"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone: 416-111-1111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIW-FR-H6V">
+                        <rect key="frame" x="8" y="52" width="304" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Vty-Ql-zv1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="b7t-bd-eyM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="7nX-GC-SPe"/>
-                    <constraint firstItem="b7t-bd-eyM" firstAttribute="leading" secondItem="tyz-A4-TAv" secondAttribute="trailing" constant="10" id="8T3-CF-kYe"/>
-                    <constraint firstAttribute="trailing" secondItem="sff-d9-MyF" secondAttribute="trailing" constant="10" id="9aU-4i-ytD"/>
-                    <constraint firstAttribute="trailing" secondItem="b7t-bd-eyM" secondAttribute="trailing" constant="10" id="Cg2-g5-ial"/>
-                    <constraint firstItem="sff-d9-MyF" firstAttribute="top" secondItem="b7t-bd-eyM" secondAttribute="bottom" constant="10" id="IIL-JQ-3lK"/>
-                    <constraint firstAttribute="bottom" secondItem="sff-d9-MyF" secondAttribute="bottom" constant="9.5" id="IPJ-F9-xc2"/>
-                    <constraint firstItem="sff-d9-MyF" firstAttribute="leading" secondItem="tyz-A4-TAv" secondAttribute="trailing" constant="10" id="RKX-N1-GRX"/>
-                    <constraint firstAttribute="bottom" secondItem="tyz-A4-TAv" secondAttribute="bottom" constant="9.5" id="Y1y-N1-Fhi"/>
-                    <constraint firstItem="tyz-A4-TAv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="YeC-9E-tSR"/>
-                    <constraint firstItem="tyz-A4-TAv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="nzp-2u-MNQ"/>
+                    <constraint firstAttribute="trailing" secondItem="bj5-gx-Yhe" secondAttribute="trailing" constant="5" id="Fre-PL-TmN"/>
+                    <constraint firstItem="LFU-sg-4Wv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="LFA-yv-t2Y"/>
+                    <constraint firstItem="KIW-FR-H6V" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Mzf-Wb-Qwp"/>
+                    <constraint firstItem="ZcD-eg-aPk" firstAttribute="leading" secondItem="LFU-sg-4Wv" secondAttribute="trailing" constant="27" id="O66-b4-bXw"/>
+                    <constraint firstAttribute="trailing" secondItem="ZcD-eg-aPk" secondAttribute="trailing" constant="8" id="QRZ-lI-4PD"/>
+                    <constraint firstItem="bj5-gx-Yhe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="TmP-rc-S3G"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="LFU-sg-4Wv" secondAttribute="trailing" constant="59" id="Ufj-1F-Jwn"/>
+                    <constraint firstItem="KIW-FR-H6V" firstAttribute="top" secondItem="KG1-Ke-jnq" secondAttribute="bottom" constant="4" id="hhe-hm-jGO"/>
+                    <constraint firstItem="LFU-sg-4Wv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="hpT-KF-p3p"/>
+                    <constraint firstAttribute="bottom" secondItem="bj5-gx-Yhe" secondAttribute="bottom" constant="3.5" id="i8m-xl-9Tb"/>
+                    <constraint firstItem="KG1-Ke-jnq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="isK-yo-niz"/>
+                    <constraint firstItem="ZcD-eg-aPk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="rI3-e2-gac"/>
+                    <constraint firstItem="KG1-Ke-jnq" firstAttribute="top" secondItem="LFU-sg-4Wv" secondAttribute="bottom" constant="1" id="s1W-yc-Qqd"/>
+                    <constraint firstAttribute="trailing" secondItem="KIW-FR-H6V" secondAttribute="trailing" constant="8" id="zNS-AT-CXk"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="O66-b4-bXw"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="mainTextLabel" destination="sff-d9-MyF" id="mhS-XE-6fw"/>
-                <outlet property="usernameLabel" destination="b7t-bd-eyM" id="ahl-Yt-7sc"/>
+                <outlet property="addressLabel" destination="bj5-gx-Yhe" id="eAr-lT-pDc"/>
+                <outlet property="contactLabel" destination="KIW-FR-H6V" id="8fS-Um-8We"/>
+                <outlet property="idLabel" destination="KG1-Ke-jnq" id="Vne-Vu-20R"/>
+                <outlet property="nameLabel" destination="LFU-sg-4Wv" id="WTo-kQ-fBs"/>
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="info-btn" width="72" height="72"/>
+    </resources>
 </document>

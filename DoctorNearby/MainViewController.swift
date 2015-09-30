@@ -66,7 +66,7 @@ class MainViewController: UIViewController, BWWalkthroughViewControllerDelegate 
 
     @IBAction func getDoctorById(sender: AnyObject) {
         
-        Alamofire.request(.GET, "http://localhost:9091/doctornearby/doctor/103559/detail", parameters: nil)
+        Alamofire.request(.GET, "\(GlobalConstant.baseServerURL)/doctor/103559/detail", parameters: nil)
             .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
                 
                 switch result {
@@ -94,7 +94,7 @@ class MainViewController: UIViewController, BWWalkthroughViewControllerDelegate 
             "language": "ENGLISH"
         ]
         
-        Alamofire.request(.POST, "http://localhost:9091/doctornearby/doctor/search", parameters: parameters, encoding: .JSON)
+        Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/doctor/search", parameters: parameters, encoding: .JSON)
             .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
                 
                 switch result {
