@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class SearchListViewController: SAInboxViewController {
     
-    var contents: [Doctor] = []
+    var contents = [Doctor]()
     var parameters = [String: AnyObject]()
     var loadMore = true
     
@@ -40,7 +40,6 @@ class SearchListViewController: SAInboxViewController {
     
     func reloadData() {
         
-//        let loadingActivity = CozyLoadingActivity(text: "Loading...", sender: self, disableUI: true)
         let activityIndicator = ActivityIndicator()
         activityIndicator.showActivityIndicator(self.view)
         
@@ -81,14 +80,12 @@ class SearchListViewController: SAInboxViewController {
                     }
                     
                     self.tableView.reloadData()
-//                    loadingActivity.hideLoadingActivity(success: true, animated: true)
                     
                 case .Failure(let data, let error):
                     print("Request failed with error: \(error)")
                     if let data = data {
                         print("Response data: \(NSString(data: data, encoding: NSUTF8StringEncoding)!)")
                     }
-//                    loadingActivity.hideLoadingActivity(success: false, animated: true)
                 }
             
             activityIndicator.hideActivityIndicator(self.view)

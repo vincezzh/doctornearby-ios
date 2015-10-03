@@ -35,10 +35,6 @@ class DetailViewCell: UITableViewCell {
     }
     
     func loadWebPage() {
-
-//        let lc: LoaderCreater = LoaderCreater()
-//        let loader = lc.generateLoader(self.frame.width * 0.5 - 25, yPosition: self.frame.height * 0.5 - 13)
-//        self.addSubview(loader)
         
         let activityIndicator = ActivityIndicator()
         activityIndicator.showActivityIndicator(self)
@@ -61,7 +57,6 @@ class DetailViewCell: UITableViewCell {
                     }
                 }
                 
-//                loader.removeFromSuperview()
                 activityIndicator.hideActivityIndicator(self)
                 
         }

@@ -22,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bk2-Pw-hQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1785" y="1792"/>
+            <point key="canvasLocation" x="1773" y="1806"/>
         </scene>
         <!--Walkthrough View Controller-->
         <scene sceneID="vBO-Ni-3NX">
@@ -285,10 +285,10 @@
             </objects>
             <point key="canvasLocation" x="329" y="1065"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Bookmark View Controller-->
         <scene sceneID="cLD-Ry-Wyh">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="Hrl-JK-vT3" customClass="SettingsViewController" customModule="DoctorNearby" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookmarkViewController" id="Hrl-JK-vT3" customClass="BookmarkViewController" customModule="DoctorNearby" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zug-bI-Tr0"/>
                         <viewControllerLayoutGuide type="bottom" id="vqP-Sm-9j6"/>
@@ -296,12 +296,39 @@
                     <view key="view" contentMode="scaleToFill" id="YAl-ul-C3s">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.40000000596046448" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Filter by Name" translatesAutoresizingMaskIntoConstraints="NO" id="XEb-GY-J5q">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="8kz-l4-vvD"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="74a-21-ixv">
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XEb-GY-J5q" firstAttribute="leading" secondItem="YAl-ul-C3s" secondAttribute="leading" id="Bcb-h3-fsq"/>
+                            <constraint firstItem="XEb-GY-J5q" firstAttribute="top" secondItem="YAl-ul-C3s" secondAttribute="top" id="TZA-iR-rdL"/>
+                            <constraint firstItem="vqP-Sm-9j6" firstAttribute="top" secondItem="74a-21-ixv" secondAttribute="bottom" id="YXq-me-ypL"/>
+                            <constraint firstItem="74a-21-ixv" firstAttribute="top" secondItem="XEb-GY-J5q" secondAttribute="bottom" id="giI-D9-LcD"/>
+                            <constraint firstItem="74a-21-ixv" firstAttribute="leading" secondItem="YAl-ul-C3s" secondAttribute="leading" id="qrl-TO-Sb6"/>
+                            <constraint firstAttribute="trailing" secondItem="XEb-GY-J5q" secondAttribute="trailing" id="xxd-Pk-XwV"/>
+                            <constraint firstAttribute="trailing" secondItem="74a-21-ixv" secondAttribute="trailing" id="yWH-0R-5Bs"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="zP7-2H-8kN"/>
+                    <connections>
+                        <outlet property="bookmarkTableView" destination="74a-21-ixv" id="uB8-hK-exp"/>
+                        <outlet property="searchBar" destination="XEb-GY-J5q" id="56h-AY-wok"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6g-BB-xvK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="331" y="1785"/>
+            <point key="canvasLocation" x="331" y="1806"/>
         </scene>
         <!--Non Menu Controller-->
         <scene sceneID="PpV-Wf-zVb">
@@ -806,7 +833,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYb-bq-wOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1035" y="1792"/>
+            <point key="canvasLocation" x="1051" y="1806"/>
         </scene>
     </scenes>
     <resources>
