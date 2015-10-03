@@ -13,12 +13,12 @@ import SwiftyJSON
 class SearchListViewController: SAInboxViewController {
     
     var contents: [Doctor] = []
-    var parameters: [String: String]?
+    var parameters = [String: AnyObject]()
+    var loadMore = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+
         title = "Search Results"
         
         navigationController?.navigationBarHidden = true
@@ -29,17 +29,33 @@ class SearchListViewController: SAInboxViewController {
         tableView.layoutMargins = UIEdgeInsetsZero
         tableView.dataSource = self
         tableView.delegate = self
+        
+        reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         setNeedsStatusBarAppearanceUpdate()
-        reloadData()
     }
     
     func reloadData() {
+        
+//        let loadingActivity = CozyLoadingActivity(text: "Loading...", sender: self, disableUI: true)
+        let activityIndicator = ActivityIndicator()
+        activityIndicator.showActivityIndicator(self.view)
+        
+        if let skip: Int = parameters["skip"] as? Int {
+            parameters.updateValue(Int(GlobalConstant.defaultPageSize), forKey: "limit")
+            parameters.updateValue(Int(skip + GlobalConstant.defaultPageSize), forKey: "skip")
+        }else {
+            parameters.updateValue(Int(GlobalConstant.defaultPageSize), forKey: "limit")
+            parameters.updateValue(Int(GlobalConstant.defaultPageStart), forKey: "skip")
+        }
+        
         Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/doctor/search", parameters: parameters, encoding: .JSON)
             .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
+                
+                var count = 0
                 
                 switch result {
                 case .Success(let data):
@@ -54,18 +70,28 @@ class SearchListViewController: SAInboxViewController {
                             doctor.doctorId = json["data"][index]["_id"].stringValue
                             doctor.contact = json["data"][index]["location"]["contactSummary"].stringValue
                             doctor.address = json["data"][index]["location"]["addressSummary"].stringValue
+                            
                             self.contents.append(doctor)
+                            count++
                         }
                     }
+                    
+                    if count < GlobalConstant.defaultPageSize {
+                        self.loadMore = false
+                    }
+                    
                     self.tableView.reloadData()
+//                    loadingActivity.hideLoadingActivity(success: true, animated: true)
                     
                 case .Failure(let data, let error):
                     print("Request failed with error: \(error)")
                     if let data = data {
                         print("Response data: \(NSString(data: data, encoding: NSUTF8StringEncoding)!)")
                     }
+//                    loadingActivity.hideLoadingActivity(success: false, animated: true)
                 }
-                
+            
+            activityIndicator.hideActivityIndicator(self.view)
         }
     }
     
@@ -98,6 +124,12 @@ extension SearchListViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contents.count
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if loadMore && indexPath.row == contents.count - 1 {
+            reloadData()
+        }
     }
 }
 

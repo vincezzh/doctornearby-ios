@@ -42,13 +42,6 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info-btn" translatesAutoresizingMaskIntoConstraints="NO" id="ZcD-eg-aPk">
-                        <rect key="frame" x="280" y="9" width="32" height="32"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="32" id="e23-qs-FFV"/>
-                            <constraint firstAttribute="height" constant="32" id="k6Z-x2-eE0"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone: 416-111-1111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIW-FR-H6V">
                         <rect key="frame" x="8" y="52" width="304" height="21"/>
                         <constraints>
@@ -63,23 +56,15 @@
                     <constraint firstAttribute="trailing" secondItem="bj5-gx-Yhe" secondAttribute="trailing" constant="5" id="Fre-PL-TmN"/>
                     <constraint firstItem="LFU-sg-4Wv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="LFA-yv-t2Y"/>
                     <constraint firstItem="KIW-FR-H6V" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Mzf-Wb-Qwp"/>
-                    <constraint firstItem="ZcD-eg-aPk" firstAttribute="leading" secondItem="LFU-sg-4Wv" secondAttribute="trailing" constant="27" id="O66-b4-bXw"/>
-                    <constraint firstAttribute="trailing" secondItem="ZcD-eg-aPk" secondAttribute="trailing" constant="8" id="QRZ-lI-4PD"/>
                     <constraint firstItem="bj5-gx-Yhe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="TmP-rc-S3G"/>
                     <constraint firstAttribute="trailingMargin" secondItem="LFU-sg-4Wv" secondAttribute="trailing" constant="59" id="Ufj-1F-Jwn"/>
                     <constraint firstItem="KIW-FR-H6V" firstAttribute="top" secondItem="KG1-Ke-jnq" secondAttribute="bottom" constant="4" id="hhe-hm-jGO"/>
                     <constraint firstItem="LFU-sg-4Wv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="hpT-KF-p3p"/>
                     <constraint firstAttribute="bottom" secondItem="bj5-gx-Yhe" secondAttribute="bottom" constant="3.5" id="i8m-xl-9Tb"/>
                     <constraint firstItem="KG1-Ke-jnq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="isK-yo-niz"/>
-                    <constraint firstItem="ZcD-eg-aPk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="rI3-e2-gac"/>
                     <constraint firstItem="KG1-Ke-jnq" firstAttribute="top" secondItem="LFU-sg-4Wv" secondAttribute="bottom" constant="1" id="s1W-yc-Qqd"/>
                     <constraint firstAttribute="trailing" secondItem="KIW-FR-H6V" secondAttribute="trailing" constant="8" id="zNS-AT-CXk"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="O66-b4-bXw"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="addressLabel" destination="bj5-gx-Yhe" id="eAr-lT-pDc"/>
@@ -89,7 +74,4 @@
             </connections>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="info-btn" width="72" height="72"/>
-    </resources>
 </document>

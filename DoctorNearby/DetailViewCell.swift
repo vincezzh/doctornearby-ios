@@ -7,16 +7,16 @@
 //
 
 import UIKit
-import MapKit
+import Alamofire
+import SwiftyJSON
 
-class DetailViewCell: UITableViewCell, CLLocationManagerDelegate, MKMapViewDelegate {
+class DetailViewCell: UITableViewCell {
 
-    static let kCellIdentifier = "DetailViewCell"
-
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var contactLabel: UILabel!
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var webView: UIWebView!
+    
+    static let kCellIdentifier = "DetailViewCell"
+    var content: Doctor?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,43 +24,55 @@ class DetailViewCell: UITableViewCell, CLLocationManagerDelegate, MKMapViewDeleg
         selectionStyle = .None
     }
     
-    func loadWebPage() {
-        let url = NSURL(string: "http://www.akhaltech.com")
-        let request = NSURLRequest(URL: url!)
-        webView.loadRequest(request)
-//        webView.loadHTMLString("<html><body><h1>Hello World!!!</h1></body></html>", baseURL: nil)
-    }
-    
-    func locationMapPage() {
-        let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(addressLabel.text!) { (placemarks: [CLPlacemark]?, error: NSError?) -> Void in
-            if error == nil {
-                if let ps = placemarks {
-                    if let pmCircularRegion = ps[0].region as? CLCircularRegion {
-                        let metersAcross = pmCircularRegion.radius * 10
-                        let region = MKCoordinateRegionMakeWithDistance(pmCircularRegion.center, metersAcross, metersAcross)
-                        self.mapView.region = region
-                        
-                        let annotation = MKPointAnnotation()
-                        annotation.coordinate = ps[0].location!.coordinate
-                        annotation.title = self.addressLabel.text
-                        annotation.subtitle = self.contactLabel.text
-                        self.mapView.addAnnotation(annotation)
-
-                    }
-                }
-            }
-        }
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        locationMapPage()
         loadWebPage()
     }
+    
+    func loadWebPage() {
+
+//        let lc: LoaderCreater = LoaderCreater()
+//        let loader = lc.generateLoader(self.frame.width * 0.5 - 25, yPosition: self.frame.height * 0.5 - 13)
+//        self.addSubview(loader)
+        
+        let activityIndicator = ActivityIndicator()
+        activityIndicator.showActivityIndicator(self)
+        
+        Alamofire.request(.GET, "\(GlobalConstant.baseServerURL)/doctor/\(content!.doctorId)/profile", parameters: nil, encoding: .JSON)
+            .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
+                
+                switch result {
+                case .Success(let data):
+                    
+                    let json = JSON(data: data)
+                    if let html: String = json["data"]["html"].stringValue {
+                        self.webView.loadHTMLString(html, baseURL: nil)
+                    }
+                    
+                case .Failure(let data, let error):
+                    print("Request failed with error: \(error)")
+                    if let data = data {
+                        print("Response data: \(NSString(data: data, encoding: NSUTF8StringEncoding)!)")
+                    }
+                }
+                
+//                loader.removeFromSuperview()
+                activityIndicator.hideActivityIndicator(self)
+                
+        }
+
+    }
+    
+    @IBAction func clickPhoneButton(sender: AnyObject) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel://(416) 461-8363")!)
+    }
+    
+    @IBAction func clickBookmarkButton(sender: AnyObject) {
+    }
+    
 }

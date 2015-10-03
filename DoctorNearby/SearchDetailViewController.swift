@@ -54,11 +54,9 @@ extension SearchDetailViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier(DetailViewCell.kCellIdentifier)!
         
         if let cell = cell as? DetailViewCell {
-            if let doctorAddress = content?.address {
-                cell.addressLabel.text = doctorAddress
-            }
-            if let doctorContact = content?.contact {
-                cell.contactLabel.text = doctorContact
+            if let doctorContent = content {
+                cell.content = doctorContent
+                cell.mapButton.addTarget(self, action: "showMapView:", forControlEvents:UIControlEvents.TouchUpInside)
             }
         }
         
@@ -72,6 +70,17 @@ extension SearchDetailViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return CGRectGetHeight(tableView.frame) * 1.5
+        return CGRectGetHeight(tableView.frame)
+    }
+    
+    func showMapView(sender: UIButton!) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mapViewController = storyboard.instantiateViewControllerWithIdentifier("MapViewController") as! MapViewController
+        if let doctorContent = content {
+            mapViewController.address = doctorContent.address
+            mapViewController.contact = doctorContent.contact
+        }
+        self.presentViewController(mapViewController, animated: true, completion: nil)
+        
     }
 }

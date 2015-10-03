@@ -9,5 +9,7 @@
 import Foundation
 
 struct GlobalConstant {
-    static var baseServerURL = "http://192.168.0.22:9091/doctornearby"
+    static var baseServerURL = "http://localhost:9091/doctornearby"
+    static var defaultPageSize = 25
+    static var defaultPageStart = 0
 }

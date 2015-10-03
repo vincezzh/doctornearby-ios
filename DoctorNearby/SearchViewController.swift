@@ -10,6 +10,7 @@ import UIKit
 
 class SearchViewController : UIViewController, UIPopoverPresentationControllerDelegate, KSTokenViewDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
+    @IBOutlet weak var doctorTypeSegment: UISegmentedControl!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var genderButton: UIButton!
@@ -160,8 +161,10 @@ class SearchViewController : UIViewController, UIPopoverPresentationControllerDe
             }else if genderButton.titleLabel?.text == "Male" {
                 gender = "Male"
             }
-            var physicianType = "Family Medicine"
+            var physicianType = ""
             if doctorTypeSwitchIndex == 1 {
+                physicianType = "Family Medicine"
+            }else if doctorTypeSwitchIndex == 2 {
                 physicianType = getSelectedTokenTitle(specialistView.tokens()!)
             }
             let parameters = [
@@ -188,9 +191,8 @@ class SearchViewController : UIViewController, UIPopoverPresentationControllerDe
         return UIModalPresentationStyle.None
     }
     
-    
-    @IBAction func changeSelectedIndex(sender: IGSwitch) {
-        doctorTypeSwitchIndex = sender.selectedIndex
+    @IBAction func changeDoctorType(sender: AnyObject) {
+        doctorTypeSwitchIndex = doctorTypeSegment.selectedSegmentIndex
     }
     
     @IBAction func search(sender: AnyObject) {
