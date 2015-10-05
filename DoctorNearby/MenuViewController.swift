@@ -21,7 +21,7 @@ protocol LeftMenuProtocol : class {
 class MenuViewController : UIViewController, LeftMenuProtocol, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    var menus = ["Main", "Search", "NonMenu"]
+    var menus = ["Dashboard", "Search", "NonMenu"]
     var mainViewController: UIViewController!
     var searchViewController: UIViewController!
     var nonMenuViewController: UIViewController!

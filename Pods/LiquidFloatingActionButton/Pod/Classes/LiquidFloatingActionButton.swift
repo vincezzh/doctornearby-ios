@@ -465,6 +465,7 @@ public class LiquidFloatingCell : LiquittableCircle {
 
     public var responsible = true
     public var imageView = UIImageView()
+    public var name = ""
     weak var actionButton: LiquidFloatingActionButton?
 
     // for implement responsible color
@@ -488,7 +489,8 @@ public class LiquidFloatingCell : LiquittableCircle {
         setupView(view)
     }
     
-    public init(icon: UIImage) {
+    public init(name: String, icon: UIImage) {
+        self.name = name
         self.originalColor = UIColor.clearColor()
         super.init()
         setup(icon)

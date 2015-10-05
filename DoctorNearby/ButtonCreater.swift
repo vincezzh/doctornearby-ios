@@ -25,12 +25,11 @@ class ButtonCreater: LiquidFloatingActionButtonDataSource, LiquidFloatingActionB
         }
         
         let cellFactory: (String) -> LiquidFloatingCell = { (iconName) in
-            return LiquidFloatingCell(icon: UIImage(named: iconName)!)
+            return LiquidFloatingCell(name: iconName, icon: UIImage(named: iconName)!)
         }
-        cells.append(cellFactory("settings"))
-        cells.append(cellFactory("bookmark"))
+        
         cells.append(cellFactory("pill"))
-        cells.append(cellFactory("calendar"))
+        cells.append(cellFactory("bookmark"))
         cells.append(cellFactory("search"))
         
         let floatingFrame = CGRect(x: xPositon, y: yPosition, width: 56, height: 56)
@@ -48,9 +47,27 @@ class ButtonCreater: LiquidFloatingActionButtonDataSource, LiquidFloatingActionB
     }
     
     @objc func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
-        print("did Tapped! \(index)")
+        if cells[index].name == "pill" {
+            launchPillView()
+        }else if cells[index].name == "bookmark" {
+            launchBookmarkView()
+        }else if cells[index].name == "search" {
+            launchSearchView()
+        }
         
         liquidFloatingActionButton.close()
+    }
+    
+    func launchSearchView() {
+        print("search")
+    }
+    
+    func launchBookmarkView() {
+        print("bookmark")
+    }
+    
+    func launchPillView() {
+        print("pill")
     }
     
 }

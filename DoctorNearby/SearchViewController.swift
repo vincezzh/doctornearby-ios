@@ -102,26 +102,36 @@ class SearchViewController : UIViewController, UIPopoverPresentationControllerDe
     
     func tokenViewDidBeginEditing(tokenView: KSTokenView) {
         if tokenView.descriptionText == "language" {
-            self.view.frame.origin.y -= 80
+            animateKeyboard(80, time: 0.5, isPlus: false)
         }else if tokenView.descriptionText == "specialist" {
-            self.view.frame.origin.y -= 230
+            animateKeyboard(230, time: 0.5, isPlus: false)
         }else if tokenView.descriptionText == "city" {
-            self.view.frame.origin.y -= 300
+            animateKeyboard(300, time: 0.5, isPlus: false)
         }else if tokenView.descriptionText == "hospital" {
-            self.view.frame.origin.y -= 380
+            animateKeyboard(380, time: 0.5, isPlus: false)
         }
     }
     
     func tokenViewDidEndEditing(tokenView: KSTokenView) {
         if tokenView.descriptionText == "language" {
-            self.view.frame.origin.y += 80
+            animateKeyboard(80, time: 0.5, isPlus: true)
         }else if tokenView.descriptionText == "specialist" {
-            self.view.frame.origin.y += 230
+            animateKeyboard(230, time: 0.5, isPlus: true)
         }else if tokenView.descriptionText == "city" {
-            self.view.frame.origin.y += 300
+            animateKeyboard(300, time: 0.5, isPlus: true)
         }else if tokenView.descriptionText == "hospital" {
-            self.view.frame.origin.y += 380
+            animateKeyboard(380, time: 0.5, isPlus: true)
         }
+    }
+    
+    func animateKeyboard(distance: CGFloat, time: Double, isPlus: Bool) {
+        UIView.animateWithDuration(time, animations: {
+            if isPlus {
+                self.view.frame.origin.y += distance
+            }else {
+                self.view.frame.origin.y -= distance
+            }
+        }, completion: nil)
     }
     
     func tokenView(token: KSTokenView, displayTitleForObject object: AnyObject) -> String {
