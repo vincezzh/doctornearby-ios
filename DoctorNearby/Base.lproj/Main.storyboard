@@ -361,6 +361,7 @@
                                     <constraint firstAttribute="width" constant="90" id="yib-fo-0V7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" red="0.2666666667" green="0.66274509800000003" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Gender"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -392,6 +393,7 @@
                                     <constraint firstAttribute="width" constant="300" id="3wa-y8-YAt"/>
                                     <constraint firstAttribute="height" constant="30" id="9Zp-EE-YTD"/>
                                 </constraints>
+                                <color key="textColor" red="0.2666666667" green="0.66274509800000003" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -433,6 +435,23 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D3G-mx-Da3">
+                                <rect key="frame" x="150" y="238" width="300" height="33"/>
+                                <color key="backgroundColor" red="0.26666666666666666" green="0.66274509803921566" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="AVG-lC-Wre"/>
+                                    <constraint firstAttribute="height" constant="32" id="Nd8-4e-hJ3"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Family Dr."/>
+                                    <segment title="Specialist"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeDoctorType:" destination="xah-sd-QW3" eventType="valueChanged" id="rCp-oJ-F9O"/>
+                                </connections>
+                            </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPP-9v-0at" userLabel="Hospital View" customClass="KSTokenView" customModule="DoctorNearby" customModuleProvider="target">
                                 <rect key="frame" x="150" y="451" width="300" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -517,23 +536,6 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D3G-mx-Da3">
-                                <rect key="frame" x="150" y="238" width="300" height="33"/>
-                                <color key="backgroundColor" red="0.40000000596046448" green="0.40000000596046448" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="AVG-lC-Wre"/>
-                                    <constraint firstAttribute="height" constant="32" id="Nd8-4e-hJ3"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="All"/>
-                                    <segment title="Family Dr."/>
-                                    <segment title="Specialist"/>
-                                </segments>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="changeDoctorType:" destination="xah-sd-QW3" eventType="valueChanged" id="rCp-oJ-F9O"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <constraints>
                             <constraint firstItem="S2J-ds-njt" firstAttribute="leading" secondItem="83f-EV-fW5" secondAttribute="leading" id="4RN-LH-jLg"/>

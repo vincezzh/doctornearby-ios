@@ -359,7 +359,7 @@ class KSTokenView: UIView {
    private func _commonSetup() {
       backgroundColor = UIColor.clearColor()
       _tokenField = KSTokenField(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height))
-      _tokenField.textColor = UIColor.blackColor()
+      _tokenField.textColor = UIColor(red: 68 / 255.0, green: 169 / 255.0, blue: 138 / 255.0, alpha: 1.0)
       _tokenField.enabled = true
       _tokenField.tokenFieldDelegate = self
       _tokenField.placeholder = ""

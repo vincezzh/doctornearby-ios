@@ -157,7 +157,7 @@ class SearchViewController : UIViewController, UIPopoverPresentationControllerDe
                 }
             }
         }else if segue.identifier == "showSearchResultList" {
-            SAInboxViewController.appearance.barTintColor = UIColor(red: 70/255, green: 136/255, blue: 241/255, alpha: 1)
+            SAInboxViewController.appearance.barTintColor = GlobalConstant.defaultColor
             SAInboxViewController.appearance.tintColor = .whiteColor()
             SAInboxViewController.appearance.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
             

@@ -57,7 +57,7 @@ class MenuViewController : UIViewController, LeftMenuProtocol, UITableViewDataSo
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: BaseTableViewCell = BaseTableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: BaseTableViewCell.identifier)
-        cell.backgroundColor = UIColor(red: 64/255, green: 170/255, blue: 239/255, alpha: 1.0)
+        cell.backgroundColor = GlobalConstant.defaultColor
         cell.textLabel?.font = UIFont.italicSystemFontOfSize(18)
         cell.textLabel?.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
         cell.textLabel?.text = menus[indexPath.row]

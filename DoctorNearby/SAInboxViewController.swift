@@ -56,9 +56,12 @@ public class SAInboxViewController: UIViewController {
             
             navigationBar.items?.append(navigationItem)
             
+            let closeButton: UIButton = UIButton()
+            closeButton.setImage(UIImage(named: "close-icon"), forState: .Normal)
+            closeButton.frame = CGRectMake(0, 0, 32, 32)
+            closeButton.addTarget(self, action: "didTapCloseButton:", forControlEvents: .TouchUpInside)
+            closeButtonItem.customView = closeButton
             closeButtonItem.target = self
-            closeButtonItem.action = "didTapCloseButton:"
-            closeButtonItem.title = "Close"
             
             backButtonItem.target = self
             backButtonItem.action = "didTapBackButton:"

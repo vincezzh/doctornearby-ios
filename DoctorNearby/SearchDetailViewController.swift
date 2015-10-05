@@ -29,10 +29,9 @@ class SearchDetailViewController: SAInboxDetailViewController {
         tableView.separatorInset = UIEdgeInsetsZero
         tableView.layoutMargins = UIEdgeInsetsZero
         
-        let color = UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1)
-        appearance.barTintColor = .whiteColor()
-        appearance.tintColor = color
-        appearance.titleTextAttributes = [NSForegroundColorAttributeName : color]
+        appearance.barTintColor = GlobalConstant.defaultColor
+        appearance.tintColor = UIColor.whiteColor()
+        appearance.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         enabledViewControllerBasedAppearance = true
     }
     

@@ -13,6 +13,8 @@ struct GlobalConstant {
     static let baseServerURL = "http://localhost:9091/doctornearby"
     static let defaultPageSize = 25
     static let defaultPageStart = 0
+    // #39886F
+    static let defaultColor = UIColor(red: 68 / 255.0, green: 169 / 255.0, blue: 138 / 255.0, alpha: 1.0)
     
     static func userId() -> String {
         let userDefaults = NSUserDefaults.standardUserDefaults()
