@@ -10,9 +10,9 @@ import UIKit
 
 struct GlobalConstant {
     
-    static var baseServerURL = "http://localhost:9091/doctornearby"
-    static var defaultPageSize = 25
-    static var defaultPageStart = 0
+    static let baseServerURL = "http://localhost:9091/doctornearby"
+    static let defaultPageSize = 25
+    static let defaultPageStart = 0
     
     static func userId() -> String {
         let userDefaults = NSUserDefaults.standardUserDefaults()

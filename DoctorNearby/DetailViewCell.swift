@@ -13,10 +13,11 @@ import SwiftyJSON
 class DetailViewCell: UITableViewCell {
 
     @IBOutlet weak var mapButton: UIButton!
+    @IBOutlet weak var bookmarkButton: UIButton!
     @IBOutlet weak var webView: UIWebView!
     
     static let kCellIdentifier = "DetailViewCell"
-    var content: Doctor?
+    var doctor = Doctor()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,7 +40,7 @@ class DetailViewCell: UITableViewCell {
         let activityIndicator = ActivityIndicator()
         activityIndicator.showActivityIndicator(self)
         
-        Alamofire.request(.GET, "\(GlobalConstant.baseServerURL)/doctor/\(content!.doctorId)/profile", parameters: nil, encoding: .JSON)
+        Alamofire.request(.GET, "\(GlobalConstant.baseServerURL)/doctor/\(doctor.doctorId)/profile", parameters: nil, encoding: .JSON)
             .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
                 
                 switch result {
@@ -64,10 +65,7 @@ class DetailViewCell: UITableViewCell {
     }
     
     @IBAction func clickPhoneButton(sender: AnyObject) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "tel://(416) 461-8363")!)
-    }
-    
-    @IBAction func clickBookmarkButton(sender: AnyObject) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(doctor.phoneNumber)")!)
     }
     
 }

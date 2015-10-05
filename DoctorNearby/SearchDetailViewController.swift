@@ -8,10 +8,12 @@
 
 import UIKit
 import QuartzCore
+import Alamofire
+import SwiftyJSON
 
 class SearchDetailViewController: SAInboxDetailViewController {
     
-    var content: Doctor?
+    var doctor = Doctor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +24,7 @@ class SearchDetailViewController: SAInboxDetailViewController {
         let nib = UINib(nibName: DetailViewCell.kCellIdentifier, bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: DetailViewCell.kCellIdentifier)
         
-        title = content?.name
+        title = doctor.name
         
         tableView.separatorInset = UIEdgeInsetsZero
         tableView.layoutMargins = UIEdgeInsetsZero
@@ -54,10 +56,9 @@ extension SearchDetailViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier(DetailViewCell.kCellIdentifier)!
         
         if let cell = cell as? DetailViewCell {
-            if let doctorContent = content {
-                cell.content = doctorContent
-                cell.mapButton.addTarget(self, action: "showMapView:", forControlEvents:UIControlEvents.TouchUpInside)
-            }
+            cell.doctor = doctor
+            cell.mapButton.addTarget(self, action: "showMapView:", forControlEvents:UIControlEvents.TouchUpInside)
+            cell.bookmarkButton.addTarget(self, action: "addBookmark:", forControlEvents:UIControlEvents.TouchUpInside)
         }
         
         cell.layoutMargins = UIEdgeInsetsZero
@@ -76,11 +77,48 @@ extension SearchDetailViewController: UITableViewDataSource {
     func showMapView(sender: UIButton!) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mapViewController = storyboard.instantiateViewControllerWithIdentifier("MapViewController") as! MapViewController
-        if let doctorContent = content {
-            mapViewController.address = doctorContent.address
-            mapViewController.contact = doctorContent.contact
-        }
+        mapViewController.doctor = doctor
         self.presentViewController(mapViewController, animated: true, completion: nil)
         
+    }
+    
+    func addBookmark(sender: UIButton!) {
+        var parameters = [String: AnyObject]()
+        var bookmarkParameter: [String: String] = ["userId": GlobalConstant.userId()]
+        bookmarkParameter.updateValue(doctor.doctorId, forKey: "doctorId")
+        parameters.updateValue(bookmarkParameter, forKey: "bookmark")
+        
+        Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/user/bookmark/add", parameters: parameters, encoding: .JSON)
+            .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
+                
+                switch result {
+                case .Success(let data):
+                    
+                    let json = JSON(data: data)
+                    let isSuccess: Bool = json["success"].boolValue
+                    var title = ""
+                    var message = ""
+                    if isSuccess {
+                        title = "Congratulations"
+                        message = "The doctor has been saved in your bookmark list."
+                        
+                        GlobalFlag.needRefreshBookmark = true
+                    }else {
+                        title = "I'm sorry"
+                        message = "The process is failed."
+                    }
+                    
+                    let actionSheetController: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+                    let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+                    actionSheetController.addAction(okAction)
+                    self.presentViewController(actionSheetController, animated: true, completion: nil)
+                    
+                case .Failure(let data, let error):
+                    print("Request failed with error: \(error)")
+                    if let data = data {
+                        print("Response data: \(NSString(data: data, encoding: NSUTF8StringEncoding)!)")
+                    }
+                }
+        }
     }
 }

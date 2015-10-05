@@ -8,14 +8,15 @@
 
 import UIKit
 import MapKit
+import Alamofire
+import SwiftyJSON
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var distanceLabel: UILabel!
-    var address: String = ""
-    var contact: String = ""
+    var doctor = Doctor()
     var doctorOffice: MKMapItem?
     var locationManager = CLLocationManager()
     var traveledDistance: Int = 0
@@ -34,7 +35,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     func locationMapPage() {
         let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(address) { (placemarks: [CLPlacemark]?, error: NSError?) -> Void in
+        geocoder.geocodeAddressString(doctor.address) { (placemarks: [CLPlacemark]?, error: NSError?) -> Void in
             if error == nil {
                 if let ps = placemarks {
                     if let pmCircularRegion = ps[0].region as? CLCircularRegion {
@@ -44,8 +45,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
                         let annotation = MKPointAnnotation()
                         annotation.coordinate = ps[0].location!.coordinate
-                        annotation.title = self.address
-                        annotation.subtitle = self.contact
+                        annotation.title = self.doctor.address
+                        annotation.subtitle = self.doctor.contact
                         self.mapView.addAnnotation(annotation)
                         
                         let geocodedPlacemark: CLPlacemark = ps[0]
@@ -63,10 +64,48 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
 
     @IBAction func clickBookmarkButton(sender: AnyObject) {
+        
+        var parameters = [String: AnyObject]()
+        var bookmarkParameter: [String: String] = ["userId": GlobalConstant.userId()]
+        bookmarkParameter.updateValue(doctor.doctorId, forKey: "doctorId")
+        parameters.updateValue(bookmarkParameter, forKey: "bookmark")
+        
+        Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/user/bookmark/add", parameters: parameters, encoding: .JSON)
+            .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
+                
+                switch result {
+                case .Success(let data):
+                    
+                    let json = JSON(data: data)
+                    let isSuccess: Bool = json["success"].boolValue
+                    var title = ""
+                    var message = ""
+                    if isSuccess {
+                        title = "Congratulations"
+                        message = "The doctor has been saved in your bookmark list."
+                        
+                        GlobalFlag.needRefreshBookmark = true
+                    }else {
+                        title = "I'm sorry"
+                        message = "The process is failed."
+                    }
+                    
+                    let actionSheetController: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+                    let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+                    actionSheetController.addAction(okAction)
+                    self.presentViewController(actionSheetController, animated: true, completion: nil)
+                    
+                case .Failure(let data, let error):
+                    print("Request failed with error: \(error)")
+                    if let data = data {
+                        print("Response data: \(NSString(data: data, encoding: NSUTF8StringEncoding)!)")
+                    }
+                }
+        }
     }
     
     @IBAction func clickPhoneButton(sender: AnyObject) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "tel://(416) 461-8363")!)
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(doctor.phoneNumber)")!)
     }
     
     @IBAction func clickRouteButton(sender: AnyObject) {

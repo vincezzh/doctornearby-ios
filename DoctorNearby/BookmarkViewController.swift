@@ -19,7 +19,6 @@ class BookmarkViewController: UIViewController, UITableViewDelegate, UITableView
     var bookmarks = [Doctor]()
     var searchActive : Bool = false
     var filteredBookmarks = [Doctor]()
-    var parameters = [String: AnyObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +39,10 @@ class BookmarkViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if GlobalFlag.needRefreshBookmark {
+            reloadData()
+        }
     }
     
     func refresh() {
@@ -48,9 +51,11 @@ class BookmarkViewController: UIViewController, UITableViewDelegate, UITableView
     
     func reloadData() {
         
-        parameters.updateValue(GlobalConstant.userId(), forKey: "userId")
+        var parameters = [String: AnyObject]()
+        let parameter: [String: String] = ["userId": GlobalConstant.userId()]
+        parameters.updateValue(parameter, forKey: "bookmark")
         
-        Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/doctor/bookmarks", parameters: parameters, encoding: .JSON)
+        Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/user/bookmark/list", parameters: parameters, encoding: .JSON)
             .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
                 
                 switch result {
@@ -73,6 +78,7 @@ class BookmarkViewController: UIViewController, UITableViewDelegate, UITableView
                         }
                     }
                     
+                    GlobalFlag.needRefreshBookmark = false
                     self.bookmarkTableView.reloadData()
                     
                 case .Failure(let data, let error):
@@ -112,6 +118,79 @@ class BookmarkViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 250
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let actionSheetController: UIAlertController = UIAlertController(title: "Please choose", message: "Which option do you prefer?", preferredStyle: .ActionSheet)
+        
+        let closeAction: UIAlertAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel, handler: nil)
+        actionSheetController.addAction(closeAction)
+        
+        let showDetailAction: UIAlertAction = UIAlertAction(title: "Show Doctor Detail", style: .Default) { action -> Void in
+            self.showDoctorMapView(self.bookmarks[indexPath.row])
+        }
+        actionSheetController.addAction(showDetailAction)
+
+        let deleteBookmarkAction: UIAlertAction = UIAlertAction(title: "Delete tshi Bookmark", style: .Default) { action -> Void in
+            self.deleteBookmark(self.bookmarks[indexPath.row])
+        }
+        actionSheetController.addAction(deleteBookmarkAction)
+        
+        self.presentViewController(actionSheetController, animated: true, completion: nil)
+        
+    }
+    
+    func deleteBookmark(bookmark: Doctor) {
+        
+        var parameters = [String: AnyObject]()
+        var bookmarkParameter: [String: String] = ["userId": GlobalConstant.userId()]
+        bookmarkParameter.updateValue(bookmark.doctorId, forKey: "doctorId")
+        parameters.updateValue(bookmarkParameter, forKey: "bookmark")
+        
+        Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/user/bookmark/delete", parameters: parameters, encoding: .JSON)
+            .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
+                
+                switch result {
+                case .Success(let data):
+                    
+                    let json = JSON(data: data)
+                    let isSuccess: Bool = json["success"].boolValue
+                    var title = ""
+                    var message = ""
+                    if isSuccess {
+                        title = "Congratulations"
+                        message = "The doctor has been deleted in your bookmark list."
+                        
+                        self.reloadData()
+                    }else {
+                        title = "I'm sorry"
+                        message = "The process is failed."
+                    }
+                    
+                    let actionSheetController: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+                    let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+                    actionSheetController.addAction(okAction)
+                    self.presentViewController(actionSheetController, animated: true, completion: nil)
+                    
+                case .Failure(let data, let error):
+                    print("Request failed with error: \(error)")
+                    if let data = data {
+                        print("Response data: \(NSString(data: data, encoding: NSUTF8StringEncoding)!)")
+                    }
+                }
+        }
+        
+    }
+    
+    func showDoctorMapView(bookmark: Doctor) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mapViewController = storyboard.instantiateViewControllerWithIdentifier("MapViewController") as! MapViewController
+        mapViewController.doctor = bookmark
+        // To generate phone number
+        mapViewController.doctor.phoneNumber = ""
+        
+        self.presentViewController(mapViewController, animated: true, completion: nil)
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {

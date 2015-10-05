@@ -52,9 +52,6 @@
                                 <exclude reference="tW9-cF-PlY"/>
                             </mask>
                         </variation>
-                        <connections>
-                            <action selector="clickBookmarkButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="c4a-ua-npi"/>
-                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -81,6 +78,7 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="bookmarkButton" destination="Vw9-Oh-lFf" id="AvJ-3S-XGf"/>
                 <outlet property="mapButton" destination="iDq-eG-qCO" id="flE-8U-ixg"/>
                 <outlet property="webView" destination="Zfo-Zh-TlO" id="KqZ-ij-Bl6"/>
             </connections>

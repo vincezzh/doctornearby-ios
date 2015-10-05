@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class SearchListViewController: SAInboxViewController {
     
-    var contents = [Doctor]()
+    var doctors = [Doctor]()
     var parameters = [String: AnyObject]()
     var loadMore = true
     
@@ -69,8 +69,10 @@ class SearchListViewController: SAInboxViewController {
                             doctor.doctorId = json["data"][index]["_id"].stringValue
                             doctor.contact = json["data"][index]["location"]["contactSummary"].stringValue
                             doctor.address = json["data"][index]["location"]["addressSummary"].stringValue
+                            // Generate phone number
+                            doctor.phoneNumber = ""
                             
-                            self.contents.append(doctor)
+                            self.doctors.append(doctor)
                             count++
                         }
                     }
@@ -107,11 +109,11 @@ extension SearchListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier(ListViewCell.kCellIdentifier)!
         
         if let cell = cell as? ListViewCell {
-            let content = contents[indexPath.row]
-            cell.nameLabel.text = content.name
-            cell.idLabel.text = content.doctorId
-            cell.contactLabel.text = content.contact
-            cell.addressLabel.text = content.address
+            let doctor = doctors[indexPath.row]
+            cell.nameLabel.text = doctor.name
+            cell.idLabel.text = doctor.doctorId
+            cell.contactLabel.text = doctor.contact
+            cell.addressLabel.text = doctor.address
         }
         
         cell.layoutMargins = UIEdgeInsetsZero
@@ -120,11 +122,11 @@ extension SearchListViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contents.count
+        return doctors.count
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if loadMore && indexPath.row == contents.count - 1 {
+        if loadMore && indexPath.row == doctors.count - 1 {
             reloadData()
         }
     }
@@ -145,8 +147,8 @@ extension SearchListViewController {
             SAInboxAnimatedTransitioningController.sharedInstance.configureCotainerView(self, cell: cell, cells: tableView.visibleCells, headerImage: headerView.screenshotImage())
         }
         
-        let content = contents[indexPath.row]
-        viewController.content = content
+        let doctor = doctors[indexPath.row]
+        viewController.doctor = doctor
         
         navigationController?.pushViewController(viewController, animated: true)
     }

@@ -24,6 +24,7 @@
 		6144A5A01BBF6E8600BC7BAB /* BookmarkListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6144A59E1BBF6E8600BC7BAB /* BookmarkListCell.xib */; settings = {ASSET_TAGS = (); }; };
 		614C92071BB422EF00BC95C6 /* ButtonCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614C92061BB422EF00BC95C6 /* ButtonCreater.swift */; settings = {ASSET_TAGS = (); }; };
 		614C92091BB4260100BC95C6 /* LoaderCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614C92081BB4260100BC95C6 /* LoaderCreater.swift */; settings = {ASSET_TAGS = (); }; };
+		61506CF11BC2CEB000DA7E09 /* GlobalFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61506CF01BC2CEB000DA7E09 /* GlobalFlag.swift */; settings = {ASSET_TAGS = (); }; };
 		615109111BB5F66C00315CEA /* KSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6151090D1BB5F66C00315CEA /* KSToken.swift */; settings = {ASSET_TAGS = (); }; };
 		615109121BB5F66C00315CEA /* KSTokenField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6151090E1BB5F66C00315CEA /* KSTokenField.swift */; settings = {ASSET_TAGS = (); }; };
 		615109131BB5F66C00315CEA /* KSTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6151090F1BB5F66C00315CEA /* KSTokenView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -96,6 +97,7 @@
 		6144A59E1BBF6E8600BC7BAB /* BookmarkListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookmarkListCell.xib; sourceTree = "<group>"; };
 		614C92061BB422EF00BC95C6 /* ButtonCreater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCreater.swift; sourceTree = "<group>"; };
 		614C92081BB4260100BC95C6 /* LoaderCreater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderCreater.swift; sourceTree = "<group>"; };
+		61506CF01BC2CEB000DA7E09 /* GlobalFlag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFlag.swift; sourceTree = "<group>"; };
 		6151090D1BB5F66C00315CEA /* KSToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSToken.swift; sourceTree = "<group>"; };
 		6151090E1BB5F66C00315CEA /* KSTokenField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSTokenField.swift; sourceTree = "<group>"; };
 		6151090F1BB5F66C00315CEA /* KSTokenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSTokenView.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				615109161BB6225300315CEA /* Language.swift */,
 				613051391BB5F07F00A6FC7D /* Specialist.swift */,
 				6177BF1C1BBB88E3008AF609 /* GlobalConstant.swift */,
+				61506CF01BC2CEB000DA7E09 /* GlobalFlag.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				61A6A7A41BB97E59006B8FCC /* SAInboxDetailViewController.swift in Sources */,
 				61A474021BB8E65A007D59F7 /* ListViewCell.swift in Sources */,
 				615109191BB6241300315CEA /* GenderPopupViewController.swift in Sources */,
+				61506CF11BC2CEB000DA7E09 /* GlobalFlag.swift in Sources */,
 				6151091B1BB62E7600315CEA /* IGSwitch.swift in Sources */,
 				61B03F5C1BB4D9E40095E729 /* BWWalkthroughViewController.swift in Sources */,
 				613B9F6D1BB46AAD00DF8DD9 /* UIViewControllerExtension.swift in Sources */,
