@@ -12,7 +12,7 @@ class ButtonCreater: LiquidFloatingActionButtonDataSource, LiquidFloatingActionB
     
     var cells: [LiquidFloatingCell] = []
     var floatingActionButton: LiquidFloatingActionButton!
-    let defaultColor = GlobalConstant.defaultColor
+    let defaultColor = GlobalConstant.buttonColor()
     
     func generateButtons(xPositon: CGFloat, yPosition: CGFloat) -> LiquidFloatingActionButton {
         let createButton: (CGRect, LiquidFloatingActionButtonAnimateStyle) -> LiquidFloatingActionButton = { (frame, style) in
