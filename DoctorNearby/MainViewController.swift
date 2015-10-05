@@ -9,23 +9,31 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import LiquidFloatingActionButton
 
-class MainViewController: UIViewController, BWWalkthroughViewControllerDelegate {
+class MainViewController: UIViewController {
+    
+    let bc: ButtonCreater = ButtonCreater()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view, typically from a nib.
-        let bc: ButtonCreater = ButtonCreater()
-        let testButton = bc.generateButtons(self.view.frame.width - 56 - 16, yPosition: self.view.frame.height - 56 - 16)
-        self.view.addSubview(testButton)
-        
+        self.generateButtons()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.setNavigationBarItem()
-        
+        self.chechIfShowWalkThrough()
+    }
+    
+    @IBAction func showWalkthrough(){
+        showWalkThroughPages()
+    }
+    
+}
+
+extension MainViewController: BWWalkthroughViewControllerDelegate {
+    func chechIfShowWalkThrough() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         if !userDefaults.boolForKey("walkthroughPresented") {
             showWalkthrough()
@@ -34,8 +42,7 @@ class MainViewController: UIViewController, BWWalkthroughViewControllerDelegate 
         }
     }
     
-    @IBAction func showWalkthrough(){
-        
+    func showWalkThroughPages() {
         // Get view controllers and build the walkthrough
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let pageManager = storyboard.instantiateViewControllerWithIdentifier("WalkPageManager") as! BWWalkthroughViewController
@@ -59,6 +66,26 @@ class MainViewController: UIViewController, BWWalkthroughViewControllerDelegate 
     func walkthroughCloseButtonPressed() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+}
+
+extension MainViewController: LiquidFloatingActionButtonDelegate {
+    func generateButtons() {
+        let names: [String] = ["search"]
+        let dashboardButtons = bc.generateButtons(names, xPositon: self.view.frame.width - 56 - 16, yPosition: self.view.frame.height - 56 - 16)
+        dashboardButtons.delegate = self
+        self.view.addSubview(dashboardButtons)
+    }
     
+    func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
+        if bc.cells[index].name == "search" {
+            launchSearchView()
+        }
+        
+        liquidFloatingActionButton.close()
+    }
+    
+    func launchSearchView() {
+        print("search")
+    }
 }
 

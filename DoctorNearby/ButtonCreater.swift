@@ -8,19 +8,18 @@
 
 import LiquidFloatingActionButton
 
-class ButtonCreater: LiquidFloatingActionButtonDataSource, LiquidFloatingActionButtonDelegate {
+class ButtonCreater: LiquidFloatingActionButtonDataSource {
     
-    var cells: [LiquidFloatingCell] = []
+    var cells = [LiquidFloatingCell]()
     var floatingActionButton: LiquidFloatingActionButton!
     let defaultColor = GlobalConstant.buttonColor()
     
-    func generateButtons(xPositon: CGFloat, yPosition: CGFloat) -> LiquidFloatingActionButton {
+    func generateButtons(names: [String], xPositon: CGFloat, yPosition: CGFloat) -> LiquidFloatingActionButton {
         let createButton: (CGRect, LiquidFloatingActionButtonAnimateStyle) -> LiquidFloatingActionButton = { (frame, style) in
             let floatingActionButton = LiquidFloatingActionButton(frame: frame)
             floatingActionButton.color = self.defaultColor
             floatingActionButton.animateStyle = style
             floatingActionButton.dataSource = self
-            floatingActionButton.delegate = self
             return floatingActionButton
         }
         
@@ -28,9 +27,9 @@ class ButtonCreater: LiquidFloatingActionButtonDataSource, LiquidFloatingActionB
             return LiquidFloatingCell(name: iconName, icon: UIImage(named: iconName)!)
         }
         
-        cells.append(cellFactory("pill"))
-        cells.append(cellFactory("bookmark"))
-        cells.append(cellFactory("search"))
+        for name: String in names {
+            cells.append(cellFactory(name))
+        }
         
         let floatingFrame = CGRect(x: xPositon, y: yPosition, width: 56, height: 56)
         let bottomRightButton = createButton(floatingFrame, .Up)
@@ -44,30 +43,6 @@ class ButtonCreater: LiquidFloatingActionButtonDataSource, LiquidFloatingActionB
     
     @objc func cellForIndex(index: Int) -> LiquidFloatingCell {
         return cells[index]
-    }
-    
-    @objc func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
-        if cells[index].name == "pill" {
-            launchPillView()
-        }else if cells[index].name == "bookmark" {
-            launchBookmarkView()
-        }else if cells[index].name == "search" {
-            launchSearchView()
-        }
-        
-        liquidFloatingActionButton.close()
-    }
-    
-    func launchSearchView() {
-        print("search")
-    }
-    
-    func launchBookmarkView() {
-        print("bookmark")
-    }
-    
-    func launchPillView() {
-        print("pill")
     }
     
 }
