@@ -44,6 +44,8 @@
 		61A6A7A51BB97E59006B8FCC /* SAInboxTransitioningContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A6A7A01BB97E59006B8FCC /* SAInboxTransitioningContainerView.swift */; settings = {ASSET_TAGS = (); }; };
 		61A6A7A61BB97E59006B8FCC /* SAInboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A6A7A11BB97E59006B8FCC /* SAInboxViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		61A6A7A71BB97E59006B8FCC /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A6A7A21BB97E59006B8FCC /* UIView+Utils.swift */; settings = {ASSET_TAGS = (); }; };
+		61ABFA441BC4707B00E4CAD5 /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ABFA431BC4707B00E4CAD5 /* CitiesTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		61ABFA461BC4733A00E4CAD5 /* HospitalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ABFA451BC4733A00E4CAD5 /* HospitalsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		61AEBB931BB320BC0034EFDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AEBB921BB320BC0034EFDA /* AppDelegate.swift */; };
 		61AEBB951BB320BC0034EFDA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AEBB941BB320BC0034EFDA /* MainViewController.swift */; };
 		61AEBB981BB320BC0034EFDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61AEBB961BB320BC0034EFDA /* Main.storyboard */; };
@@ -119,6 +121,8 @@
 		61A6A7A01BB97E59006B8FCC /* SAInboxTransitioningContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAInboxTransitioningContainerView.swift; sourceTree = "<group>"; };
 		61A6A7A11BB97E59006B8FCC /* SAInboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAInboxViewController.swift; sourceTree = "<group>"; };
 		61A6A7A21BB97E59006B8FCC /* UIView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		61ABFA431BC4707B00E4CAD5 /* CitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesTableViewController.swift; sourceTree = "<group>"; };
+		61ABFA451BC4733A00E4CAD5 /* HospitalsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalsTableViewController.swift; sourceTree = "<group>"; };
 		61AEBB8F1BB320BC0034EFDA /* DoctorNearby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoctorNearby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AEBB921BB320BC0034EFDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61AEBB941BB320BC0034EFDA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -212,12 +216,14 @@
 		613B9F631BB4690500DF8DD9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				61ABFA431BC4707B00E4CAD5 /* CitiesTableViewController.swift */,
 				61C965511BC4353F00E56073 /* DoctorSearchTableViewController.swift */,
+				61ABFA451BC4733A00E4CAD5 /* HospitalsTableViewController.swift */,
 				61C965531BC4419000E56073 /* LanguagesTableViewController.swift */,
-				61C965551BC450D700E56073 /* SpecializationTableViewController.swift */,
 				61AEBB941BB320BC0034EFDA /* MainViewController.swift */,
 				613B9F641BB469C100DF8DD9 /* MenuViewController.swift */,
 				613B9F651BB469C100DF8DD9 /* SearchViewController.swift */,
+				61C965551BC450D700E56073 /* SpecializationTableViewController.swift */,
 				615109181BB6241300315CEA /* GenderPopupViewController.swift */,
 				613B9F661BB469C100DF8DD9 /* BookmarkViewController.swift */,
 				613B9F671BB469C100DF8DD9 /* NonMenuController.swift */,
@@ -612,6 +618,7 @@
 				613B9F6A1BB469C100DF8DD9 /* BookmarkViewController.swift in Sources */,
 				613B9F6B1BB469C100DF8DD9 /* NonMenuController.swift in Sources */,
 				613910421BB9E11600A03493 /* Doctor.swift in Sources */,
+				61ABFA441BC4707B00E4CAD5 /* CitiesTableViewController.swift in Sources */,
 				6144A59F1BBF6E8600BC7BAB /* BookmarkListCell.swift in Sources */,
 				61A6A7A41BB97E59006B8FCC /* SAInboxDetailViewController.swift in Sources */,
 				61A474021BB8E65A007D59F7 /* ListViewCell.swift in Sources */,
@@ -646,6 +653,7 @@
 				61AEBB951BB320BC0034EFDA /* MainViewController.swift in Sources */,
 				613B9F681BB469C100DF8DD9 /* MenuViewController.swift in Sources */,
 				61A6A7A51BB97E59006B8FCC /* SAInboxTransitioningContainerView.swift in Sources */,
+				61ABFA461BC4733A00E4CAD5 /* HospitalsTableViewController.swift in Sources */,
 				61AEBB931BB320BC0034EFDA /* AppDelegate.swift in Sources */,
 				613B9F771BB46FDC00DF8DD9 /* StringExtension.swift in Sources */,
 				61AEBB9B1BB320BC0034EFDA /* DoctorNearby.xcdatamodeld in Sources */,

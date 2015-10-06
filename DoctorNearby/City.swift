@@ -11,6 +11,7 @@ import Foundation
 class City: NSObject {
     class func names() -> Array <String> {
         return [
+            "ALL",
             "Acton",
             "Addison",
             "Agincourt",

@@ -12,6 +12,8 @@ class DoctorSearchTableViewController: UITableViewController {
 
     @IBOutlet weak var selectedLanguageTextField: UILabel!
     @IBOutlet weak var selectedSpecialistTextField: UILabel!
+    @IBOutlet weak var selectedCityTextField: UILabel!
+    @IBOutlet weak var selectedHospitalTextField: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +53,14 @@ class DoctorSearchTableViewController: UITableViewController {
         selectedSpecialistTextField.text = data
     }
     
+    func doCityWithData(data: String) {
+        selectedCityTextField.text = data
+    }
+    
+    func doHospitalWithData(data: String) {
+        selectedHospitalTextField.text = data
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showLanguageSegue" {
             if let viewController = segue.destinationViewController as? LanguagesTableViewController {
@@ -69,6 +79,26 @@ class DoctorSearchTableViewController: UITableViewController {
                     (data) in
                     if let weakSelf = self {
                         weakSelf.doSpecialistsWithData(data)
+                    }
+                }
+            }
+        }else if segue.identifier == "showCitiesSegue" {
+            if let viewController = segue.destinationViewController as? CitiesTableViewController {
+                viewController.selectedCity = selectedCityTextField.text!
+                viewController.onDataAvailable = {[weak self]
+                    (data) in
+                    if let weakSelf = self {
+                        weakSelf.doCityWithData(data)
+                    }
+                }
+            }
+        }else if segue.identifier == "showHospitalsSegue" {
+            if let viewController = segue.destinationViewController as? HospitalsTableViewController {
+                viewController.selectedHospital = selectedHospitalTextField.text!
+                viewController.onDataAvailable = {[weak self]
+                    (data) in
+                    if let weakSelf = self {
+                        weakSelf.doHospitalWithData(data)
                     }
                 }
             }
