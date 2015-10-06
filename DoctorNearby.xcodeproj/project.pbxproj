@@ -59,6 +59,7 @@
 		61C9651A1BC410E200E56073 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C965191BC410E200E56073 /* StringUtil.swift */; settings = {ASSET_TAGS = (); }; };
 		61C965521BC4353F00E56073 /* DoctorSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C965511BC4353F00E56073 /* DoctorSearchTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		61C965541BC4419000E56073 /* LanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C965531BC4419000E56073 /* LanguagesTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		61C965561BC450D700E56073 /* SpecializationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C965551BC450D700E56073 /* SpecializationTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D59ABB3B27D41706D30240F6 /* Pods_DoctorNearby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D042A87512E18A83E3A6754 /* Pods_DoctorNearby.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -139,6 +140,7 @@
 		61C965191BC410E200E56073 /* StringUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
 		61C965511BC4353F00E56073 /* DoctorSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorSearchTableViewController.swift; sourceTree = "<group>"; };
 		61C965531BC4419000E56073 /* LanguagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguagesTableViewController.swift; sourceTree = "<group>"; };
+		61C965551BC450D700E56073 /* SpecializationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecializationTableViewController.swift; sourceTree = "<group>"; };
 		7D042A87512E18A83E3A6754 /* Pods_DoctorNearby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoctorNearby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A25E8EAD04601C31F7716677 /* Pods-DoctorNearby.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoctorNearby.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoctorNearby/Pods-DoctorNearby.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -212,6 +214,7 @@
 			children = (
 				61C965511BC4353F00E56073 /* DoctorSearchTableViewController.swift */,
 				61C965531BC4419000E56073 /* LanguagesTableViewController.swift */,
+				61C965551BC450D700E56073 /* SpecializationTableViewController.swift */,
 				61AEBB941BB320BC0034EFDA /* MainViewController.swift */,
 				613B9F641BB469C100DF8DD9 /* MenuViewController.swift */,
 				613B9F651BB469C100DF8DD9 /* SearchViewController.swift */,
@@ -605,6 +608,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61C965561BC450D700E56073 /* SpecializationTableViewController.swift in Sources */,
 				613B9F6A1BB469C100DF8DD9 /* BookmarkViewController.swift in Sources */,
 				613B9F6B1BB469C100DF8DD9 /* NonMenuController.swift in Sources */,
 				613910421BB9E11600A03493 /* Doctor.swift in Sources */,

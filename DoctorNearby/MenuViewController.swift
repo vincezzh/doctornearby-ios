@@ -37,7 +37,7 @@ class MenuViewController : UIViewController, LeftMenuProtocol, UITableViewDataSo
         self.tableView.delegate = self
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let searchViewController = storyboard.instantiateViewControllerWithIdentifier("SearchViewController") as! SearchViewController
+        let searchViewController = storyboard.instantiateViewControllerWithIdentifier("DoctorSearchTableViewController") as! DoctorSearchTableViewController
         self.searchViewController = UINavigationController(rootViewController: searchViewController)
         
         let nonMenuController = storyboard.instantiateViewControllerWithIdentifier("NonMenuController") as! NonMenuController

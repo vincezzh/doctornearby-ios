@@ -11,6 +11,7 @@ import Foundation
 class Specialist: NSObject {
     class func names() -> Array <String> {
         return [
+            "ALL",
             "Adolescent Medicine",
             "Anatomical Pathology",
             "Anesthesiology",

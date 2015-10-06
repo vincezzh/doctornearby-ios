@@ -11,10 +11,11 @@ import UIKit
 class DoctorSearchTableViewController: UITableViewController {
 
     @IBOutlet weak var selectedLanguageTextField: UILabel!
+    @IBOutlet weak var selectedSpecialistTextField: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setNavigationBarItem()
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
     }
 
@@ -46,6 +47,10 @@ class DoctorSearchTableViewController: UITableViewController {
         selectedLanguageTextField.text = data
     }
     
+    func doSpecialistsWithData(data: String) {
+        selectedSpecialistTextField.text = data
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showLanguageSegue" {
             if let viewController = segue.destinationViewController as? LanguagesTableViewController {
@@ -54,6 +59,16 @@ class DoctorSearchTableViewController: UITableViewController {
                     (data) in
                     if let weakSelf = self {
                         weakSelf.doLanguagesWithData(data)
+                    }
+                }
+            }
+        }else if segue.identifier == "showSpecialistsSegue" {
+            if let viewController = segue.destinationViewController as? SpecializationTableViewController {
+                viewController.selectedSpecialist = selectedSpecialistTextField.text!
+                viewController.onDataAvailable = {[weak self]
+                    (data) in
+                    if let weakSelf = self {
+                        weakSelf.doSpecialistsWithData(data)
                     }
                 }
             }
