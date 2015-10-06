@@ -69,8 +69,6 @@ class SearchListViewController: SAInboxViewController {
                             doctor.doctorId = json["data"][index]["_id"].stringValue
                             doctor.contact = json["data"][index]["location"]["contactSummary"].stringValue
                             doctor.address = json["data"][index]["location"]["addressSummary"].stringValue
-                            // Generate phone number
-                            doctor.phoneNumber = ""
                             
                             self.doctors.append(doctor)
                             count++

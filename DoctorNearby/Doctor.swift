@@ -13,5 +13,21 @@ class Doctor {
     var name: String = ""
     var address: String = ""
     var contact: String = ""
-    var phoneNumber: String = ""
+    let phoneWord = "Phone:"
+
+    func phoneNumber() -> String {
+        var phone = ""
+        if contact != "" {
+            if let content: String = contact {
+                let phoneWordEndIndex = content.indexOf(phoneWord) + phoneWord.length
+                let firstCommanIndex = content.indexOf(",")
+                if firstCommanIndex >= 0 {
+                    phone = content.subString(phoneWordEndIndex, endIndex: firstCommanIndex).trim()
+                }else {
+                    phone = content.subString(phoneWordEndIndex, endIndex: content.length).trim()
+                }
+            }
+        }
+        return phone
+    }
 }

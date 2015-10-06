@@ -115,7 +115,7 @@ extension MapViewController: LiquidFloatingActionButtonDelegate {
     }
     
     func callDoctorClinic() {
-        UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(doctor.phoneNumber)")!)
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(doctor.phoneNumber())")!)
     }
     
     func addBookmark() {

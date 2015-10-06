@@ -184,14 +184,6 @@ class BookmarkViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func showDoctorMapView(bookmark: Doctor) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let mapViewController = storyboard.instantiateViewControllerWithIdentifier("MapViewController") as! MapViewController
-//        mapViewController.doctor = bookmark
-//         To generate phone number
-//        mapViewController.doctor.phoneNumber = ""
-//        
-//        self.presentViewController(mapViewController, animated: true, completion: nil)
-        
         let viewController = SearchDetailViewController()
         viewController.doctor = bookmark
         viewController.fromBookMarkView = true
