@@ -10,12 +10,14 @@ import UIKit
 import MapKit
 import Alamofire
 import SwiftyJSON
+import LiquidFloatingActionButton
 
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
-    
     @IBOutlet weak var distanceLabel: UILabel!
+    
+    let bc: ButtonCreater = ButtonCreater()
     var doctor = Doctor()
     var doctorOffice: MKMapItem?
     var locationManager = CLLocationManager()
@@ -23,6 +25,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.generateButtons()
 
         distanceLabel.alpha = 0
         mapView.delegate = self
@@ -63,8 +66,59 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         dismissViewControllerAnimated(true, completion: nil)
     }
 
-    @IBAction func clickBookmarkButton(sender: AnyObject) {
+}
+
+extension MapViewController: LiquidFloatingActionButtonDelegate {
+    func generateButtons() {
+        let names: [String] = ["bookmark", "phone", "car", "route"]
+        let dashboardButtons = bc.generateButtons(names, xPositon: self.view.frame.width - 56 - 16, yPosition: self.view.frame.height - 56 - 16)
+        dashboardButtons.delegate = self
+        self.view.addSubview(dashboardButtons)
+    }
+    
+    func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
+        if bc.cells[index].name == "bookmark" {
+            addBookmark()
+        }else if bc.cells[index].name == "phone" {
+            callDoctorClinic()
+        }else if bc.cells[index].name == "car" {
+            navigateClient()
+        }else if bc.cells[index].name == "route" {
+            displayRouteOnMap()
+        }
         
+        liquidFloatingActionButton.close()
+    }
+    
+    func displayRouteOnMap() {
+        let req = MKDirectionsRequest()
+        req.source = MKMapItem.mapItemForCurrentLocation()
+        req.destination = doctorOffice
+        let dir = MKDirections(request:req)
+        dir.calculateDirectionsWithCompletionHandler { (response: MKDirectionsResponse?, error: NSError?) -> Void in
+            if error == nil {
+                if let routes = response?.routes {
+                    let route = routes[0]
+                    let poly = route.polyline
+                    self.mapView.addOverlay(poly)
+                }
+            }
+        }
+        
+        distanceLabel.text = "\(traveledDistance) km to your current location"
+        distanceLabel.alpha = 1
+    }
+    
+    func navigateClient() {
+        let options: [String : AnyObject] = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving, MKLaunchOptionsShowsTrafficKey: true]
+        MKMapItem.openMapsWithItems([self.doctorOffice!], launchOptions: options)
+    }
+    
+    func callDoctorClinic() {
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(doctor.phoneNumber)")!)
+    }
+    
+    func addBookmark() {
         var parameters = [String: AnyObject]()
         var bookmarkParameter: [String: String] = ["userId": GlobalConstant.userId()]
         bookmarkParameter.updateValue(doctor.doctorId, forKey: "doctorId")
@@ -103,37 +157,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 }
         }
     }
-    
-    @IBAction func clickPhoneButton(sender: AnyObject) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(doctor.phoneNumber)")!)
-    }
-    
-    @IBAction func clickRouteButton(sender: AnyObject) {
-        
-        let req = MKDirectionsRequest()
-        req.source = MKMapItem.mapItemForCurrentLocation()
-        req.destination = doctorOffice
-        let dir = MKDirections(request:req)
-        dir.calculateDirectionsWithCompletionHandler { (response: MKDirectionsResponse?, error: NSError?) -> Void in
-            if error == nil {
-                if let routes = response?.routes {
-                    let route = routes[0]
-                    let poly = route.polyline
-                    self.mapView.addOverlay(poly)
-                }
-            }
-        }
-        
-        distanceLabel.text = "\(traveledDistance) km to your current location"
-        distanceLabel.alpha = 1
-        
-    }
-    
-    @IBAction func clickNavigationButton(sender: AnyObject) {
-        let options: [String : AnyObject] = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving, MKLaunchOptionsShowsTrafficKey: true]
-        MKMapItem.openMapsWithItems([self.doctorOffice!], launchOptions: options)
-    }
-    
+}
+
+extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
         var v : MKPolylineRenderer! = nil
         if let overlay = overlay as? MKPolyline {
@@ -154,6 +180,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 traveledDistance = Int(distance / 1000)
             }
         }
-
+        
     }
 }

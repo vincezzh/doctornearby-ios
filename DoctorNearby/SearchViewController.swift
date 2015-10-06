@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewController : UIViewController, UIPopoverPresentationControllerDelegate, KSTokenViewDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class SearchViewController : UIViewController, UIPopoverPresentationControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var doctorTypeSegment: UISegmentedControl!
     @IBOutlet var scrollView: UIScrollView!
@@ -81,62 +81,7 @@ class SearchViewController : UIViewController, UIPopoverPresentationControllerDe
     }
     
     
-    func tokenView(token: KSTokenView, performSearchWithString string: String, completion: ((results: Array<AnyObject>) -> Void)?) {
-        var data: Array<String> = []
-        var names = languages
-        if token.descriptionText == "specialist" {
-            names = specialists
-        }else if token.descriptionText == "city" {
-            names = cities
-        }else if token.descriptionText == "hospital" {
-            names = hospitals
-        }
-        
-        for value: String in names {
-            if value.lowercaseString.rangeOfString(string.lowercaseString) != nil {
-                data.append(value)
-            }
-        }
-        completion!(results: data)
-    }
     
-    func tokenViewDidBeginEditing(tokenView: KSTokenView) {
-        if tokenView.descriptionText == "language" {
-            animateKeyboard(80, time: 0.5, isPlus: false)
-        }else if tokenView.descriptionText == "specialist" {
-            animateKeyboard(230, time: 0.5, isPlus: false)
-        }else if tokenView.descriptionText == "city" {
-            animateKeyboard(300, time: 0.5, isPlus: false)
-        }else if tokenView.descriptionText == "hospital" {
-            animateKeyboard(380, time: 0.5, isPlus: false)
-        }
-    }
-    
-    func tokenViewDidEndEditing(tokenView: KSTokenView) {
-        if tokenView.descriptionText == "language" {
-            animateKeyboard(80, time: 0.5, isPlus: true)
-        }else if tokenView.descriptionText == "specialist" {
-            animateKeyboard(230, time: 0.5, isPlus: true)
-        }else if tokenView.descriptionText == "city" {
-            animateKeyboard(300, time: 0.5, isPlus: true)
-        }else if tokenView.descriptionText == "hospital" {
-            animateKeyboard(380, time: 0.5, isPlus: true)
-        }
-    }
-    
-    func animateKeyboard(distance: CGFloat, time: Double, isPlus: Bool) {
-        UIView.animateWithDuration(time, animations: {
-            if isPlus {
-                self.view.frame.origin.y += distance
-            }else {
-                self.view.frame.origin.y -= distance
-            }
-        }, completion: nil)
-    }
-    
-    func tokenView(token: KSTokenView, displayTitleForObject object: AnyObject) -> String {
-        return object as! String
-    }
     
     func doSomethingWithData(data: String) {
         genderButton.titleLabel?.text = data
@@ -213,9 +158,72 @@ class SearchViewController : UIViewController, UIPopoverPresentationControllerDe
         return SAInboxAnimatedTransitioningController.sharedInstance.setOperation(operation)
     }
     
+    
+    
+}
+
+extension SearchViewController: UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         nameTextField.resignFirstResponder()
         return true
     }
+}
+
+extension SearchViewController: KSTokenViewDelegate {
+    func tokenView(token: KSTokenView, performSearchWithString string: String, completion: ((results: Array<AnyObject>) -> Void)?) {
+        var data: Array<String> = []
+        var names = languages
+        if token.descriptionText == "specialist" {
+            names = specialists
+        }else if token.descriptionText == "city" {
+            names = cities
+        }else if token.descriptionText == "hospital" {
+            names = hospitals
+        }
+        
+        for value: String in names {
+            if value.lowercaseString.rangeOfString(string.lowercaseString) != nil {
+                data.append(value)
+            }
+        }
+        completion!(results: data)
+    }
     
+    func tokenViewDidBeginEditing(tokenView: KSTokenView) {
+        if tokenView.descriptionText == "language" {
+            animateKeyboard(80, time: 0.5, isPlus: false)
+        }else if tokenView.descriptionText == "specialist" {
+            animateKeyboard(230, time: 0.5, isPlus: false)
+        }else if tokenView.descriptionText == "city" {
+            animateKeyboard(300, time: 0.5, isPlus: false)
+        }else if tokenView.descriptionText == "hospital" {
+            animateKeyboard(380, time: 0.5, isPlus: false)
+        }
+    }
+    
+    func tokenViewDidEndEditing(tokenView: KSTokenView) {
+        if tokenView.descriptionText == "language" {
+            animateKeyboard(80, time: 0.5, isPlus: true)
+        }else if tokenView.descriptionText == "specialist" {
+            animateKeyboard(230, time: 0.5, isPlus: true)
+        }else if tokenView.descriptionText == "city" {
+            animateKeyboard(300, time: 0.5, isPlus: true)
+        }else if tokenView.descriptionText == "hospital" {
+            animateKeyboard(380, time: 0.5, isPlus: true)
+        }
+    }
+    
+    func animateKeyboard(distance: CGFloat, time: Double, isPlus: Bool) {
+        UIView.animateWithDuration(time, animations: {
+            if isPlus {
+                self.view.frame.origin.y += distance
+            }else {
+                self.view.frame.origin.y -= distance
+            }
+            }, completion: nil)
+    }
+    
+    func tokenView(token: KSTokenView, displayTitleForObject object: AnyObject) -> String {
+        return object as! String
+    }
 }

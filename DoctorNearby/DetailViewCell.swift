@@ -12,8 +12,6 @@ import SwiftyJSON
 
 class DetailViewCell: UITableViewCell {
 
-    @IBOutlet weak var mapButton: UIButton!
-    @IBOutlet weak var bookmarkButton: UIButton!
     @IBOutlet weak var webView: UIWebView!
     
     static let kCellIdentifier = "DetailViewCell"
@@ -62,10 +60,6 @@ class DetailViewCell: UITableViewCell {
                 
         }
 
-    }
-    
-    @IBAction func clickPhoneButton(sender: AnyObject) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(doctor.phoneNumber)")!)
     }
     
 }

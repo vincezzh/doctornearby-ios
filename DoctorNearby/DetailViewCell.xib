@@ -15,78 +15,33 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zfo-Zh-TlO">
-                        <rect key="frame" x="8" y="58" width="584" height="531.5"/>
+                        <rect key="frame" x="0.0" y="8" width="600" height="583.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </webView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4w-Jm-Dom">
-                        <rect key="frame" x="20" y="8" width="32" height="32"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RmZ-pe-PyI">
+                        <rect key="frame" x="548" y="-50" width="32" height="32"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="32" id="9z1-jF-19g"/>
-                            <constraint firstAttribute="width" constant="32" id="G3z-ex-kag"/>
+                            <constraint firstAttribute="height" constant="32" id="CS2-gq-DmZ"/>
+                            <constraint firstAttribute="width" constant="32" id="WIc-uC-KYi"/>
                         </constraints>
-                        <state key="normal" image="phone-icon"/>
-                        <connections>
-                            <action selector="clickPhoneButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jXM-SJ-1zN"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDq-eG-qCO">
-                        <rect key="frame" x="82" y="8" width="32" height="32"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="32" id="Ytg-cq-pjT"/>
-                            <constraint firstAttribute="width" constant="32" id="uPg-j1-fBz"/>
-                        </constraints>
-                        <state key="normal" image="map-icon"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vw9-Oh-lFf">
-                        <rect key="frame" x="144" y="8" width="32" height="32"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="32" id="Fs2-4A-ilD"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="I7F-eS-Ozy"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="tW9-cF-PlY"/>
-                            <constraint firstAttribute="height" constant="32" id="ySf-KP-ZaB"/>
-                        </constraints>
-                        <state key="normal" image="plus-icon"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="I7F-eS-Ozy"/>
-                                <exclude reference="tW9-cF-PlY"/>
-                            </mask>
-                        </variation>
+                        <state key="normal" title="Button" image="close-icon"/>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Vw9-Oh-lFf" secondAttribute="trailing" constant="25" id="6rd-sF-YNc"/>
-                    <constraint firstItem="iDq-eG-qCO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="F2W-M0-g2m"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Zfo-Zh-TlO" secondAttribute="bottom" constant="2" id="LUF-G6-EYc"/>
-                    <constraint firstItem="iDq-eG-qCO" firstAttribute="leading" secondItem="Y4w-Jm-Dom" secondAttribute="trailing" constant="30" id="MCA-ui-5sC"/>
-                    <constraint firstItem="Vw9-Oh-lFf" firstAttribute="leading" secondItem="iDq-eG-qCO" secondAttribute="trailing" constant="30" id="POl-qP-bUY"/>
-                    <constraint firstItem="Zfo-Zh-TlO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="50" id="SbQ-Ai-YDb"/>
-                    <constraint firstItem="Zfo-Zh-TlO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="X9r-BR-8fx"/>
-                    <constraint firstItem="Vw9-Oh-lFf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Xab-Y6-VbC"/>
-                    <constraint firstItem="Y4w-Jm-Dom" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="bRD-Hg-yXq"/>
-                    <constraint firstAttribute="topMargin" secondItem="iDq-eG-qCO" secondAttribute="top" id="dU5-Sq-Ag9"/>
-                    <constraint firstAttribute="trailing" secondItem="Zfo-Zh-TlO" secondAttribute="trailing" constant="8" id="h9o-Gn-biq"/>
-                    <constraint firstItem="iDq-eG-qCO" firstAttribute="leading" secondItem="Y4w-Jm-Dom" secondAttribute="trailing" constant="35" id="lwr-UO-ptO"/>
-                    <constraint firstItem="Y4w-Jm-Dom" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="pg4-ba-xXI"/>
+                    <constraint firstItem="RmZ-pe-PyI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="-50" id="CpL-qh-ij7"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Zfo-Zh-TlO" secondAttribute="bottom" id="LUF-G6-EYc"/>
+                    <constraint firstItem="Zfo-Zh-TlO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="SbQ-Ai-YDb"/>
+                    <constraint firstItem="Zfo-Zh-TlO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="X9r-BR-8fx"/>
+                    <constraint firstAttribute="trailing" secondItem="Zfo-Zh-TlO" secondAttribute="trailing" id="h9o-Gn-biq"/>
+                    <constraint firstAttribute="trailing" secondItem="RmZ-pe-PyI" secondAttribute="trailing" constant="20" id="icd-jR-YwX"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="dU5-Sq-Ag9"/>
-                        <exclude reference="lwr-UO-ptO"/>
-                        <exclude reference="6rd-sF-YNc"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="bookmarkButton" destination="Vw9-Oh-lFf" id="AvJ-3S-XGf"/>
-                <outlet property="mapButton" destination="iDq-eG-qCO" id="flE-8U-ixg"/>
                 <outlet property="webView" destination="Zfo-Zh-TlO" id="KqZ-ij-Bl6"/>
             </connections>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="map-icon" width="72" height="72"/>
-        <image name="phone-icon" width="72" height="72"/>
-        <image name="plus-icon" width="72" height="72"/>
+        <image name="close-icon" width="72" height="72"/>
     </resources>
 </document>

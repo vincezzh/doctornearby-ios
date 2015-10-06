@@ -700,21 +700,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FHK-Bl-1ls">
-                                <rect key="frame" x="8" y="60" width="584" height="532"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBq-pO-LN5">
-                                <rect key="frame" x="20" y="20" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="44K-0f-d6E"/>
-                                    <constraint firstAttribute="height" constant="32" id="Irh-6n-x2S"/>
-                                </constraints>
-                                <state key="normal" title="Direction" image="phone-icon"/>
-                                <connections>
-                                    <action selector="clickPhoneButton:" destination="oGw-uz-XD6" eventType="touchUpInside" id="j6x-2a-PKW"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXL-sq-qe9">
-                                <rect key="frame" x="548" y="20" width="32" height="32"/>
+                                <rect key="frame" x="548" y="40" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="S14-eC-oFZ"/>
                                     <constraint firstAttribute="height" constant="32" id="d6N-C6-F7Z"/>
@@ -724,41 +713,8 @@
                                     <action selector="clickCloseButton:" destination="oGw-uz-XD6" eventType="touchUpInside" id="Kew-Q2-p1T"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcG-7q-uRN">
-                                <rect key="frame" x="82" y="20" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="3Z4-cB-qit"/>
-                                    <constraint firstAttribute="width" constant="32" id="xMH-V6-4Yo"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="gps-icon"/>
-                                <connections>
-                                    <action selector="clickRouteButton:" destination="oGw-uz-XD6" eventType="touchUpInside" id="m3M-Jc-Uhj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGP-jl-6O5">
-                                <rect key="frame" x="206" y="20" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="8TY-tm-a4W"/>
-                                    <constraint firstAttribute="width" constant="32" id="rW5-cC-kAB"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="plus-icon"/>
-                                <connections>
-                                    <action selector="clickBookmarkButton:" destination="oGw-uz-XD6" eventType="touchUpInside" id="kyK-ev-kKV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZb-Dz-jA0">
-                                <rect key="frame" x="144" y="20" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="ECA-Pz-zsy"/>
-                                    <constraint firstAttribute="width" constant="32" id="gIe-Yi-AbX"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="car-icon"/>
-                                <connections>
-                                    <action selector="clickNavigationButton:" destination="oGw-uz-XD6" eventType="touchUpInside" id="Tvr-0o-Y3q"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="250 km to your current location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPG-Pd-UhL">
-                                <rect key="frame" x="149" y="102" width="302" height="21"/>
+                                <rect key="frame" x="149" y="70" width="302" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="fzI-I2-meM"/>
                                 </constraints>
@@ -769,26 +725,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FHK-Bl-1ls" firstAttribute="top" secondItem="eXL-sq-qe9" secondAttribute="bottom" constant="8" id="3zo-T1-R0C"/>
-                            <constraint firstItem="LcG-7q-uRN" firstAttribute="top" secondItem="l2c-cB-Qdp" secondAttribute="bottom" id="54T-zd-m6A"/>
-                            <constraint firstItem="LcG-7q-uRN" firstAttribute="leading" secondItem="hBq-pO-LN5" secondAttribute="trailing" constant="30" id="G6t-e8-QaM"/>
-                            <constraint firstItem="DZb-Dz-jA0" firstAttribute="leading" secondItem="LcG-7q-uRN" secondAttribute="trailing" constant="30" id="GMr-Uu-JXt"/>
-                            <constraint firstItem="hBq-pO-LN5" firstAttribute="leading" secondItem="tvp-XV-XXq" secondAttribute="leading" constant="20" id="I4M-b8-AKU"/>
+                            <constraint firstItem="YPG-Pd-UhL" firstAttribute="top" secondItem="l2c-cB-Qdp" secondAttribute="bottom" constant="50" id="G1j-ff-eMd"/>
                             <constraint firstAttribute="trailing" secondItem="eXL-sq-qe9" secondAttribute="trailing" constant="20" id="KuB-WA-Ndd"/>
-                            <constraint firstItem="dGP-jl-6O5" firstAttribute="top" secondItem="l2c-cB-Qdp" secondAttribute="bottom" id="PwM-3N-R6J"/>
-                            <constraint firstItem="hBq-pO-LN5" firstAttribute="top" secondItem="l2c-cB-Qdp" secondAttribute="bottom" id="S11-7e-QCR"/>
-                            <constraint firstItem="AQj-wp-qCc" firstAttribute="top" secondItem="FHK-Bl-1ls" secondAttribute="bottom" constant="8" id="T07-SS-yv0"/>
+                            <constraint firstItem="AQj-wp-qCc" firstAttribute="top" secondItem="FHK-Bl-1ls" secondAttribute="bottom" id="T07-SS-yv0"/>
                             <constraint firstItem="YPG-Pd-UhL" firstAttribute="centerX" secondItem="tvp-XV-XXq" secondAttribute="centerX" id="UNf-ng-75f"/>
-                            <constraint firstItem="FHK-Bl-1ls" firstAttribute="leading" secondItem="tvp-XV-XXq" secondAttribute="leading" constant="8" id="aTL-xD-Cju"/>
-                            <constraint firstItem="eXL-sq-qe9" firstAttribute="top" secondItem="l2c-cB-Qdp" secondAttribute="bottom" id="b4d-Xh-ro9"/>
-                            <constraint firstItem="YPG-Pd-UhL" firstAttribute="top" secondItem="DZb-Dz-jA0" secondAttribute="bottom" constant="50" id="bYf-3a-G83"/>
-                            <constraint firstItem="dGP-jl-6O5" firstAttribute="leading" secondItem="LcG-7q-uRN" secondAttribute="trailing" constant="30" id="cxJ-rS-Win"/>
-                            <constraint firstAttribute="trailing" secondItem="FHK-Bl-1ls" secondAttribute="trailing" constant="8" id="lfn-tL-0eg"/>
-                            <constraint firstItem="dGP-jl-6O5" firstAttribute="leading" secondItem="DZb-Dz-jA0" secondAttribute="trailing" constant="30" id="mFv-sg-rzf"/>
-                            <constraint firstItem="DZb-Dz-jA0" firstAttribute="top" secondItem="l2c-cB-Qdp" secondAttribute="bottom" id="xfO-Zt-Fxg"/>
+                            <constraint firstItem="FHK-Bl-1ls" firstAttribute="leading" secondItem="tvp-XV-XXq" secondAttribute="leading" id="aTL-xD-Cju"/>
+                            <constraint firstItem="eXL-sq-qe9" firstAttribute="top" secondItem="l2c-cB-Qdp" secondAttribute="bottom" constant="20" id="b4d-Xh-ro9"/>
+                            <constraint firstAttribute="trailing" secondItem="FHK-Bl-1ls" secondAttribute="trailing" id="lfn-tL-0eg"/>
+                            <constraint firstItem="FHK-Bl-1ls" firstAttribute="top" secondItem="l2c-cB-Qdp" secondAttribute="bottom" id="n9m-Xo-Rz0"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="cxJ-rS-Win"/>
+                                <exclude reference="3zo-T1-R0C"/>
                             </mask>
                         </variation>
                     </view>
@@ -821,11 +769,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="car-icon" width="72" height="72"/>
         <image name="close-icon" width="72" height="72"/>
-        <image name="gps-icon" width="72" height="72"/>
-        <image name="phone-icon" width="72" height="72"/>
-        <image name="plus-icon" width="72" height="72"/>
         <image name="search-btn" width="72" height="72"/>
     </resources>
 </document>

@@ -132,7 +132,6 @@ extension SearchListViewController: UITableViewDataSource {
     }
 }
 
-//MARK: - UITableViewDelegate Methods
 extension SearchListViewController {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 100
@@ -149,6 +148,7 @@ extension SearchListViewController {
         
         let doctor = doctors[indexPath.row]
         viewController.doctor = doctor
+        viewController.fromBookMarkView = false
         
         navigationController?.pushViewController(viewController, animated: true)
     }

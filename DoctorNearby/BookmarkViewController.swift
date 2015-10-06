@@ -132,7 +132,7 @@ class BookmarkViewController: UIViewController, UITableViewDelegate, UITableView
         }
         actionSheetController.addAction(showDetailAction)
 
-        let deleteBookmarkAction: UIAlertAction = UIAlertAction(title: "Delete tshi Bookmark", style: .Default) { action -> Void in
+        let deleteBookmarkAction: UIAlertAction = UIAlertAction(title: "Delete this Bookmark", style: .Default) { action -> Void in
             self.deleteBookmark(self.bookmarks[indexPath.row])
         }
         actionSheetController.addAction(deleteBookmarkAction)
@@ -184,13 +184,18 @@ class BookmarkViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func showDoctorMapView(bookmark: Doctor) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mapViewController = storyboard.instantiateViewControllerWithIdentifier("MapViewController") as! MapViewController
-        mapViewController.doctor = bookmark
-        // To generate phone number
-        mapViewController.doctor.phoneNumber = ""
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let mapViewController = storyboard.instantiateViewControllerWithIdentifier("MapViewController") as! MapViewController
+//        mapViewController.doctor = bookmark
+//         To generate phone number
+//        mapViewController.doctor.phoneNumber = ""
+//        
+//        self.presentViewController(mapViewController, animated: true, completion: nil)
         
-        self.presentViewController(mapViewController, animated: true, completion: nil)
+        let viewController = SearchDetailViewController()
+        viewController.doctor = bookmark
+        viewController.fromBookMarkView = true
+        self.presentViewController(viewController, animated: true, completion: nil)
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
