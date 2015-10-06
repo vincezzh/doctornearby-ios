@@ -57,6 +57,8 @@
 		61B4DCCA1BB592E8001D7530 /* JSonParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B4DCC91BB592E8001D7530 /* JSonParse.swift */; settings = {ASSET_TAGS = (); }; };
 		61B4DCCC1BB59304001D7530 /* HttpWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B4DCCB1BB59304001D7530 /* HttpWrapper.swift */; settings = {ASSET_TAGS = (); }; };
 		61C9651A1BC410E200E56073 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C965191BC410E200E56073 /* StringUtil.swift */; settings = {ASSET_TAGS = (); }; };
+		61C965521BC4353F00E56073 /* DoctorSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C965511BC4353F00E56073 /* DoctorSearchTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		61C965541BC4419000E56073 /* LanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C965531BC4419000E56073 /* LanguagesTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D59ABB3B27D41706D30240F6 /* Pods_DoctorNearby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D042A87512E18A83E3A6754 /* Pods_DoctorNearby.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -135,6 +137,8 @@
 		61B4DCC91BB592E8001D7530 /* JSonParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSonParse.swift; sourceTree = "<group>"; };
 		61B4DCCB1BB59304001D7530 /* HttpWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpWrapper.swift; sourceTree = "<group>"; };
 		61C965191BC410E200E56073 /* StringUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
+		61C965511BC4353F00E56073 /* DoctorSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorSearchTableViewController.swift; sourceTree = "<group>"; };
+		61C965531BC4419000E56073 /* LanguagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguagesTableViewController.swift; sourceTree = "<group>"; };
 		7D042A87512E18A83E3A6754 /* Pods_DoctorNearby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoctorNearby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A25E8EAD04601C31F7716677 /* Pods-DoctorNearby.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoctorNearby.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoctorNearby/Pods-DoctorNearby.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +210,8 @@
 		613B9F631BB4690500DF8DD9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				61C965511BC4353F00E56073 /* DoctorSearchTableViewController.swift */,
+				61C965531BC4419000E56073 /* LanguagesTableViewController.swift */,
 				61AEBB941BB320BC0034EFDA /* MainViewController.swift */,
 				613B9F641BB469C100DF8DD9 /* MenuViewController.swift */,
 				613B9F651BB469C100DF8DD9 /* SearchViewController.swift */,
@@ -616,11 +622,13 @@
 				61A473FF1BB8E45F007D59F7 /* SearchDetailViewController.swift in Sources */,
 				61A6A7A31BB97E59006B8FCC /* SAInboxAnimatedTransitioningController.swift in Sources */,
 				61B03F5B1BB4D9E40095E729 /* BWWalkthroughPageViewController.swift in Sources */,
+				61C965521BC4353F00E56073 /* DoctorSearchTableViewController.swift in Sources */,
 				6144A5991BBF64E300BC7BAB /* ActivityIndicator.swift in Sources */,
 				613B9F691BB469C100DF8DD9 /* SearchViewController.swift in Sources */,
 				615109121BB5F66C00315CEA /* KSTokenField.swift in Sources */,
 				6130513A1BB5F07F00A6FC7D /* Specialist.swift in Sources */,
 				616D67E31BBDD360007937B3 /* MapViewController.swift in Sources */,
+				61C965541BC4419000E56073 /* LanguagesTableViewController.swift in Sources */,
 				613B9F721BB46D7F00DF8DD9 /* BaseTableViewCell.swift in Sources */,
 				615109171BB6225300315CEA /* Language.swift in Sources */,
 				613051381BB5F00E00A6FC7D /* Hospital.swift in Sources */,

@@ -11,6 +11,7 @@ import Foundation
 class Language: NSObject {
     class func names() -> Array <String> {
         return [
+            "ALL",
             "ACHOLI",
             "AFRIKAANS",
             "AKAN",
