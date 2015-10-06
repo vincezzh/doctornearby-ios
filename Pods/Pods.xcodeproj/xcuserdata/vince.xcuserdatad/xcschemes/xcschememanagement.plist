@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>EGFloatingTextField.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>LiquidFloatingActionButton-LiquidFloatingActionButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -24,22 +19,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>LiquidLoader-LiquidLoader.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>LiquidLoader.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-DoctorNearby.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>PureLayout.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -57,17 +37,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0FF07E676A99318EDFE1DD38AF802ABE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2BE8045C39600657EA735CAB88C4028B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>725D3E7D44A86E96EAE5915678832952</key>
+		<key>53567F27254F28D8C2605D17ED64ED43</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,22 +47,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8240A687A12B3496C485DFBEB80E79E2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>87986764FF8D567EF49E4492D6EA6B36</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>930A0F0D975ADE1B2954261674E5FA2D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A9F34DEB1DA0808F0887382CA267B4DC</key>
+		<key>8B8FE9D384B156E54F01F02F53199E4D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,7 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D040FB931B480CC155B9F4263B63BBB3</key>
+		<key>C0848313DFF12361F3BA5B3C7CCB39A9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D78E9B8AB61C21C31DE53167E4FC170C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

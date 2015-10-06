@@ -53,19 +53,13 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-DoctorNearby/Alamofire.framework'
-  install_framework 'Pods-DoctorNearby/EGFloatingTextField.framework'
   install_framework 'Pods-DoctorNearby/LiquidFloatingActionButton.framework'
-  install_framework 'Pods-DoctorNearby/LiquidLoader.framework'
-  install_framework 'Pods-DoctorNearby/PureLayout.framework'
   install_framework 'Pods-DoctorNearby/SlideMenuControllerSwift.framework'
   install_framework 'Pods-DoctorNearby/SwiftyJSON.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-DoctorNearby/Alamofire.framework'
-  install_framework 'Pods-DoctorNearby/EGFloatingTextField.framework'
   install_framework 'Pods-DoctorNearby/LiquidFloatingActionButton.framework'
-  install_framework 'Pods-DoctorNearby/LiquidLoader.framework'
-  install_framework 'Pods-DoctorNearby/PureLayout.framework'
   install_framework 'Pods-DoctorNearby/SlideMenuControllerSwift.framework'
   install_framework 'Pods-DoctorNearby/SwiftyJSON.framework'
 fi

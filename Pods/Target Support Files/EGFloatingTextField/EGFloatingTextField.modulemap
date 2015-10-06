@@ -1,6 +1,0 @@
-framework module EGFloatingTextField {
-  umbrella header "EGFloatingTextField-umbrella.h"
-
-  export *
-  module * { export * }
-}
