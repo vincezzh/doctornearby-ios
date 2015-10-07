@@ -30,6 +30,8 @@ class SpecializationTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0)
+        self.tableView.scrollRectToVisible(CGRectMake(0, 0, self.tableView.bounds.width, 30), animated: false)
         searchBar.delegate = self
     }
     

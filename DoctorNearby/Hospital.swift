@@ -11,6 +11,7 @@ import Foundation
 class Hospital: NSObject {
     class func names() -> Array <String> {
         return [
+            "ALL",
             "Alexandra Hospital",
             "Alexandra Marine and General Hospital",
             "Almonte General Hospital",

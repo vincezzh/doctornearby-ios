@@ -8,17 +8,25 @@
 
 import UIKit
 
-class DoctorSearchTableViewController: UITableViewController {
+class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var selectedLanguageTextField: UILabel!
+    @IBOutlet weak var selectedGenderTextField: UILabel!
     @IBOutlet weak var selectedSpecialistTextField: UILabel!
     @IBOutlet weak var selectedCityTextField: UILabel!
     @IBOutlet weak var selectedHospitalTextField: UILabel!
+    @IBOutlet weak var physicianTypeSegment: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setNavigationBarItem()
+        self.setSearchNavigationBarItem()
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        self.nameTextField.delegate = self
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -59,6 +67,10 @@ class DoctorSearchTableViewController: UITableViewController {
     
     func doHospitalWithData(data: String) {
         selectedHospitalTextField.text = data
+    }
+    
+    func doGenderWithData(data: String) {
+        selectedGenderTextField.text = data
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -102,7 +114,74 @@ class DoctorSearchTableViewController: UITableViewController {
                     }
                 }
             }
+        }else if segue.identifier == "showGendersSegue" {
+            if let viewController = segue.destinationViewController as? GenderTableViewController {
+                viewController.selectedGender = selectedGenderTextField.text!
+                viewController.onDataAvailable = {[weak self]
+                    (data) in
+                    if let weakSelf = self {
+                        weakSelf.doGenderWithData(data)
+                    }
+                }
+            }
+        }else if segue.identifier == "showDoctorsSearchResultList" {
+            
+            SAInboxViewController.appearance.barTintColor = GlobalConstant.defaultColor
+            SAInboxViewController.appearance.tintColor = .whiteColor()
+            SAInboxViewController.appearance.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+            
+            let destViewController = segue.destinationViewController as! UINavigationController
+            destViewController.delegate = self
+            let viewController: SearchListViewController = destViewController.viewControllers[0] as! SearchListViewController
+            
+            var gender = ""
+            if selectedGenderTextField.text == "Female" {
+                gender = "Female"
+            }else if selectedGenderTextField.text == "Male" {
+                gender = "Male"
+            }
+            var physicianType = ""
+            if physicianTypeSegment.selectedSegmentIndex == 1 {
+                physicianType = "Family Medicine"
+            }else if physicianTypeSegment.selectedSegmentIndex == 2 {
+                if selectedSpecialistTextField.text! != "ALL" {
+                    physicianType = selectedSpecialistTextField.text!
+                }
+            }
+            var language = ""
+            if selectedLanguageTextField.text != "ALL" {
+                language = selectedLanguageTextField.text!
+            }
+            var city = ""
+            if selectedCityTextField.text != "ALL" {
+                city = selectedCityTextField.text!
+            }
+            var hospital = ""
+            if selectedHospitalTextField.text != "ALL" {
+                hospital = selectedHospitalTextField.text!
+            }
+            let parameters = [
+                "name": nameTextField.text!,
+                "gender": gender,
+                "language": language,
+                "physicianType": physicianType,
+                "location": city,
+                "hospital": hospital
+            ]
+            viewController.parameters = parameters
+            
         }
     }
+    
+    func search() {
+        performSegueWithIdentifier("showDoctorsSearchResultList", sender: self)
+    }
 
+}
+
+extension DoctorSearchTableViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        nameTextField.resignFirstResponder()
+        return true
+    }
 }

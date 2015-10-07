@@ -46,6 +46,8 @@
 		61A6A7A71BB97E59006B8FCC /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A6A7A21BB97E59006B8FCC /* UIView+Utils.swift */; settings = {ASSET_TAGS = (); }; };
 		61ABFA441BC4707B00E4CAD5 /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ABFA431BC4707B00E4CAD5 /* CitiesTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		61ABFA461BC4733A00E4CAD5 /* HospitalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ABFA451BC4733A00E4CAD5 /* HospitalsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		61ABFA481BC49C0100E4CAD5 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ABFA471BC49C0000E4CAD5 /* Gender.swift */; settings = {ASSET_TAGS = (); }; };
+		61ABFA4A1BC49D3900E4CAD5 /* GenderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ABFA491BC49D3900E4CAD5 /* GenderTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		61AEBB931BB320BC0034EFDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AEBB921BB320BC0034EFDA /* AppDelegate.swift */; };
 		61AEBB951BB320BC0034EFDA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AEBB941BB320BC0034EFDA /* MainViewController.swift */; };
 		61AEBB981BB320BC0034EFDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61AEBB961BB320BC0034EFDA /* Main.storyboard */; };
@@ -123,6 +125,8 @@
 		61A6A7A21BB97E59006B8FCC /* UIView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		61ABFA431BC4707B00E4CAD5 /* CitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesTableViewController.swift; sourceTree = "<group>"; };
 		61ABFA451BC4733A00E4CAD5 /* HospitalsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalsTableViewController.swift; sourceTree = "<group>"; };
+		61ABFA471BC49C0000E4CAD5 /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		61ABFA491BC49D3900E4CAD5 /* GenderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderTableViewController.swift; sourceTree = "<group>"; };
 		61AEBB8F1BB320BC0034EFDA /* DoctorNearby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoctorNearby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AEBB921BB320BC0034EFDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61AEBB941BB320BC0034EFDA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				613051341BB5EFD400A6FC7D /* City.swift */,
+				61ABFA471BC49C0000E4CAD5 /* Gender.swift */,
 				613051371BB5F00E00A6FC7D /* Hospital.swift */,
 				615109161BB6225300315CEA /* Language.swift */,
 				613051391BB5F07F00A6FC7D /* Specialist.swift */,
@@ -218,6 +223,7 @@
 			children = (
 				61ABFA431BC4707B00E4CAD5 /* CitiesTableViewController.swift */,
 				61C965511BC4353F00E56073 /* DoctorSearchTableViewController.swift */,
+				61ABFA491BC49D3900E4CAD5 /* GenderTableViewController.swift */,
 				61ABFA451BC4733A00E4CAD5 /* HospitalsTableViewController.swift */,
 				61C965531BC4419000E56073 /* LanguagesTableViewController.swift */,
 				61AEBB941BB320BC0034EFDA /* MainViewController.swift */,
@@ -626,6 +632,7 @@
 				61506CF11BC2CEB000DA7E09 /* GlobalFlag.swift in Sources */,
 				61B03F5C1BB4D9E40095E729 /* BWWalkthroughViewController.swift in Sources */,
 				613B9F6D1BB46AAD00DF8DD9 /* UIViewControllerExtension.swift in Sources */,
+				61ABFA481BC49C0100E4CAD5 /* Gender.swift in Sources */,
 				61A473FE1BB8E45F007D59F7 /* SearchListViewController.swift in Sources */,
 				61A6A7A61BB97E59006B8FCC /* SAInboxViewController.swift in Sources */,
 				613B9F751BB46DEC00DF8DD9 /* UITableViewExtension.swift in Sources */,
@@ -644,6 +651,7 @@
 				615109171BB6225300315CEA /* Language.swift in Sources */,
 				613051381BB5F00E00A6FC7D /* Hospital.swift in Sources */,
 				615109111BB5F66C00315CEA /* KSToken.swift in Sources */,
+				61ABFA4A1BC49D3900E4CAD5 /* GenderTableViewController.swift in Sources */,
 				61C9651A1BC410E200E56073 /* StringUtil.swift in Sources */,
 				614C92071BB422EF00BC95C6 /* ButtonCreater.swift in Sources */,
 				6177BF1D1BBB88E3008AF609 /* GlobalConstant.swift in Sources */,

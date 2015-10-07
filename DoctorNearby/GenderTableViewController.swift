@@ -1,5 +1,5 @@
 //
-//  HospitalTableViewController.swift
+//  GenderTableViewController.swift
 //  DoctorNearby
 //
 //  Created by Vince Zhang on 2015-10-06.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class HospitalsTableViewController: UITableViewController {
+class GenderTableViewController: UITableViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
 
-    let hospitals: Array<String> = Hospital.names()
-    var filteredHospitals = Array<String>()
-    var selectedHospital: String = ""
+    let genders: Array<String> = Gender.names()
+    var filteredGenders = Array<String>()
+    var selectedGender: String = ""
     var searchActive : Bool = false
     var onDataAvailable : ((data: String) -> ())?
     
@@ -41,9 +41,9 @@ class HospitalsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchActive {
-            return filteredHospitals.count
+            return filteredGenders.count
         }else {
-            return hospitals.count
+            return genders.count
         }
     }
     
@@ -52,13 +52,13 @@ class HospitalsTableViewController: UITableViewController {
         cell.textLabel?.textColor = UIColor.blackColor()
         
         if searchActive {
-            cell.textLabel?.text = filteredHospitals[indexPath.row]
-            if selectedHospital == filteredHospitals[indexPath.row] {
+            cell.textLabel?.text = filteredGenders[indexPath.row]
+            if selectedGender == filteredGenders[indexPath.row] {
                 cell.textLabel?.textColor = GlobalConstant.defaultColor
             }
         }else {
-            cell.textLabel?.text = hospitals[indexPath.row]
-            if selectedHospital == hospitals[indexPath.row] {
+            cell.textLabel?.text = genders[indexPath.row]
+            if selectedGender == genders[indexPath.row] {
                 cell.textLabel?.textColor = GlobalConstant.defaultColor
             }
         }
@@ -68,15 +68,15 @@ class HospitalsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if searchActive {
-            dismissViewController(filteredHospitals[indexPath.row])
+            dismissViewController(filteredGenders[indexPath.row])
         }else {
-            dismissViewController(hospitals[indexPath.row])
+            dismissViewController(genders[indexPath.row])
         }
     }
     
 }
 
-extension HospitalsTableViewController: UISearchBarDelegate {
+extension GenderTableViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true;
     }
@@ -95,13 +95,13 @@ extension HospitalsTableViewController: UISearchBarDelegate {
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         
-        filteredHospitals = hospitals.filter({ (hospital) -> Bool in
-            let tempHospital = hospital as NSString
-            let range = tempHospital.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+        filteredGenders = genders.filter({ (gender) -> Bool in
+            let tempGender = gender as NSString
+            let range = tempGender.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
             return range.location != NSNotFound
         })
         
-        if(filteredHospitals.count == 0 && searchBar.text == ""){
+        if(filteredGenders.count == 0 && searchBar.text == ""){
             searchActive = false;
         } else {
             searchActive = true;
@@ -109,4 +109,3 @@ extension HospitalsTableViewController: UISearchBarDelegate {
         self.tableView.reloadData()
     }
 }
-
