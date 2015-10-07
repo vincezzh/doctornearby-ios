@@ -23,7 +23,6 @@
 		6144A59F1BBF6E8600BC7BAB /* BookmarkListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6144A59D1BBF6E8600BC7BAB /* BookmarkListCell.swift */; settings = {ASSET_TAGS = (); }; };
 		6144A5A01BBF6E8600BC7BAB /* BookmarkListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6144A59E1BBF6E8600BC7BAB /* BookmarkListCell.xib */; settings = {ASSET_TAGS = (); }; };
 		614C92071BB422EF00BC95C6 /* ButtonCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614C92061BB422EF00BC95C6 /* ButtonCreater.swift */; settings = {ASSET_TAGS = (); }; };
-		614C92091BB4260100BC95C6 /* LoaderCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614C92081BB4260100BC95C6 /* LoaderCreater.swift */; settings = {ASSET_TAGS = (); }; };
 		61506CF11BC2CEB000DA7E09 /* GlobalFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61506CF01BC2CEB000DA7E09 /* GlobalFlag.swift */; settings = {ASSET_TAGS = (); }; };
 		615109111BB5F66C00315CEA /* KSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6151090D1BB5F66C00315CEA /* KSToken.swift */; settings = {ASSET_TAGS = (); }; };
 		615109121BB5F66C00315CEA /* KSTokenField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6151090E1BB5F66C00315CEA /* KSTokenField.swift */; settings = {ASSET_TAGS = (); }; };
@@ -48,6 +47,9 @@
 		61ABFA461BC4733A00E4CAD5 /* HospitalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ABFA451BC4733A00E4CAD5 /* HospitalsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		61ABFA481BC49C0100E4CAD5 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ABFA471BC49C0000E4CAD5 /* Gender.swift */; settings = {ASSET_TAGS = (); }; };
 		61ABFA4A1BC49D3900E4CAD5 /* GenderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ABFA491BC49D3900E4CAD5 /* GenderTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		61ABFA4E1BC5980E00E4CAD5 /* AppointmentListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ABFA4D1BC5980E00E4CAD5 /* AppointmentListTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		61ABFA501BC5AC3700E4CAD5 /* AppointmentAddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ABFA4F1BC5AC3700E4CAD5 /* AppointmentAddTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		61ABFA521BC5ACBA00E4CAD5 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ABFA511BC5ACBA00E4CAD5 /* Appointment.swift */; settings = {ASSET_TAGS = (); }; };
 		61AEBB931BB320BC0034EFDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AEBB921BB320BC0034EFDA /* AppDelegate.swift */; };
 		61AEBB951BB320BC0034EFDA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AEBB941BB320BC0034EFDA /* MainViewController.swift */; };
 		61AEBB981BB320BC0034EFDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61AEBB961BB320BC0034EFDA /* Main.storyboard */; };
@@ -102,7 +104,6 @@
 		6144A59D1BBF6E8600BC7BAB /* BookmarkListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkListCell.swift; sourceTree = "<group>"; };
 		6144A59E1BBF6E8600BC7BAB /* BookmarkListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookmarkListCell.xib; sourceTree = "<group>"; };
 		614C92061BB422EF00BC95C6 /* ButtonCreater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCreater.swift; sourceTree = "<group>"; };
-		614C92081BB4260100BC95C6 /* LoaderCreater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderCreater.swift; sourceTree = "<group>"; };
 		61506CF01BC2CEB000DA7E09 /* GlobalFlag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFlag.swift; sourceTree = "<group>"; };
 		6151090D1BB5F66C00315CEA /* KSToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSToken.swift; sourceTree = "<group>"; };
 		6151090E1BB5F66C00315CEA /* KSTokenField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSTokenField.swift; sourceTree = "<group>"; };
@@ -127,6 +128,9 @@
 		61ABFA451BC4733A00E4CAD5 /* HospitalsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalsTableViewController.swift; sourceTree = "<group>"; };
 		61ABFA471BC49C0000E4CAD5 /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		61ABFA491BC49D3900E4CAD5 /* GenderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderTableViewController.swift; sourceTree = "<group>"; };
+		61ABFA4D1BC5980E00E4CAD5 /* AppointmentListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentListTableViewController.swift; sourceTree = "<group>"; };
+		61ABFA4F1BC5AC3700E4CAD5 /* AppointmentAddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentAddTableViewController.swift; sourceTree = "<group>"; };
+		61ABFA511BC5ACBA00E4CAD5 /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		61AEBB8F1BB320BC0034EFDA /* DoctorNearby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoctorNearby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AEBB921BB320BC0034EFDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61AEBB941BB320BC0034EFDA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				613910411BB9E11600A03493 /* Doctor.swift */,
+				61ABFA511BC5ACBA00E4CAD5 /* Appointment.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -221,6 +226,8 @@
 		613B9F631BB4690500DF8DD9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				61ABFA4F1BC5AC3700E4CAD5 /* AppointmentAddTableViewController.swift */,
+				61ABFA4D1BC5980E00E4CAD5 /* AppointmentListTableViewController.swift */,
 				61ABFA431BC4707B00E4CAD5 /* CitiesTableViewController.swift */,
 				61C965511BC4353F00E56073 /* DoctorSearchTableViewController.swift */,
 				61ABFA491BC49D3900E4CAD5 /* GenderTableViewController.swift */,
@@ -293,7 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				614C92061BB422EF00BC95C6 /* ButtonCreater.swift */,
-				614C92081BB4260100BC95C6 /* LoaderCreater.swift */,
 			);
 			name = Creaters;
 			sourceTree = "<group>";
@@ -635,13 +641,14 @@
 				61ABFA481BC49C0100E4CAD5 /* Gender.swift in Sources */,
 				61A473FE1BB8E45F007D59F7 /* SearchListViewController.swift in Sources */,
 				61A6A7A61BB97E59006B8FCC /* SAInboxViewController.swift in Sources */,
+				61ABFA521BC5ACBA00E4CAD5 /* Appointment.swift in Sources */,
 				613B9F751BB46DEC00DF8DD9 /* UITableViewExtension.swift in Sources */,
-				614C92091BB4260100BC95C6 /* LoaderCreater.swift in Sources */,
 				61A473FF1BB8E45F007D59F7 /* SearchDetailViewController.swift in Sources */,
 				61A6A7A31BB97E59006B8FCC /* SAInboxAnimatedTransitioningController.swift in Sources */,
 				61B03F5B1BB4D9E40095E729 /* BWWalkthroughPageViewController.swift in Sources */,
 				61C965521BC4353F00E56073 /* DoctorSearchTableViewController.swift in Sources */,
 				6144A5991BBF64E300BC7BAB /* ActivityIndicator.swift in Sources */,
+				61ABFA501BC5AC3700E4CAD5 /* AppointmentAddTableViewController.swift in Sources */,
 				613B9F691BB469C100DF8DD9 /* SearchViewController.swift in Sources */,
 				615109121BB5F66C00315CEA /* KSTokenField.swift in Sources */,
 				6130513A1BB5F07F00A6FC7D /* Specialist.swift in Sources */,
@@ -649,6 +656,7 @@
 				61C965541BC4419000E56073 /* LanguagesTableViewController.swift in Sources */,
 				613B9F721BB46D7F00DF8DD9 /* BaseTableViewCell.swift in Sources */,
 				615109171BB6225300315CEA /* Language.swift in Sources */,
+				61ABFA4E1BC5980E00E4CAD5 /* AppointmentListTableViewController.swift in Sources */,
 				613051381BB5F00E00A6FC7D /* Hospital.swift in Sources */,
 				615109111BB5F66C00315CEA /* KSToken.swift in Sources */,
 				61ABFA4A1BC49D3900E4CAD5 /* GenderTableViewController.swift in Sources */,

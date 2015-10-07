@@ -11,6 +11,7 @@ import UIKit
 enum LeftMenu: Int {
     case Main = 0
     case Search
+    case Appointments
     case NonMenu
 }
 
@@ -21,9 +22,10 @@ protocol LeftMenuProtocol : class {
 class MenuViewController : UIViewController, LeftMenuProtocol, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    var menus = ["Dashboard", "Search", "NonMenu"]
+    var menus = ["Dashboard", "Search", "Appointments" , "NonMenu"]
     var mainViewController: UIViewController!
     var searchViewController: UIViewController!
+    var appointmentViewController: UIViewController!
     var nonMenuViewController: UIViewController!
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,8 +39,12 @@ class MenuViewController : UIViewController, LeftMenuProtocol, UITableViewDataSo
         self.tableView.delegate = self
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
         let searchViewController = storyboard.instantiateViewControllerWithIdentifier("DoctorSearchTableViewController") as! DoctorSearchTableViewController
         self.searchViewController = UINavigationController(rootViewController: searchViewController)
+        
+        let appointmentViewController = storyboard.instantiateViewControllerWithIdentifier("AppointmentListTableViewController") as! AppointmentListTableViewController
+        self.appointmentViewController = UINavigationController(rootViewController: appointmentViewController)
         
         let nonMenuController = storyboard.instantiateViewControllerWithIdentifier("NonMenuController") as! NonMenuController
         nonMenuController.delegate = self
@@ -74,8 +80,12 @@ class MenuViewController : UIViewController, LeftMenuProtocol, UITableViewDataSo
         switch menu {
         case .Main:
             self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
+            break
         case .Search:
             self.slideMenuController()?.changeMainViewController(self.searchViewController, close: true)
+            break
+        case .Appointments:
+            self.slideMenuController()?.changeMainViewController(self.appointmentViewController, close: true)
             break
         case .NonMenu:
             self.slideMenuController()?.changeMainViewController(self.nonMenuViewController, close: true)
