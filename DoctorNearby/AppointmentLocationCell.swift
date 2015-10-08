@@ -20,7 +20,14 @@ class AppointmentLocationCell: UITableViewCell {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        locationTextField.delegate = self
     }
 
+}
+
+extension AppointmentLocationCell: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        locationTextField.resignFirstResponder()
+        return true
+    }
 }

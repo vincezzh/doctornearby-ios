@@ -26,11 +26,19 @@ class AppointmentAddTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
         dateFormatter.dateFormat = "MMM dd, yyyy hh:mm a"
         
         for (key, value) in names {
             objectArray.append(Objects(sectionName: key, sectionObjects: value))
         }
+    }
+    
+    func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .Ended {
+            self.view.endEditing(true)
+        }
+        sender.cancelsTouchesInView = false
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -175,6 +183,7 @@ class AppointmentAddTableViewController: UITableViewController {
                 
                 do {
                     try store.saveEvent(event, span: EKSpan.ThisEvent)
+                    GlobalFlag.needRefreshAppointment = true
                 }catch {
                     print("Event save failed")
                 }

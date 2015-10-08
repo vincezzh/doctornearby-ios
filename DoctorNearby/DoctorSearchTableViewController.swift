@@ -23,10 +23,14 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
         self.setSearchNavigationBarItem()
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         self.nameTextField.delegate = self
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.view.endEditing(true)
+    func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .Ended {
+            self.view.endEditing(true)
+        }
+        sender.cancelsTouchesInView = false
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -181,7 +185,7 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
 
 extension DoctorSearchTableViewController: UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        nameTextField.resignFirstResponder()
+        textField.resignFirstResponder()
         return true
     }
 }
