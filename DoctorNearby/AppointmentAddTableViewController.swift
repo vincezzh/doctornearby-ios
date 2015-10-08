@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EventKit
 
 class AppointmentAddTableViewController: UITableViewController {
     
@@ -58,7 +59,13 @@ class AppointmentAddTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell?
         let cellID = objectArray[indexPath.section].sectionObjects[indexPath.row]
-        cell = tableView.dequeueReusableCellWithIdentifier(cellID)! as UITableViewCell
+        if cellID == "titleCell" {
+            cell = tableView.dequeueReusableCellWithIdentifier(cellID)! as! AppointmentTitleCell
+        }else if cellID == "locationCell" {
+            cell = tableView.dequeueReusableCellWithIdentifier(cellID)! as! AppointmentLocationCell
+        }else {
+            cell = tableView.dequeueReusableCellWithIdentifier(cellID)! as UITableViewCell
+        }
         
         let now = NSDate()
         if cellID == "startsCell" {
@@ -121,7 +128,109 @@ class AppointmentAddTableViewController: UITableViewController {
     }
     
     @IBAction func clickSaveButton(sender: AnyObject) {
+        getAuthrizationAndInsertEventInCalendar()
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func getAuthrizationAndInsertEventInCalendar() {
+        let eventStore = EKEventStore()
+        
+        switch EKEventStore.authorizationStatusForEntityType(EKEntityType.Event) {
+        case EKAuthorizationStatus.Authorized:
+            insertEvent(eventStore)
+        case .Denied:
+            print("Access denied")
+        case .NotDetermined:
+            eventStore.requestAccessToEntityType(.Event, completion: { (granted: Bool, error: NSError?) -> Void in
+                if granted {
+                    self.insertEvent(eventStore)
+                } else {
+                    print("Access denied")
+                }
+            })
+        default:
+            print("Case Default")
+        }
+    }
+    
+    func insertEvent(store: EKEventStore) {
+        let calendars = store.calendarsForEntityType(EKEntityType.Event)
+        
+        for calendar in calendars {
+            if calendar.title == GlobalConstant.defaultCalendar {
+                
+                let event = EKEvent(eventStore: store)
+                event.calendar = calendar
+                event.title = getLabelText("titleCell")
+                event.location = getLabelText("locationCell")
+                event.startDate = getDateFromString("startsCell")
+                event.endDate = getDateFromString("endsCell")
+                event.notes = GlobalConstant.brandFlag
+
+                let seconds = caculateAlarmInSecond()
+                if(seconds != -1) {
+                    let alarm:EKAlarm = EKAlarm(relativeOffset: NSTimeInterval(seconds))
+                    event.alarms = [alarm]
+                }
+                
+                do {
+                    try store.saveEvent(event, span: EKSpan.ThisEvent)
+                }catch {
+                    print("Event save failed")
+                }
+            }
+        }
+    }
+    
+    func caculateAlarmInSecond() -> Int {
+        var seconds = -1
+        let row: Int = objectArray[1].sectionObjects.indexOf("alertCell")!
+        let targetedCellIndexPath: NSIndexPath = NSIndexPath(forRow: row, inSection: 1)
+        let cell = tableView.cellForRowAtIndexPath(targetedCellIndexPath)
+        let labelText = cell?.detailTextLabel?.text
+        
+        if labelText == "5 mins before" {
+            seconds = -60 * 5
+        }else if labelText == "10 mins before" {
+            seconds = -60 * 10
+        }else if labelText == "30 mins before" {
+            seconds = -60 * 30
+        }else if labelText == "1 hour before" {
+            seconds = -60 * 60 * 1
+        }else if labelText == "2 hours before" {
+            seconds = -60 * 60 * 2
+        }else if labelText == "1 day before" {
+            seconds = -60 * 60 * 24 * 1
+        }else if labelText == "2 days before" {
+            seconds = -60 * 60 * 24 * 2
+        }else if labelText == "1 week before" {
+            seconds = -60 * 60 * 24 * 7
+        }else {
+            seconds = -1
+        }
+        
+        return seconds
+    }
+    
+    func getLabelText(cellID: String) -> String {
+        let row: Int = objectArray[0].sectionObjects.indexOf(cellID)!
+        let targetedCellIndexPath: NSIndexPath = NSIndexPath(forRow: row, inSection: 0)
+        var labelText = ""
+        if cellID == "titleCell" {
+            let cell = tableView.cellForRowAtIndexPath(targetedCellIndexPath) as! AppointmentTitleCell
+            labelText = cell.titleTextField.text!
+        }else if cellID == "locationCell" {
+            let cell = tableView.cellForRowAtIndexPath(targetedCellIndexPath) as! AppointmentLocationCell
+            labelText = cell.locationTextField.text!
+        }
+        return labelText
+    }
+    
+    func getDateFromString(cellID: String) -> NSDate {
+        let row: Int = objectArray[1].sectionObjects.indexOf(cellID)!
+        let targetedCellIndexPath: NSIndexPath = NSIndexPath(forRow: row, inSection: 1)
+        let cell = tableView.cellForRowAtIndexPath(targetedCellIndexPath)
+        return dateFormatter.dateFromString((cell?.detailTextLabel?.text)!)!
     }
     
     func doAlertWithData(data: String) {

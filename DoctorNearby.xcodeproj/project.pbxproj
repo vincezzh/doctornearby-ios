@@ -58,6 +58,8 @@
 		61AEBBA01BB320BC0034EFDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61AEBB9E1BB320BC0034EFDA /* LaunchScreen.storyboard */; };
 		61AEBBAB1BB320BC0034EFDA /* DoctorNearbyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AEBBAA1BB320BC0034EFDA /* DoctorNearbyTests.swift */; };
 		61AEBBB61BB320BC0034EFDA /* DoctorNearbyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AEBBB51BB320BC0034EFDA /* DoctorNearbyUITests.swift */; };
+		61B003681BC6EAA300D5AF18 /* AppointmentTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B003671BC6EAA300D5AF18 /* AppointmentTitleCell.swift */; settings = {ASSET_TAGS = (); }; };
+		61B0036A1BC6EAB800D5AF18 /* AppointmentLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B003691BC6EAB800D5AF18 /* AppointmentLocationCell.swift */; settings = {ASSET_TAGS = (); }; };
 		61B03F5B1BB4D9E40095E729 /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B03F591BB4D9E40095E729 /* BWWalkthroughPageViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		61B03F5C1BB4D9E40095E729 /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B03F5A1BB4D9E40095E729 /* BWWalkthroughViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		61B4DCCA1BB592E8001D7530 /* JSonParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B4DCC91BB592E8001D7530 /* JSonParse.swift */; settings = {ASSET_TAGS = (); }; };
@@ -146,6 +148,8 @@
 		61AEBBB11BB320BC0034EFDA /* DoctorNearbyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoctorNearbyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AEBBB51BB320BC0034EFDA /* DoctorNearbyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorNearbyUITests.swift; sourceTree = "<group>"; };
 		61AEBBB71BB320BC0034EFDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61B003671BC6EAA300D5AF18 /* AppointmentTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentTitleCell.swift; sourceTree = "<group>"; };
+		61B003691BC6EAB800D5AF18 /* AppointmentLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentLocationCell.swift; sourceTree = "<group>"; };
 		61B03F591BB4D9E40095E729 /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		61B03F5A1BB4D9E40095E729 /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughViewController.swift; sourceTree = "<group>"; };
 		61B4DCC91BB592E8001D7530 /* JSonParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSonParse.swift; sourceTree = "<group>"; };
@@ -282,6 +286,7 @@
 		613B9F731BB46D8300DF8DD9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				61B003661BC6EA7200D5AF18 /* AppointmentCells */,
 				6144A59A1BBF6DFF00BC7BAB /* BookmarkListCell */,
 				61A474041BB8E663007D59F7 /* SearchListCell */,
 				61A474091BB8E68E007D59F7 /* SearchDetailCell */,
@@ -404,6 +409,15 @@
 				61AEBBB71BB320BC0034EFDA /* Info.plist */,
 			);
 			path = DoctorNearbyUITests;
+			sourceTree = "<group>";
+		};
+		61B003661BC6EA7200D5AF18 /* AppointmentCells */ = {
+			isa = PBXGroup;
+			children = (
+				61B003671BC6EAA300D5AF18 /* AppointmentTitleCell.swift */,
+				61B003691BC6EAB800D5AF18 /* AppointmentLocationCell.swift */,
+			);
+			name = AppointmentCells;
 			sourceTree = "<group>";
 		};
 		61B03F571BB4D9C30095E729 /* Components */ = {
@@ -629,6 +643,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61B0036A1BC6EAB800D5AF18 /* AppointmentLocationCell.swift in Sources */,
 				61C965561BC450D700E56073 /* SpecializationTableViewController.swift in Sources */,
 				613B9F6A1BB469C100DF8DD9 /* BookmarkViewController.swift in Sources */,
 				613B9F6B1BB469C100DF8DD9 /* NonMenuController.swift in Sources */,
@@ -681,6 +696,7 @@
 				61B4DCCC1BB59304001D7530 /* HttpWrapper.swift in Sources */,
 				61A6A7A71BB97E59006B8FCC /* UIView+Utils.swift in Sources */,
 				613051351BB5EFD400A6FC7D /* City.swift in Sources */,
+				61B003681BC6EAA300D5AF18 /* AppointmentTitleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

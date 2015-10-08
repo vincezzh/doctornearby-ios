@@ -10,8 +10,7 @@ import UIKit
 
 class AlertTableViewController: UITableViewController {
 
-    var names = ["section1": ["None"], "section2": ["5 mins before", "10 mins before", "20 mins before"]]
-    var dateFormatter = NSDateFormatter()
+    var names = ["section1": ["None"], "section2": ["5 mins before", "10 mins before", "30 mins before", "1 hour before", "2 hours before", "1 day before", "2 days before", "1 week before"]]
     
     struct Objects {
         var sectionName : String!

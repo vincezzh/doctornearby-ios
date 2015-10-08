@@ -13,6 +13,11 @@ struct GlobalConstant {
     static let baseServerURL = "http://192.168.0.22:9091/doctornearby"
     static let defaultPageSize = 25
     static let defaultPageStart = 0
+    
+    static let brandFlag = "Added by Doctor NearBy"
+    static let defaultCalendar = "Calendar"
+    static let defaultCalendarPeriod = 60 * 60 * 24 * 90 // 90 days
+    
     // #39886F
     static let defaultColor = UIColor(red: 68 / 255.0, green: 169 / 255.0, blue: 138 / 255.0, alpha: 1.0)
     static let buttonColors: [UIColor] = [

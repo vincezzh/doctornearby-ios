@@ -9,5 +9,8 @@
 import Foundation
 
 class Appointment {
-    
+    var title = ""
+    var location = ""
+    var startsTime = ""
+    var endsTime = ""
 }
