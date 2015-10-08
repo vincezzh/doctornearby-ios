@@ -13,6 +13,7 @@ class AppointmentAddTableViewController: UITableViewController {
     var startsDatePickerCellID = "startsDatePickerCell"
     var endsDatePickerCellID = "endsDatePickerCell"
     var names = ["section1": ["titleCell", "locationCell"], "section2": ["startsCell", "endsCell", "alertCell"]]
+    var dateFormatter = NSDateFormatter()
     
     struct Objects {
         var sectionName : String!
@@ -24,6 +25,7 @@ class AppointmentAddTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        dateFormatter.dateFormat = "MMM dd, yyyy hh:mm a"
         
         for (key, value) in names {
             objectArray.append(Objects(sectionName: key, sectionObjects: value))
@@ -57,7 +59,16 @@ class AppointmentAddTableViewController: UITableViewController {
         var cell: UITableViewCell?
         let cellID = objectArray[indexPath.section].sectionObjects[indexPath.row]
         cell = tableView.dequeueReusableCellWithIdentifier(cellID)! as UITableViewCell
-        cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        
+        let now = NSDate()
+        if cellID == "startsCell" {
+            cell?.detailTextLabel?.text = dateFormatter.stringFromDate(now)
+        }else if cellID == "endsCell" {
+            let afterAnHourNow = now.dateByAddingTimeInterval(3600)
+            cell?.detailTextLabel?.text = dateFormatter.stringFromDate(afterAnHourNow)
+        }else if cellID == "alertCell" {
+            cell?.detailTextLabel?.text = "None"
+        }
         
         return cell!
     }
@@ -87,6 +98,50 @@ class AppointmentAddTableViewController: UITableViewController {
         }
         tableView.deselectRowAtIndexPath(indexPath, animated:true)
         tableView.endUpdates()
+    }
+    
+    @IBAction func changeStartsDatePicker(sender: AnyObject) {
+        let row: Int = objectArray[1].sectionObjects.indexOf("startsCell")!
+        let targetedCellIndexPath: NSIndexPath = NSIndexPath(forRow: row, inSection: 1)
+        let cell = tableView.cellForRowAtIndexPath(targetedCellIndexPath)
+        let targetedDatePicker = sender as! UIDatePicker
+        cell?.detailTextLabel?.text = dateFormatter.stringFromDate(targetedDatePicker.date)
+    }
+    
+    @IBAction func changeEndsDatePicker(sender: AnyObject) {
+        let row: Int = objectArray[1].sectionObjects.indexOf("endsCell")!
+        let targetedCellIndexPath: NSIndexPath = NSIndexPath(forRow: row, inSection: 1)
+        let cell = tableView.cellForRowAtIndexPath(targetedCellIndexPath)
+        let targetedDatePicker = sender as! UIDatePicker
+        cell?.detailTextLabel?.text = dateFormatter.stringFromDate(targetedDatePicker.date)
+    }
+    
+    @IBAction func clickCancelButton(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func clickSaveButton(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func doAlertWithData(data: String) {
+        let row: Int = objectArray[1].sectionObjects.indexOf("alertCell")!
+        let targetedCellIndexPath: NSIndexPath = NSIndexPath(forRow: row, inSection: 1)
+        let cell = tableView.cellForRowAtIndexPath(targetedCellIndexPath)
+        cell?.detailTextLabel?.text = data
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "popupAlertSegue" {
+            if let viewController = segue.destinationViewController as? AlertTableViewController {
+                viewController.onDataAvailable = {[weak self]
+                    (data) in
+                    if let weakSelf = self {
+                        weakSelf.doAlertWithData(data)
+                    }
+                }
+            }
+        }
     }
     
 }
