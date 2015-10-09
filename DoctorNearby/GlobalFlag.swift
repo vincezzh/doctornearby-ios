@@ -11,4 +11,5 @@ import Foundation
 struct GlobalFlag {
     static var needRefreshBookmark = false
     static var needRefreshAppointment = false
+    static var needRefreshPill = false
 }

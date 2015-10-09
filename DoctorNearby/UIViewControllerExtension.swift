@@ -27,6 +27,7 @@ extension UIViewController {
     }
     
     func setSearchNavigationBarItem() {
+        self.title = "Search"
         self.addLeftBarButtonWithImage(UIImage(named: "menu-navi")!)
         self.addCustomRightBarButtonWithImage(UIImage(named: "search-navi")!, actionName: "search")
         self.slideMenuController()?.removeLeftGestures()
@@ -35,8 +36,18 @@ extension UIViewController {
     }
     
     func setAppointmentNavigationBarItem() {
+        self.title = "Appointments"
         self.addLeftBarButtonWithImage(UIImage(named: "menu-navi")!)
         self.addCustomRightBarButtonWithImage(UIImage(named: "add-navi")!, actionName: "addNewAppointment")
+        self.slideMenuController()?.removeLeftGestures()
+        self.slideMenuController()?.removeRightGestures()
+        self.slideMenuController()?.addLeftGestures()
+    }
+    
+    func setPillNavigationBarItem() {
+        self.title = "Medicines"
+        self.addLeftBarButtonWithImage(UIImage(named: "menu-navi")!)
+        self.addCustomRightBarButtonWithImage(UIImage(named: "add-navi")!, actionName: "addNewPill")
         self.slideMenuController()?.removeLeftGestures()
         self.slideMenuController()?.removeRightGestures()
         self.slideMenuController()?.addLeftGestures()

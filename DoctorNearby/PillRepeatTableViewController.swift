@@ -1,16 +1,16 @@
 //
-//  AlertTableViewController.swift
+//  PillRepeatTableViewController.swift
 //  DoctorNearby
 //
-//  Created by Vince Zhang on 2015-10-08.
+//  Created by Vince Zhang on 2015-10-09.
 //  Copyright © 2015 AkhalTech. All rights reserved.
 //
 
 import UIKit
 
-class AlertTableViewController: UITableViewController {
+class PillRepeatTableViewController: UITableViewController {
 
-    var names = ["section1": ["None"], "section2": ["5 mins before", "10 mins before", "30 mins before", "1 hour before", "2 hours before", "1 day before", "2 days before", "1 week before"]]
+    var names = ["section1": ["Never"], "section2": ["Every 4 hours", "Every 6 hours", "Every 8 hour", "Every 12 hours", "Every 1 day", "Every 2 days", "Every 1 week"]]
     
     struct Objects {
         var sectionName : String!
@@ -33,7 +33,7 @@ class AlertTableViewController: UITableViewController {
             objectArray.append(Objects(sectionName: key, sectionObjects: value))
         }
     }
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return objectArray.count
     }
@@ -54,7 +54,7 @@ class AlertTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let title = objectArray[indexPath.section].sectionObjects[indexPath.row]
-        let cell: UITableViewCell? = tableView.dequeueReusableCellWithIdentifier("alertCell")! as UITableViewCell
+        let cell: UITableViewCell? = tableView.dequeueReusableCellWithIdentifier("repeatReminderCell")! as UITableViewCell
         cell?.textLabel?.text = title
         
         return cell!
@@ -65,5 +65,5 @@ class AlertTableViewController: UITableViewController {
         navigationController?.popViewControllerAnimated(true)
         self.sendData((cell?.textLabel?.text)!)
     }
-    
+
 }

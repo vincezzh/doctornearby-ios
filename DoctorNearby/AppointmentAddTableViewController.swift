@@ -251,7 +251,7 @@ class AppointmentAddTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "popupAlertSegue" {
-            if let viewController = segue.destinationViewController as? AlertTableViewController {
+            if let viewController = segue.destinationViewController as? AppointmentAlertTableViewController {
                 viewController.onDataAvailable = {[weak self]
                     (data) in
                     if let weakSelf = self {

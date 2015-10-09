@@ -23,6 +23,12 @@
 		6144A59F1BBF6E8600BC7BAB /* BookmarkListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6144A59D1BBF6E8600BC7BAB /* BookmarkListCell.swift */; settings = {ASSET_TAGS = (); }; };
 		6144A5A01BBF6E8600BC7BAB /* BookmarkListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6144A59E1BBF6E8600BC7BAB /* BookmarkListCell.xib */; settings = {ASSET_TAGS = (); }; };
 		614C92071BB422EF00BC95C6 /* ButtonCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614C92061BB422EF00BC95C6 /* ButtonCreater.swift */; settings = {ASSET_TAGS = (); }; };
+		61503A4D1BC83B45001DD864 /* PillListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61503A4C1BC83B45001DD864 /* PillListTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		61503A4F1BC83B61001DD864 /* PillAddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61503A4E1BC83B61001DD864 /* PillAddTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		61503A511BC83B9D001DD864 /* PillRepeatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61503A501BC83B9D001DD864 /* PillRepeatTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		61503A531BC83BE6001DD864 /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61503A521BC83BE6001DD864 /* Pill.swift */; settings = {ASSET_TAGS = (); }; };
+		61503A581BC840CF001DD864 /* PillListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61503A571BC840CF001DD864 /* PillListCell.swift */; settings = {ASSET_TAGS = (); }; };
+		61503A5A1BC8527C001DD864 /* PillNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61503A591BC8527C001DD864 /* PillNameCell.swift */; settings = {ASSET_TAGS = (); }; };
 		61506CF11BC2CEB000DA7E09 /* GlobalFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61506CF01BC2CEB000DA7E09 /* GlobalFlag.swift */; settings = {ASSET_TAGS = (); }; };
 		615109111BB5F66C00315CEA /* KSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6151090D1BB5F66C00315CEA /* KSToken.swift */; settings = {ASSET_TAGS = (); }; };
 		615109121BB5F66C00315CEA /* KSTokenField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6151090E1BB5F66C00315CEA /* KSTokenField.swift */; settings = {ASSET_TAGS = (); }; };
@@ -71,7 +77,7 @@
 		61C965521BC4353F00E56073 /* DoctorSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C965511BC4353F00E56073 /* DoctorSearchTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		61C965541BC4419000E56073 /* LanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C965531BC4419000E56073 /* LanguagesTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		61C965561BC450D700E56073 /* SpecializationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C965551BC450D700E56073 /* SpecializationTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		61D70F0B1BC69705009ECD3A /* AlertTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D70F0A1BC69705009ECD3A /* AlertTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		61D70F0B1BC69705009ECD3A /* AppointmentAlertTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D70F0A1BC69705009ECD3A /* AppointmentAlertTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D59ABB3B27D41706D30240F6 /* Pods_DoctorNearby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D042A87512E18A83E3A6754 /* Pods_DoctorNearby.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -110,6 +116,12 @@
 		6144A59D1BBF6E8600BC7BAB /* BookmarkListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkListCell.swift; sourceTree = "<group>"; };
 		6144A59E1BBF6E8600BC7BAB /* BookmarkListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookmarkListCell.xib; sourceTree = "<group>"; };
 		614C92061BB422EF00BC95C6 /* ButtonCreater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCreater.swift; sourceTree = "<group>"; };
+		61503A4C1BC83B45001DD864 /* PillListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillListTableViewController.swift; sourceTree = "<group>"; };
+		61503A4E1BC83B61001DD864 /* PillAddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillAddTableViewController.swift; sourceTree = "<group>"; };
+		61503A501BC83B9D001DD864 /* PillRepeatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillRepeatTableViewController.swift; sourceTree = "<group>"; };
+		61503A521BC83BE6001DD864 /* Pill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
+		61503A571BC840CF001DD864 /* PillListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillListCell.swift; sourceTree = "<group>"; };
+		61503A591BC8527C001DD864 /* PillNameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillNameCell.swift; sourceTree = "<group>"; };
 		61506CF01BC2CEB000DA7E09 /* GlobalFlag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFlag.swift; sourceTree = "<group>"; };
 		6151090D1BB5F66C00315CEA /* KSToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSToken.swift; sourceTree = "<group>"; };
 		6151090E1BB5F66C00315CEA /* KSTokenField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSTokenField.swift; sourceTree = "<group>"; };
@@ -164,7 +176,7 @@
 		61C965511BC4353F00E56073 /* DoctorSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorSearchTableViewController.swift; sourceTree = "<group>"; };
 		61C965531BC4419000E56073 /* LanguagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguagesTableViewController.swift; sourceTree = "<group>"; };
 		61C965551BC450D700E56073 /* SpecializationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecializationTableViewController.swift; sourceTree = "<group>"; };
-		61D70F0A1BC69705009ECD3A /* AlertTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertTableViewController.swift; sourceTree = "<group>"; };
+		61D70F0A1BC69705009ECD3A /* AppointmentAlertTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentAlertTableViewController.swift; sourceTree = "<group>"; };
 		7D042A87512E18A83E3A6754 /* Pods_DoctorNearby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoctorNearby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A25E8EAD04601C31F7716677 /* Pods-DoctorNearby.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoctorNearby.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoctorNearby/Pods-DoctorNearby.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,8 +241,9 @@
 		613910401BB9E0FA00A03493 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				613910411BB9E11600A03493 /* Doctor.swift */,
 				61ABFA511BC5ACBA00E4CAD5 /* Appointment.swift */,
+				613910411BB9E11600A03493 /* Doctor.swift */,
+				61503A521BC83BE6001DD864 /* Pill.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -238,24 +251,27 @@
 		613B9F631BB4690500DF8DD9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				61D70F0A1BC69705009ECD3A /* AlertTableViewController.swift */,
+				61D70F0A1BC69705009ECD3A /* AppointmentAlertTableViewController.swift */,
 				61ABFA4F1BC5AC3700E4CAD5 /* AppointmentAddTableViewController.swift */,
 				61ABFA4D1BC5980E00E4CAD5 /* AppointmentListTableViewController.swift */,
+				613B9F661BB469C100DF8DD9 /* BookmarkViewController.swift */,
 				61ABFA431BC4707B00E4CAD5 /* CitiesTableViewController.swift */,
 				61C965511BC4353F00E56073 /* DoctorSearchTableViewController.swift */,
+				615109181BB6241300315CEA /* GenderPopupViewController.swift */,
 				61ABFA491BC49D3900E4CAD5 /* GenderTableViewController.swift */,
 				61ABFA451BC4733A00E4CAD5 /* HospitalsTableViewController.swift */,
 				61C965531BC4419000E56073 /* LanguagesTableViewController.swift */,
 				61AEBB941BB320BC0034EFDA /* MainViewController.swift */,
+				616D67E21BBDD360007937B3 /* MapViewController.swift */,
 				613B9F641BB469C100DF8DD9 /* MenuViewController.swift */,
+				613B9F671BB469C100DF8DD9 /* NonMenuController.swift */,
+				61503A4E1BC83B61001DD864 /* PillAddTableViewController.swift */,
+				61503A4C1BC83B45001DD864 /* PillListTableViewController.swift */,
+				61503A501BC83B9D001DD864 /* PillRepeatTableViewController.swift */,
 				613B9F651BB469C100DF8DD9 /* SearchViewController.swift */,
 				61C965551BC450D700E56073 /* SpecializationTableViewController.swift */,
-				615109181BB6241300315CEA /* GenderPopupViewController.swift */,
-				613B9F661BB469C100DF8DD9 /* BookmarkViewController.swift */,
-				613B9F671BB469C100DF8DD9 /* NonMenuController.swift */,
 				61A473FC1BB8E45F007D59F7 /* SearchListViewController.swift */,
 				61A473FD1BB8E45F007D59F7 /* SearchDetailViewController.swift */,
-				616D67E21BBDD360007937B3 /* MapViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -294,6 +310,7 @@
 			children = (
 				61B003661BC6EA7200D5AF18 /* AppointmentCells */,
 				6144A59A1BBF6DFF00BC7BAB /* BookmarkListCell */,
+				61503A541BC84076001DD864 /* PillCell */,
 				61A474041BB8E663007D59F7 /* SearchListCell */,
 				61A474091BB8E68E007D59F7 /* SearchDetailCell */,
 				613B9F711BB46D7F00DF8DD9 /* BaseTableViewCell.swift */,
@@ -316,6 +333,15 @@
 				614C92061BB422EF00BC95C6 /* ButtonCreater.swift */,
 			);
 			name = Creaters;
+			sourceTree = "<group>";
+		};
+		61503A541BC84076001DD864 /* PillCell */ = {
+			isa = PBXGroup;
+			children = (
+				61503A571BC840CF001DD864 /* PillListCell.swift */,
+				61503A591BC8527C001DD864 /* PillNameCell.swift */,
+			);
+			name = PillCell;
 			sourceTree = "<group>";
 		};
 		615109151BB5F67500315CEA /* KSTokenView */ = {
@@ -660,15 +686,20 @@
 				61ABFA441BC4707B00E4CAD5 /* CitiesTableViewController.swift in Sources */,
 				6144A59F1BBF6E8600BC7BAB /* BookmarkListCell.swift in Sources */,
 				61A6A7A41BB97E59006B8FCC /* SAInboxDetailViewController.swift in Sources */,
+				61503A531BC83BE6001DD864 /* Pill.swift in Sources */,
 				61A474021BB8E65A007D59F7 /* ListViewCell.swift in Sources */,
 				615109191BB6241300315CEA /* GenderPopupViewController.swift in Sources */,
 				61506CF11BC2CEB000DA7E09 /* GlobalFlag.swift in Sources */,
 				61B03F5C1BB4D9E40095E729 /* BWWalkthroughViewController.swift in Sources */,
+				61503A4D1BC83B45001DD864 /* PillListTableViewController.swift in Sources */,
 				613B9F6D1BB46AAD00DF8DD9 /* UIViewControllerExtension.swift in Sources */,
 				61ABFA481BC49C0100E4CAD5 /* Gender.swift in Sources */,
+				61503A581BC840CF001DD864 /* PillListCell.swift in Sources */,
 				61B0036C1BC7172C00D5AF18 /* AppointmentListCell.swift in Sources */,
 				61A473FE1BB8E45F007D59F7 /* SearchListViewController.swift in Sources */,
 				61A6A7A61BB97E59006B8FCC /* SAInboxViewController.swift in Sources */,
+				61503A4F1BC83B61001DD864 /* PillAddTableViewController.swift in Sources */,
+				61503A5A1BC8527C001DD864 /* PillNameCell.swift in Sources */,
 				61ABFA521BC5ACBA00E4CAD5 /* Appointment.swift in Sources */,
 				613B9F751BB46DEC00DF8DD9 /* UITableViewExtension.swift in Sources */,
 				61A473FF1BB8E45F007D59F7 /* SearchDetailViewController.swift in Sources */,
@@ -687,7 +718,7 @@
 				615109171BB6225300315CEA /* Language.swift in Sources */,
 				61ABFA4E1BC5980E00E4CAD5 /* AppointmentListTableViewController.swift in Sources */,
 				613051381BB5F00E00A6FC7D /* Hospital.swift in Sources */,
-				61D70F0B1BC69705009ECD3A /* AlertTableViewController.swift in Sources */,
+				61D70F0B1BC69705009ECD3A /* AppointmentAlertTableViewController.swift in Sources */,
 				615109111BB5F66C00315CEA /* KSToken.swift in Sources */,
 				61ABFA4A1BC49D3900E4CAD5 /* GenderTableViewController.swift in Sources */,
 				61C9651A1BC410E200E56073 /* StringUtil.swift in Sources */,
@@ -701,6 +732,7 @@
 				613B9F681BB469C100DF8DD9 /* MenuViewController.swift in Sources */,
 				61A6A7A51BB97E59006B8FCC /* SAInboxTransitioningContainerView.swift in Sources */,
 				61ABFA461BC4733A00E4CAD5 /* HospitalsTableViewController.swift in Sources */,
+				61503A511BC83B9D001DD864 /* PillRepeatTableViewController.swift in Sources */,
 				61AEBB931BB320BC0034EFDA /* AppDelegate.swift in Sources */,
 				613B9F771BB46FDC00DF8DD9 /* StringExtension.swift in Sources */,
 				61AEBB9B1BB320BC0034EFDA /* DoctorNearby.xcdatamodeld in Sources */,
