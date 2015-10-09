@@ -191,7 +191,9 @@ class BookmarkViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        searchActive = true;
+        if searchBar.text?.length > 0 {
+            searchActive = true;
+        }
     }
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {

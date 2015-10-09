@@ -24,7 +24,7 @@ class MapViewController: UIViewController {
     var locationManager = CLLocationManager()
     var traveledDistance: Int = 0
     
-    var radius: Double = 1000
+    var radius: Double = 2000
     var placeTypes: [String] = ["cafe", "pharmacy"]
     var search: AppleSearch = AppleSearch()
     var selectedPlace: CustomPointAnnotation?
