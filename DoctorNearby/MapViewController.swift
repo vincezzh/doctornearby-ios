@@ -20,8 +20,14 @@ class MapViewController: UIViewController {
     let bc: ButtonCreater = ButtonCreater()
     var doctor = Doctor()
     var doctorOffice: MKMapItem?
+    var doctorOfficeAnnotation: MKPointAnnotation?
     var locationManager = CLLocationManager()
     var traveledDistance: Int = 0
+    
+    var radius: Double = 1000
+    var placeTypes: [String] = ["cafe", "pharmacy"]
+    var search: AppleSearch = AppleSearch()
+    var selectedPlace: CustomPointAnnotation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +56,7 @@ class MapViewController: UIViewController {
                         annotation.coordinate = ps[0].location!.coordinate
                         annotation.title = self.doctor.address
                         annotation.subtitle = self.doctor.contact
-                        self.mapView.addAnnotation(annotation)
+                        self.search.refreshMapInformation(self.mapView, location: ps[0].location!, placeTypes: self.placeTypes, radius: self.radius, doctorOfficeAnnotation: annotation)
                         
                         let geocodedPlacemark: CLPlacemark = ps[0]
                         let placemark: MKPlacemark = MKPlacemark(coordinate: geocodedPlacemark.location!.coordinate, addressDictionary: geocodedPlacemark.addressDictionary as? [String : AnyObject])
@@ -160,6 +166,7 @@ extension MapViewController: LiquidFloatingActionButtonDelegate {
 }
 
 extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
+    
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
         var v : MKPolylineRenderer! = nil
         if let overlay = overlay as? MKPolyline {
@@ -181,5 +188,29 @@ extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
             }
         }
         
+    }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        if !(annotation is CustomPointAnnotation) {
+            return nil
+        }
+        
+        let reuseId = "pin"
+        var anView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+        if anView == nil {
+            anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            anView!.canShowCallout = true
+        }else {
+            anView!.annotation = annotation
+        }
+        
+        let cpa = annotation as! CustomPointAnnotation
+        anView!.image = cpa.iconImage
+        
+        return anView
+    }
+    
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        self.selectedPlace = view.annotation as? CustomPointAnnotation
     }
 }

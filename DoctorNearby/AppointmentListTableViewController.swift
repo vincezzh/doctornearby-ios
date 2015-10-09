@@ -45,6 +45,10 @@ class AppointmentListTableViewController: UITableViewController, UISearchBarDele
     func refresh() {
         reloadData()
     }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80
+    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchActive {
@@ -61,10 +65,14 @@ class AppointmentListTableViewController: UITableViewController, UISearchBarDele
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("appointmentCell")! as UITableViewCell
-        cell.textLabel?.text = appointments[indexPath.row].title
+        let cell = tableView.dequeueReusableCellWithIdentifier("appointmentCell")! as! AppointmentListCell
+        cell.titleLabel.text = appointments[indexPath.row].title
+        cell.locationLabel.text = appointments[indexPath.row].location
+        cell.dateLabel.text = appointments[indexPath.row].startsTime + " to " + appointments[indexPath.row].endsTime
         if searchActive {
-            cell.textLabel?.text = filteredAppointments[indexPath.row].title
+            cell.titleLabel.text = filteredAppointments[indexPath.row].title
+            cell.locationLabel.text = filteredAppointments[indexPath.row].location
+            cell.dateLabel.text = filteredAppointments[indexPath.row].startsTime + " to " + appointments[indexPath.row].endsTime
         }
         return cell
     }

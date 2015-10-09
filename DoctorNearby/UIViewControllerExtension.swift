@@ -44,7 +44,7 @@ extension UIViewController {
     
     func addCustomRightBarButtonWithImage(buttonImage: UIImage, actionName: String) {
         let rightButton: UIBarButtonItem = UIBarButtonItem(image: buttonImage, style: UIBarButtonItemStyle.Plain, target: self, action: Selector(actionName))
-        rightButton.tintColor = UIColor(red: 68 / 255.0, green: 169 / 255.0, blue: 138 / 255.0, alpha: 1.0)
+        rightButton.tintColor = GlobalConstant.defaultColor
         navigationItem.rightBarButtonItem = rightButton;
     }
     

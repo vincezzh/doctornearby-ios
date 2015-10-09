@@ -496,13 +496,56 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="appointmentCell" id="I3c-7K-xDl">
-                                <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="appointmentCell" rowHeight="80" id="I3c-7K-xDl" customClass="AppointmentListCell" customModule="DoctorNearby" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I3c-7K-xDl" id="SPF-M2-RyD">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aug 11, 2015 - Sep 22, 2016" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZV-xe-9k7">
+                                            <rect key="frame" x="8" y="56" width="584" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Aes-5G-8z7"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="111 Markham gg Rd, Markham, ON, L1R 1K1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2k-Nh-dH7">
+                                            <rect key="frame" x="8" y="37" width="584" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="87z-5X-vgo"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World gg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyT-cY-x9i">
+                                            <rect key="frame" x="8" y="8" width="584" height="27"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="a2k-Nh-dH7" firstAttribute="leading" secondItem="SPF-M2-RyD" secondAttribute="leading" constant="8" id="0AG-dS-etF"/>
+                                        <constraint firstAttribute="trailing" secondItem="qZV-xe-9k7" secondAttribute="trailing" constant="8" id="3WX-NS-Ofx"/>
+                                        <constraint firstAttribute="bottom" secondItem="qZV-xe-9k7" secondAttribute="bottom" constant="2" id="4Tu-l7-DkK"/>
+                                        <constraint firstItem="qZV-xe-9k7" firstAttribute="leading" secondItem="SPF-M2-RyD" secondAttribute="leading" constant="8" id="EX0-dp-BvQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="a2k-Nh-dH7" secondAttribute="trailing" constant="8" id="brR-4f-cYW"/>
+                                        <constraint firstAttribute="trailing" secondItem="LyT-cY-x9i" secondAttribute="trailing" constant="8" id="fjb-cg-gO7"/>
+                                        <constraint firstItem="qZV-xe-9k7" firstAttribute="top" secondItem="a2k-Nh-dH7" secondAttribute="bottom" constant="-1.5" id="iJy-y2-26r"/>
+                                        <constraint firstItem="LyT-cY-x9i" firstAttribute="top" secondItem="SPF-M2-RyD" secondAttribute="top" constant="8" id="m16-DJ-q1R"/>
+                                        <constraint firstItem="LyT-cY-x9i" firstAttribute="leading" secondItem="SPF-M2-RyD" secondAttribute="leading" constant="8" id="nDE-OK-SQ1"/>
+                                        <constraint firstItem="a2k-Nh-dH7" firstAttribute="top" secondItem="LyT-cY-x9i" secondAttribute="bottom" constant="2" id="puB-gf-i3Q"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="qZV-xe-9k7" id="thX-KA-IDU"/>
+                                    <outlet property="locationLabel" destination="a2k-Nh-dH7" id="Lim-0A-DRS"/>
+                                    <outlet property="titleLabel" destination="LyT-cY-x9i" id="JsZ-Hz-peq"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
