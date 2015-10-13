@@ -96,6 +96,7 @@ class PillListTableViewController: UITableViewController {
                     }
                 }
                 
+                GlobalFlag.needRefreshPill = false
                 activityIndicator.hideActivityIndicator(self.view)
         }
     }

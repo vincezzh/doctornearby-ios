@@ -137,7 +137,6 @@ class AppointmentAddTableViewController: UITableViewController {
     
     @IBAction func clickSaveButton(sender: AnyObject) {
         getAuthrizationAndInsertEventInCalendar()
-        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func getAuthrizationAndInsertEventInCalendar() {
@@ -164,31 +163,42 @@ class AppointmentAddTableViewController: UITableViewController {
     func insertEvent(store: EKEventStore) {
         let calendars = store.calendarsForEntityType(EKEntityType.Event)
         
+        let alertController = UIAlertController(title: "Select Calendar", message: "Which calendar do you prefer to add?", preferredStyle: .Alert)
         for calendar in calendars {
-            if calendar.title == GlobalConstant.defaultCalendar {
-                
-                let event = EKEvent(eventStore: store)
-                event.calendar = calendar
-                event.title = getLabelText("titleCell")
-                event.location = getLabelText("locationCell")
-                event.startDate = getDateFromString("startsCell")
-                event.endDate = getDateFromString("endsCell")
-                event.notes = GlobalConstant.brandFlag
-
-                let seconds = caculateAlarmInSecond()
-                if(seconds != -1) {
-                    let alarm:EKAlarm = EKAlarm(relativeOffset: NSTimeInterval(seconds))
-                    event.alarms = [alarm]
-                }
-                
-                do {
-                    try store.saveEvent(event, span: EKSpan.ThisEvent)
-                    GlobalFlag.needRefreshAppointment = true
-                }catch {
-                    print("Event save failed")
-                }
-            }
+            let button = UIAlertAction(title: calendar.title, style: .Default, handler: { (action: UIAlertAction) -> Void in
+                self.insertToCalendar(store, calendar: calendar)
+            })
+            alertController.addAction(button)
         }
+        let buttonCancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action: UIAlertAction) -> Void in
+            alertController.dismissViewControllerAnimated(true, completion: nil)
+        })
+        alertController.addAction(buttonCancel)
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func insertToCalendar(store: EKEventStore, calendar: EKCalendar) {
+        let event = EKEvent(eventStore: store)
+        event.calendar = calendar
+        event.title = getLabelText("titleCell")
+        event.location = getLabelText("locationCell")
+        event.startDate = getDateFromString("startsCell")
+        event.endDate = getDateFromString("endsCell")
+        event.notes = GlobalConstant.brandFlag
+        
+        let seconds = caculateAlarmInSecond()
+        if(seconds != -1) {
+            let alarm:EKAlarm = EKAlarm(relativeOffset: NSTimeInterval(seconds))
+            event.alarms = [alarm]
+        }
+        
+        do {
+            try store.saveEvent(event, span: EKSpan.ThisEvent)
+            GlobalFlag.needRefreshAppointment = true
+        }catch {
+            print("Event save failed")
+        }
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func caculateAlarmInSecond() -> Int {

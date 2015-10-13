@@ -106,30 +106,28 @@ class AppointmentListTableViewController: UITableViewController, UISearchBarDele
         let calendars = store.calendarsForEntityType(EKEntityType.Event)
         
         for calendar in calendars {
-            if calendar.title == GlobalConstant.defaultCalendar {
-                let endDate = NSDate(timeIntervalSinceNow: NSTimeInterval(GlobalConstant.defaultCalendarPeriod));
-                let predicate = store.predicateForEventsWithStartDate(NSDate(), endDate: endDate, calendars: [calendar])
-                let events: [EKEvent] = store.eventsMatchingPredicate(predicate)
-                if events.count > 0 {
-                    appointments.removeAll()
-                    
-                    for event in events {
-                        if let notes = event.notes {
-                            if notes.contains(GlobalConstant.brandFlag) {
-                                let appointment = Appointment()
-                                appointment.title = event.title
-                                if let location = event.location {
-                                    appointment.location = location
-                                }
-                                appointment.startsTime = dateFormatter.stringFromDate(event.startDate)
-                                appointment.endsTime = dateFormatter.stringFromDate(event.endDate)
-                                appointments.append(appointment)
+            let endDate = NSDate(timeIntervalSinceNow: NSTimeInterval(GlobalConstant.defaultCalendarPeriod));
+            let predicate = store.predicateForEventsWithStartDate(NSDate(), endDate: endDate, calendars: [calendar])
+            let events: [EKEvent] = store.eventsMatchingPredicate(predicate)
+            if events.count > 0 {
+                appointments.removeAll()
+                
+                for event in events {
+                    if let notes = event.notes {
+                        if notes.contains(GlobalConstant.brandFlag) {
+                            let appointment = Appointment()
+                            appointment.title = event.title
+                            if let location = event.location {
+                                appointment.location = location
                             }
+                            appointment.startsTime = dateFormatter.stringFromDate(event.startDate)
+                            appointment.endsTime = dateFormatter.stringFromDate(event.endDate)
+                            appointments.append(appointment)
                         }
                     }
-                    self.tableView.reloadData()
-                    GlobalFlag.needRefreshAppointment = false
                 }
+                self.tableView.reloadData()
+                GlobalFlag.needRefreshAppointment = false
             }
         }
         self.refresher.endRefreshing()

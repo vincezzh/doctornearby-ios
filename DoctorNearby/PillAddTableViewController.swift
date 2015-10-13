@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class PillAddTableViewController: UITableViewController {
 
@@ -120,7 +122,68 @@ class PillAddTableViewController: UITableViewController {
     }
     
     @IBAction func clickSaveButton(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+        
+        let medicineParameters: [String: AnyObject] = [
+            "userId": GlobalConstant.userId(),
+            "name": getLabelText("medicineCell"),
+            "periodMinutes": caculateRepeatTimeInMinutes(),
+            "startTime": getDateFromString("eatTimeCell")
+        ]
+
+        let parameters: [String: AnyObject] = ["medicine": medicineParameters]
+        
+        Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/user/medicine/add", parameters: parameters, encoding: .JSON)
+            .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
+                
+                switch result {
+                case .Success(_):
+                    GlobalFlag.needRefreshPill = true
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                case .Failure(let data, let error):
+                    print("Request failed with error: \(error)")
+                    if let data = data {
+                        print("Response data: \(NSString(data: data, encoding: NSUTF8StringEncoding)!)")
+                    }
+                }
+        }
+    }
+    
+    func getDateFromString(cellID: String) -> String {
+        let row: Int = objectArray[0].sectionObjects.indexOf(cellID)!
+        let targetedCellIndexPath: NSIndexPath = NSIndexPath(forRow: row, inSection: 0)
+        let cell = tableView.cellForRowAtIndexPath(targetedCellIndexPath)
+        let time = Int64(dateFormatter.dateFromString((cell?.detailTextLabel?.text)!)!.timeIntervalSince1970 * 1000)
+        return "\(time)"
+    }
+    
+    func caculateRepeatTimeInMinutes() -> Int {
+        var minutes = 0
+        let row: Int = objectArray[0].sectionObjects.indexOf("repeatCell")!
+        let targetedCellIndexPath: NSIndexPath = NSIndexPath(forRow: row, inSection: 0)
+        let cell = tableView.cellForRowAtIndexPath(targetedCellIndexPath)
+        let labelText = cell?.detailTextLabel?.text
+        
+        ["Every 4 hours", "Every 6 hours", "Every 8 hour", "Every 12 hours", "Every 1 day", "Every 2 days", "Every 1 week"]
+        
+        if labelText == "Every 4 hours" {
+            minutes = 60 * 4
+        }else if labelText == "Every 6 hours" {
+            minutes = 60 * 6
+        }else if labelText == "Every 8 hours" {
+            minutes = 60 * 8
+        }else if labelText == "Every 12 hours" {
+            minutes = 60 * 12
+        }else if labelText == "Every 1 day" {
+            minutes = 60 * 24 * 1
+        }else if labelText == "Every 2 day" {
+            minutes = 60 * 24 * 2
+        }else if labelText == "Every 1 week" {
+            minutes = 60 * 24 * 7
+        }else {
+            minutes = 0
+        }
+        
+        return minutes
     }
     
     func getLabelText(cellID: String) -> String {
