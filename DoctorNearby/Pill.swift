@@ -9,6 +9,7 @@
 import Foundation
 
 class Pill {
+    var id = ""
     var medicine = ""
-    var secondsLeft: NSTimeInterval = 0
+    var leftMinutes: NSTimeInterval = 0
 }

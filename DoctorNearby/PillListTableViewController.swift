@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class PillListTableViewController: UITableViewController {
 
@@ -34,6 +36,7 @@ class PillListTableViewController: UITableViewController {
     
     func refresh() {
         reloadData()
+        self.refresher.endRefreshing()
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,20 +60,44 @@ class PillListTableViewController: UITableViewController {
     }
     
     func reloadData() {
+        
         pills.removeAll()
         
-        let pill1 = Pill()
-        pill1.medicine = "Vitamin A"
-        pill1.secondsLeft = 15
-        pills.append(pill1)
+        let activityIndicator = ActivityIndicator()
+        activityIndicator.showActivityIndicator(self.view)
         
-        let pill2 = Pill()
-        pill2.medicine = "Vitamin B"
-        pill2.secondsLeft = 10245
-        pills.append(pill2)
+        let medicineParams: [String : AnyObject] = ["userId": GlobalConstant.userId()]
+        let parameters: [String : AnyObject] = ["medicine": medicineParams]
         
-        self.tableView.reloadData()
-        self.refresher.endRefreshing()
+        Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/user/medicine/list", parameters: parameters, encoding: .JSON)
+            .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
+                
+                switch result {
+                case .Success(let data):
+                    
+                    let json = JSON(data: data)
+                    if json["data"].count > 0 {
+                        for index in 0...json["data"].count - 1 {
+                            let pill: Pill = Pill()
+                            pill.id = json["data"][index]["_id"]["$oid"].stringValue
+                            pill.medicine = json["data"][index]["name"].stringValue
+                            pill.leftMinutes = NSTimeInterval(json["data"][index]["leftMinutes"].intValue)
+                            
+                            self.pills.append(pill)
+                        }
+                    }
+                    
+                    self.tableView.reloadData()
+                    
+                case .Failure(let data, let error):
+                    print("Request failed with error: \(error)")
+                    if let data = data {
+                        print("Response data: \(NSString(data: data, encoding: NSUTF8StringEncoding)!)")
+                    }
+                }
+                
+                activityIndicator.hideActivityIndicator(self.view)
+        }
     }
 
 }

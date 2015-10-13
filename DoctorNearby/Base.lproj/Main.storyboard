@@ -1776,11 +1776,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="New Medicine" id="TXC-Ug-E8G">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="5C8-zA-aqQ">
+                            <color key="tintColor" red="0.2666666667" green="0.66274509800000003" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="clickCancelButton:" destination="7im-k4-oKs" id="IRS-HH-ws9"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="5QQ-Th-iR3">
+                            <color key="tintColor" red="0.2666666667" green="0.66274509800000003" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="clickSaveButton:" destination="7im-k4-oKs" id="faV-Je-59g"/>
                             </connections>

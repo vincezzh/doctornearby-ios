@@ -25,8 +25,8 @@ class PillListCell: UITableViewCell {
         self.textLabel?.text = pill.medicine
         
         if !timer.valid {
-            timeCount = pill.secondsLeft
-            self.detailTextLabel?.text = timeString(pill.secondsLeft)
+            timeCount = pill.leftMinutes * 60
+            self.detailTextLabel?.text = timeString(pill.leftMinutes * 60)
             timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval,
                 target: self,
                 selector: "timerDidEnd:",
