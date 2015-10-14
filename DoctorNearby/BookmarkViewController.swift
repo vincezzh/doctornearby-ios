@@ -22,6 +22,7 @@ class BookmarkViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
         
         refresher = UIRefreshControl()
         refresher.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
@@ -43,6 +44,11 @@ class BookmarkViewController: UIViewController, UITableViewDelegate, UITableView
         if GlobalFlag.needRefreshBookmark {
             reloadData()
         }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.view.endEditing(true)
     }
     
     func refresh() {

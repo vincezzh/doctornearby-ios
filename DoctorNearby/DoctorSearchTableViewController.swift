@@ -25,13 +25,6 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
         self.nameTextField.delegate = self
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
     }
-    
-    func handleTap(sender: UITapGestureRecognizer) {
-        if sender.state == .Ended {
-            self.view.endEditing(true)
-        }
-        sender.cancelsTouchesInView = false
-    }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 4

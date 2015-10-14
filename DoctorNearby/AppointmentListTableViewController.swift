@@ -23,6 +23,8 @@ class AppointmentListTableViewController: UITableViewController, UISearchBarDele
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setAppointmentNavigationBarItem()
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
+        
         dateFormatter.dateFormat = "MMM dd, yyyy hh:mm a"
         
         refresher = UIRefreshControl()

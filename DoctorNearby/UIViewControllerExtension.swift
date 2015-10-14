@@ -59,4 +59,18 @@ extension UIViewController {
         navigationItem.rightBarButtonItem = rightButton;
     }
     
+    func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .Ended {
+            self.view.endEditing(true)
+        }
+        sender.cancelsTouchesInView = false
+    }
+    
+    func showAlertPopup(title: String, message: String) {
+            let actionController: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+            let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+            actionController.addAction(okAction)
+            self.presentViewController(actionController, animated: true, completion: nil)
+    }
 }
+    

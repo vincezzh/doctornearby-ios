@@ -25,20 +25,14 @@ class AppointmentAddTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.tableFooterView = UIView(frame: CGRectZero)
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
+        
+        self.tableView.tableFooterView = UIView(frame: CGRectZero)
         dateFormatter.dateFormat = "MMM dd, yyyy hh:mm a"
         
         for (key, value) in names {
             objectArray.append(Objects(sectionName: key, sectionObjects: value))
         }
-    }
-    
-    func handleTap(sender: UITapGestureRecognizer) {
-        if sender.state == .Ended {
-            self.view.endEditing(true)
-        }
-        sender.cancelsTouchesInView = false
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -107,11 +101,12 @@ class AppointmentAddTableViewController: UITableViewController {
         if hasDatePicker {
             objectArray[indexPath.section].sectionObjects.removeAtIndex(datePickerIndex)
             tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Fade)
+            tableView.deselectRowAtIndexPath(indexPath, animated:true)
         }else {
             objectArray[indexPath.section].sectionObjects.insert(cellID, atIndex: datePickerIndex)
             tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Fade)
+            tableView.cellForRowAtIndexPath(indexPath)?.contentView.backgroundColor = GlobalConstant.cellSelectedColor
         }
-        tableView.deselectRowAtIndexPath(indexPath, animated:true)
         tableView.endUpdates()
     }
     
@@ -193,12 +188,16 @@ class AppointmentAddTableViewController: UITableViewController {
         }
         
         do {
-            try store.saveEvent(event, span: EKSpan.ThisEvent)
-            GlobalFlag.needRefreshAppointment = true
+            if event.title.trim() == "" {
+                self.showAlertPopup("Title is required", message: "Please input title in the field.")
+            }else {
+                try store.saveEvent(event, span: EKSpan.ThisEvent)
+                GlobalFlag.needRefreshAppointment = true
+                dismissViewControllerAnimated(true, completion: nil)
+            }
         }catch {
             print("Event save failed")
         }
-        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func caculateAlarmInSecond() -> Int {

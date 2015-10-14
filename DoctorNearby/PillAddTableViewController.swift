@@ -25,20 +25,14 @@ class PillAddTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.tableFooterView = UIView(frame: CGRectZero)
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
+        
+        self.tableView.tableFooterView = UIView(frame: CGRectZero)
         dateFormatter.dateFormat = "MMM dd, yyyy hh:mm a"
         
         for (key, value) in names {
             objectArray.append(Objects(sectionName: key, sectionObjects: value))
         }
-    }
-    
-    func handleTap(sender: UITapGestureRecognizer) {
-        if sender.state == .Ended {
-            self.view.endEditing(true)
-        }
-        sender.cancelsTouchesInView = false
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -101,11 +95,12 @@ class PillAddTableViewController: UITableViewController {
         if hasDatePicker {
             objectArray[indexPath.section].sectionObjects.removeAtIndex(datePickerIndex)
             tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Fade)
+            tableView.deselectRowAtIndexPath(indexPath, animated:true)
         }else {
             objectArray[indexPath.section].sectionObjects.insert(cellID, atIndex: datePickerIndex)
             tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Fade)
+            tableView.cellForRowAtIndexPath(indexPath)?.contentView.backgroundColor = GlobalConstant.cellSelectedColor
         }
-        tableView.deselectRowAtIndexPath(indexPath, animated:true)
         tableView.endUpdates()
     }
     
@@ -130,21 +125,25 @@ class PillAddTableViewController: UITableViewController {
             "startTime": getDateFromString("eatTimeCell")
         ]
 
-        let parameters: [String: AnyObject] = ["medicine": medicineParameters]
-        
-        Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/user/medicine/add", parameters: parameters, encoding: .JSON)
-            .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
-                
-                switch result {
-                case .Success(_):
-                    GlobalFlag.needRefreshPill = true
-                    self.dismissViewControllerAnimated(true, completion: nil)
-                case .Failure(let data, let error):
-                    print("Request failed with error: \(error)")
-                    if let data = data {
-                        print("Response data: \(NSString(data: data, encoding: NSUTF8StringEncoding)!)")
+        if (medicineParameters["name"] as! String).trim() == "" {
+            self.showAlertPopup("Name is required", message: "Please input name in the field.")
+        }else {
+            let parameters: [String: AnyObject] = ["medicine": medicineParameters]
+            
+            Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/user/medicine/add", parameters: parameters, encoding: .JSON)
+                .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
+                    
+                    switch result {
+                    case .Success(_):
+                        GlobalFlag.needRefreshPill = true
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    case .Failure(let data, let error):
+                        print("Request failed with error: \(error)")
+                        if let data = data {
+                            print("Response data: \(NSString(data: data, encoding: NSUTF8StringEncoding)!)")
+                        }
                     }
-                }
+            }
         }
     }
     
