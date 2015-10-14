@@ -12,7 +12,6 @@
 		6130513A1BB5F07F00A6FC7D /* Specialist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613051391BB5F07F00A6FC7D /* Specialist.swift */; settings = {ASSET_TAGS = (); }; };
 		613910421BB9E11600A03493 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613910411BB9E11600A03493 /* Doctor.swift */; settings = {ASSET_TAGS = (); }; };
 		613B9F681BB469C100DF8DD9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F641BB469C100DF8DD9 /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		613B9F691BB469C100DF8DD9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F651BB469C100DF8DD9 /* SearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		613B9F6A1BB469C100DF8DD9 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F661BB469C100DF8DD9 /* BookmarkViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		613B9F6B1BB469C100DF8DD9 /* NonMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F671BB469C100DF8DD9 /* NonMenuController.swift */; settings = {ASSET_TAGS = (); }; };
 		613B9F6D1BB46AAD00DF8DD9 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613B9F6C1BB46AAD00DF8DD9 /* UIViewControllerExtension.swift */; settings = {ASSET_TAGS = (); }; };
@@ -30,10 +29,6 @@
 		61503A581BC840CF001DD864 /* PillListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61503A571BC840CF001DD864 /* PillListCell.swift */; settings = {ASSET_TAGS = (); }; };
 		61503A5A1BC8527C001DD864 /* PillNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61503A591BC8527C001DD864 /* PillNameCell.swift */; settings = {ASSET_TAGS = (); }; };
 		61506CF11BC2CEB000DA7E09 /* GlobalFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61506CF01BC2CEB000DA7E09 /* GlobalFlag.swift */; settings = {ASSET_TAGS = (); }; };
-		615109111BB5F66C00315CEA /* KSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6151090D1BB5F66C00315CEA /* KSToken.swift */; settings = {ASSET_TAGS = (); }; };
-		615109121BB5F66C00315CEA /* KSTokenField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6151090E1BB5F66C00315CEA /* KSTokenField.swift */; settings = {ASSET_TAGS = (); }; };
-		615109131BB5F66C00315CEA /* KSTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6151090F1BB5F66C00315CEA /* KSTokenView.swift */; settings = {ASSET_TAGS = (); }; };
-		615109141BB5F66C00315CEA /* KSUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615109101BB5F66C00315CEA /* KSUtils.swift */; settings = {ASSET_TAGS = (); }; };
 		615109171BB6225300315CEA /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615109161BB6225300315CEA /* Language.swift */; settings = {ASSET_TAGS = (); }; };
 		615109191BB6241300315CEA /* GenderPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615109181BB6241300315CEA /* GenderPopupViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		616D67E31BBDD360007937B3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616D67E21BBDD360007937B3 /* MapViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -105,7 +100,6 @@
 		613051391BB5F07F00A6FC7D /* Specialist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specialist.swift; sourceTree = "<group>"; };
 		613910411BB9E11600A03493 /* Doctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		613B9F641BB469C100DF8DD9 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		613B9F651BB469C100DF8DD9 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		613B9F661BB469C100DF8DD9 /* BookmarkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		613B9F671BB469C100DF8DD9 /* NonMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonMenuController.swift; sourceTree = "<group>"; };
 		613B9F6C1BB46AAD00DF8DD9 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -123,10 +117,6 @@
 		61503A571BC840CF001DD864 /* PillListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillListCell.swift; sourceTree = "<group>"; };
 		61503A591BC8527C001DD864 /* PillNameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillNameCell.swift; sourceTree = "<group>"; };
 		61506CF01BC2CEB000DA7E09 /* GlobalFlag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFlag.swift; sourceTree = "<group>"; };
-		6151090D1BB5F66C00315CEA /* KSToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSToken.swift; sourceTree = "<group>"; };
-		6151090E1BB5F66C00315CEA /* KSTokenField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSTokenField.swift; sourceTree = "<group>"; };
-		6151090F1BB5F66C00315CEA /* KSTokenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSTokenView.swift; sourceTree = "<group>"; };
-		615109101BB5F66C00315CEA /* KSUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSUtils.swift; sourceTree = "<group>"; };
 		615109161BB6225300315CEA /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		615109181BB6241300315CEA /* GenderPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderPopupViewController.swift; sourceTree = "<group>"; };
 		616D67E21BBDD360007937B3 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -268,7 +258,6 @@
 				61503A4E1BC83B61001DD864 /* PillAddTableViewController.swift */,
 				61503A4C1BC83B45001DD864 /* PillListTableViewController.swift */,
 				61503A501BC83B9D001DD864 /* PillRepeatTableViewController.swift */,
-				613B9F651BB469C100DF8DD9 /* SearchViewController.swift */,
 				61C965551BC450D700E56073 /* SpecializationTableViewController.swift */,
 				61A473FC1BB8E45F007D59F7 /* SearchListViewController.swift */,
 				61A473FD1BB8E45F007D59F7 /* SearchDetailViewController.swift */,
@@ -342,17 +331,6 @@
 				61503A591BC8527C001DD864 /* PillNameCell.swift */,
 			);
 			name = PillCell;
-			sourceTree = "<group>";
-		};
-		615109151BB5F67500315CEA /* KSTokenView */ = {
-			isa = PBXGroup;
-			children = (
-				6151090D1BB5F66C00315CEA /* KSToken.swift */,
-				6151090E1BB5F66C00315CEA /* KSTokenField.swift */,
-				6151090F1BB5F66C00315CEA /* KSTokenView.swift */,
-				615109101BB5F66C00315CEA /* KSUtils.swift */,
-			);
-			name = KSTokenView;
 			sourceTree = "<group>";
 		};
 		61A474041BB8E663007D59F7 /* SearchListCell */ = {
@@ -457,7 +435,6 @@
 			isa = PBXGroup;
 			children = (
 				61C9654E1BC41F2A00E56073 /* ActivityIndicator */,
-				615109151BB5F67500315CEA /* KSTokenView */,
 				61A6A79D1BB97E44006B8FCC /* SAInboxView */,
 				61B03F581BB4D9CE0095E729 /* WalkThrough */,
 			);
@@ -709,8 +686,6 @@
 				61C965521BC4353F00E56073 /* DoctorSearchTableViewController.swift in Sources */,
 				6144A5991BBF64E300BC7BAB /* ActivityIndicator.swift in Sources */,
 				61ABFA501BC5AC3700E4CAD5 /* AppointmentAddTableViewController.swift in Sources */,
-				613B9F691BB469C100DF8DD9 /* SearchViewController.swift in Sources */,
-				615109121BB5F66C00315CEA /* KSTokenField.swift in Sources */,
 				6130513A1BB5F07F00A6FC7D /* Specialist.swift in Sources */,
 				616D67E31BBDD360007937B3 /* MapViewController.swift in Sources */,
 				61C965541BC4419000E56073 /* LanguagesTableViewController.swift in Sources */,
@@ -719,14 +694,11 @@
 				61ABFA4E1BC5980E00E4CAD5 /* AppointmentListTableViewController.swift in Sources */,
 				613051381BB5F00E00A6FC7D /* Hospital.swift in Sources */,
 				61D70F0B1BC69705009ECD3A /* AppointmentAlertTableViewController.swift in Sources */,
-				615109111BB5F66C00315CEA /* KSToken.swift in Sources */,
 				61ABFA4A1BC49D3900E4CAD5 /* GenderTableViewController.swift in Sources */,
 				61C9651A1BC410E200E56073 /* StringUtil.swift in Sources */,
 				614C92071BB422EF00BC95C6 /* ButtonCreater.swift in Sources */,
 				6177BF1D1BBB88E3008AF609 /* GlobalConstant.swift in Sources */,
-				615109131BB5F66C00315CEA /* KSTokenView.swift in Sources */,
 				61A474071BB8E678007D59F7 /* DetailViewCell.swift in Sources */,
-				615109141BB5F66C00315CEA /* KSUtils.swift in Sources */,
 				61AEBB951BB320BC0034EFDA /* MainViewController.swift in Sources */,
 				61B0036E1BC759B900D5AF18 /* AppleSearch.swift in Sources */,
 				613B9F681BB469C100DF8DD9 /* MenuViewController.swift in Sources */,

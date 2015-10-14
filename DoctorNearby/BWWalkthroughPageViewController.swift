@@ -136,7 +136,6 @@ class BWWalkthroughPageViewController: UIViewController, BWWalkthroughPage {
     
     private func animationInOut(index:Int, _ offset:CGFloat){
         var transform = CATransform3DIdentity
-        var x:CGFloat = (1.0 - offset) * 20
         
         var tmpOffset = offset
         if(tmpOffset > 1.0){
@@ -147,7 +146,7 @@ class BWWalkthroughPageViewController: UIViewController, BWWalkthroughPage {
     }
     
     private func applyTransform(index:Int, transform:CATransform3D){
-        if let subview = view.subviews[index] as? UIView{
+        if let subview: UIView = view.subviews[index] {
             if !notAnimatableViews.contains(subview.tag){
                 view.subviews[index].layer.transform = transform
             }
