@@ -69,7 +69,10 @@ class SearchDetailViewController: SAInboxDetailViewController {
 
 extension SearchDetailViewController: LiquidFloatingActionButtonDelegate {
     func generateButtons() {
-        let names: [String] = ["bookmark", "phone", "map"]
+        var names: [String] = ["search", "bookmark", "phone", "map"]
+        if fromBookMarkView {
+            names = ["home", "phone", "map"]
+        }
         let dashboardButtons = bc.generateButtons(names, xPositon: self.view.frame.width - 56 - 16, yPosition: self.view.frame.height - 56 - 16)
         dashboardButtons.delegate = self
         self.view.addSubview(dashboardButtons)
@@ -82,9 +85,15 @@ extension SearchDetailViewController: LiquidFloatingActionButtonDelegate {
             callDoctorClinic()
         }else if bc.cells[index].name == "map" {
             launchMapView()
+        }else if bc.cells[index].name == "search" || bc.cells[index].name == "home" {
+            goToRootPage()
         }
         
         liquidFloatingActionButton.close()
+    }
+    
+    func goToRootPage() {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func addBookmark() {
@@ -135,6 +144,7 @@ extension SearchDetailViewController: LiquidFloatingActionButtonDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mapViewController = storyboard.instantiateViewControllerWithIdentifier("MapViewController") as! MapViewController
         mapViewController.doctor = doctor
+        mapViewController.fromBookMarkView = fromBookMarkView
         self.presentViewController(mapViewController, animated: true, completion: nil)
     }
 }

@@ -100,5 +100,36 @@ class PillListTableViewController: UITableViewController {
                 activityIndicator.hideActivityIndicator(self.view)
         }
     }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            
+            let activityIndicator = ActivityIndicator()
+            activityIndicator.showActivityIndicator(self.view)
+            
+            let oidParams: [String: AnyObject] = ["$oid": pills[indexPath.row].id]
+            let medicineParams: [String : AnyObject] = ["_id": oidParams]
+            let parameters: [String : AnyObject] = ["medicine": medicineParams]
+            
+            Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/user/medicine/delete", parameters: parameters, encoding: .JSON)
+                .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
+                    
+                    switch result {
+                    case .Success(_):
+                        
+                        self.pills.removeAtIndex(indexPath.row)
+                        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                        
+                    case .Failure(let data, let error):
+                        print("Request failed with error: \(error)")
+                        if let data = data {
+                            print("Response data: \(NSString(data: data, encoding: NSUTF8StringEncoding)!)")
+                        }
+                    }
+                    
+                    activityIndicator.hideActivityIndicator(self.view)
+            }
+        }
+    }
 
 }

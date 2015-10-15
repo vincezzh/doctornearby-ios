@@ -17,6 +17,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var distanceLabel: UILabel!
     
+    var fromBookMarkView = false
     let bc: ButtonCreater = ButtonCreater()
     var doctor = Doctor()
     var doctorOffice: MKMapItem?
@@ -76,7 +77,10 @@ class MapViewController: UIViewController {
 
 extension MapViewController: LiquidFloatingActionButtonDelegate {
     func generateButtons() {
-        let names: [String] = ["bookmark", "phone", "car", "route"]
+        var names: [String] = ["search", "bookmark", "phone", "car", "route"]
+        if fromBookMarkView {
+            names = ["home", "phone", "car", "route"]
+        }
         let dashboardButtons = bc.generateButtons(names, xPositon: self.view.frame.width - 56 - 16, yPosition: self.view.frame.height - 56 - 16)
         dashboardButtons.delegate = self
         self.view.addSubview(dashboardButtons)
@@ -91,9 +95,15 @@ extension MapViewController: LiquidFloatingActionButtonDelegate {
             navigateClient()
         }else if bc.cells[index].name == "route" {
             displayRouteOnMap()
+        }else if bc.cells[index].name == "search" || bc.cells[index].name == "home" {
+            goToRootPage()
         }
         
         liquidFloatingActionButton.close()
+    }
+    
+    func goToRootPage() {
+        self.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func displayRouteOnMap() {
