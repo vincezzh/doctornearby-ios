@@ -51,7 +51,7 @@ class SearchListViewController: SAInboxViewController {
             parameters.updateValue(Int(GlobalConstant.defaultPageStart), forKey: "skip")
         }
         
-        Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/doctor/search", parameters: parameters, encoding: .JSON)
+        Alamofire.request(.POST, "\(GlobalFlag.baseServerURL)/doctor/search", parameters: parameters, encoding: .JSON)
             .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
                 
                 var count = 0

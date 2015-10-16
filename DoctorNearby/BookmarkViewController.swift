@@ -61,7 +61,7 @@ class BookmarkViewController: UIViewController, UITableViewDelegate, UITableView
         let parameter: [String: String] = ["userId": GlobalConstant.userId()]
         parameters.updateValue(parameter, forKey: "bookmark")
         
-        Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/user/bookmark/list", parameters: parameters, encoding: .JSON)
+        Alamofire.request(.POST, "\(GlobalFlag.baseServerURL)/user/bookmark/list", parameters: parameters, encoding: .JSON)
             .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
                 
                 switch result {
@@ -147,7 +147,7 @@ class BookmarkViewController: UIViewController, UITableViewDelegate, UITableView
             bookmarkParameter.updateValue(bookmarks[indexPath.row].doctorId, forKey: "doctorId")
             parameters.updateValue(bookmarkParameter, forKey: "bookmark")
             
-            Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/user/bookmark/delete", parameters: parameters, encoding: .JSON)
+            Alamofire.request(.POST, "\(GlobalFlag.baseServerURL)/user/bookmark/delete", parameters: parameters, encoding: .JSON)
                 .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
                     
                     switch result {

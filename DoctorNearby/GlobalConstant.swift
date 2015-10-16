@@ -10,7 +10,7 @@ import UIKit
 
 struct GlobalConstant {
     
-    static let baseServerURL = "http://localhost:9091/doctornearby"
+    static let baseServerURL = "http://doctornearby-akhaltech.rhcloud.com/doctornearby"
     static let defaultPageSize = 25
     static let defaultPageStart = 0
     

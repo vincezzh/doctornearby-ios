@@ -9,7 +9,10 @@
 import Foundation
 
 struct GlobalFlag {
+    
+    static var baseServerURL = ""
     static var needRefreshBookmark = false
     static var needRefreshAppointment = false
     static var needRefreshPill = false
+    
 }

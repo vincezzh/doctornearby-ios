@@ -130,7 +130,7 @@ class PillAddTableViewController: UITableViewController {
         }else {
             let parameters: [String: AnyObject] = ["medicine": medicineParameters]
             
-            Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/user/medicine/add", parameters: parameters, encoding: .JSON)
+            Alamofire.request(.POST, "\(GlobalFlag.baseServerURL)/user/medicine/add", parameters: parameters, encoding: .JSON)
                 .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
                     
                     switch result {

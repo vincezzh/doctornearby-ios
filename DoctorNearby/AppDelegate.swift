@@ -14,9 +14,25 @@ import SlideMenuControllerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    func initializeApplicationURL() {
+        do {
+            let jsonData = NSData(contentsOfURL: NSURL(string: "http://www.akhaltech.com/doctornearby/config.json")!)!
+            let dictionary: NSDictionary = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+            
+            if let appURL: String = dictionary["endpointURL"] as? String {
+                GlobalFlag.baseServerURL = appURL
+            }else {
+                GlobalFlag.baseServerURL = GlobalConstant.baseServerURL
+            }
+        } catch {
+            NSLog("Get Application Server URL error!!")
+        }
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        initializeApplicationURL()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         

@@ -102,7 +102,7 @@ extension SearchDetailViewController: LiquidFloatingActionButtonDelegate {
         bookmarkParameter.updateValue(doctor.doctorId, forKey: "doctorId")
         parameters.updateValue(bookmarkParameter, forKey: "bookmark")
         
-        Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/user/bookmark/add", parameters: parameters, encoding: .JSON)
+        Alamofire.request(.POST, "\(GlobalFlag.baseServerURL)/user/bookmark/add", parameters: parameters, encoding: .JSON)
             .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
                 
                 switch result {

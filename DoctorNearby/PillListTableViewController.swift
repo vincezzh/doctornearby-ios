@@ -69,7 +69,7 @@ class PillListTableViewController: UITableViewController {
         let medicineParams: [String : AnyObject] = ["userId": GlobalConstant.userId()]
         let parameters: [String : AnyObject] = ["medicine": medicineParams]
         
-        Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/user/medicine/list", parameters: parameters, encoding: .JSON)
+        Alamofire.request(.POST, "\(GlobalFlag.baseServerURL)/user/medicine/list", parameters: parameters, encoding: .JSON)
             .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
                 
                 switch result {
@@ -111,7 +111,7 @@ class PillListTableViewController: UITableViewController {
             let medicineParams: [String : AnyObject] = ["_id": oidParams]
             let parameters: [String : AnyObject] = ["medicine": medicineParams]
             
-            Alamofire.request(.POST, "\(GlobalConstant.baseServerURL)/user/medicine/delete", parameters: parameters, encoding: .JSON)
+            Alamofire.request(.POST, "\(GlobalFlag.baseServerURL)/user/medicine/delete", parameters: parameters, encoding: .JSON)
                 .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
                     
                     switch result {
