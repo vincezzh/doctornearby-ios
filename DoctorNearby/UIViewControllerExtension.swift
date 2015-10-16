@@ -26,6 +26,14 @@ extension UIViewController {
         self.slideMenuController()?.removeRightGestures()
     }
     
+    func setAboutNavigationBarItem() {
+        self.title = "About"
+        self.addCustomLeftBarButtonWithImage(UIImage(named: "home-navi")!, actionName: "goMain")
+        self.navigationItem.rightBarButtonItem = nil
+        self.slideMenuController()?.removeLeftGestures()
+        self.slideMenuController()?.removeRightGestures()
+    }
+    
     func setSearchNavigationBarItem() {
         self.title = "Search"
         self.addLeftBarButtonWithImage(UIImage(named: "menu-navi")!)
@@ -51,6 +59,12 @@ extension UIViewController {
         self.slideMenuController()?.removeLeftGestures()
         self.slideMenuController()?.removeRightGestures()
         self.slideMenuController()?.addLeftGestures()
+    }
+    
+    func addCustomLeftBarButtonWithImage(buttonImage: UIImage, actionName: String) {
+        let leftButton: UIBarButtonItem = UIBarButtonItem(image: buttonImage, style: UIBarButtonItemStyle.Plain, target: self, action: Selector(actionName))
+        leftButton.tintColor = GlobalConstant.defaultColor
+        navigationItem.leftBarButtonItem = leftButton;
     }
     
     func addCustomRightBarButtonWithImage(buttonImage: UIImage, actionName: String) {

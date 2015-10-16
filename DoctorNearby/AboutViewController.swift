@@ -1,5 +1,5 @@
 //
-//  NonMenuController
+//  AboutViewController
 //  DoctorNearby
 //
 //  Created by Vince Zhang on 2015-09-23.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class NonMenuController: UIViewController {
+class AboutViewController: UIViewController {
+    
+    @IBOutlet weak var textArea: UITextView!
     
     weak var delegate: LeftMenuProtocol?
     
@@ -18,7 +20,7 @@ class NonMenuController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.removeNavigationBarItem()
+        self.setAboutNavigationBarItem()
     }
   
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
@@ -27,14 +29,14 @@ class NonMenuController: UIViewController {
             guard let vc = (self.slideMenuController()?.mainViewController as? UINavigationController)?.topViewController else {
                 return
             }
-            if vc.isKindOfClass(NonMenuController)  {
+            if vc.isKindOfClass(AboutViewController)  {
                 self.slideMenuController()?.removeLeftGestures()
                 self.slideMenuController()?.removeRightGestures()
             }
         })
     }
   
-    @IBAction func goToMain(sender: AnyObject) {
+    func goMain() {
         delegate?.changeViewController(LeftMenu.Main)
     }
     
