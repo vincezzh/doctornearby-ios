@@ -13,23 +13,82 @@ import LiquidFloatingActionButton
 
 class MainViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     let bc: ButtonCreater = ButtonCreater()
+    var names = ["section1": ["weatherCell", "nextPillCell", "nextAppointmentCell"]]
+    var dateFormatter = NSDateFormatter()
+    
+    struct Objects {
+        var sectionName : String!
+        var sectionObjects : [String]!
+    }
+    
+    var objectArray = [Objects]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.generateButtons()
+        self.chechIfShowWalkThrough()
+        
+        self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        dateFormatter.dateFormat = "MMM dd, yyyy hh:mm a"
+        
+        for (key, value) in names {
+            objectArray.append(Objects(sectionName: key, sectionObjects: value))
+        }
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.setNavigationBarItem()
-        self.chechIfShowWalkThrough()
     }
     
     @IBAction func showWalkthrough(){
         showWalkThroughPages()
     }
     
+}
+
+extension MainViewController: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return objectArray.count
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return objectArray[section].sectionObjects.count
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return " "
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let cellID = objectArray[indexPath.section].sectionObjects[indexPath.row]
+        return cellID == "weatherCell" ? 100 : 80
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell: UITableViewCell?
+        let cellID = objectArray[indexPath.section].sectionObjects[indexPath.row]
+        if cellID == "weatherCell" {
+            cell = tableView.dequeueReusableCellWithIdentifier(cellID)! as! MainWeatherCell
+        }else if cellID == "nextPillCell" {
+            cell = tableView.dequeueReusableCellWithIdentifier(cellID)! as! MainNextPillCell
+        }else if cellID == "nextAppointmentCell" {
+            cell = tableView.dequeueReusableCellWithIdentifier(cellID)! as! MainNextAppointmentCell
+        }else {
+            cell = tableView.dequeueReusableCellWithIdentifier(cellID)! as UITableViewCell
+        }
+        
+        return cell!
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 }
 
 extension MainViewController: BWWalkthroughViewControllerDelegate {

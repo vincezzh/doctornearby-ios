@@ -136,37 +136,37 @@ class BookmarkViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.Delete {
-            
-            let activityIndicator = ActivityIndicator()
-            activityIndicator.showActivityIndicator(self.view)
-            
-            var parameters = [String: AnyObject]()
-            var bookmarkParameter: [String: String] = ["userId": GlobalConstant.userId()]
-            bookmarkParameter.updateValue(bookmarks[indexPath.row].doctorId, forKey: "doctorId")
-            parameters.updateValue(bookmarkParameter, forKey: "bookmark")
-            
-            Alamofire.request(.POST, "\(GlobalFlag.baseServerURL)/user/bookmark/delete", parameters: parameters, encoding: .JSON)
-                .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
-                    
-                    switch result {
-                    case .Success(_):
-                        
-                        self.bookmarks.removeAtIndex(indexPath.row)
-                        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-                        
-                    case .Failure(let data, let error):
-                        print("Request failed with error: \(error)")
-                        if let data = data {
-                            print("Response data: \(NSString(data: data, encoding: NSUTF8StringEncoding)!)")
-                        }
-                    }
-                    
-                    activityIndicator.hideActivityIndicator(self.view)
-            }
-        }
-    }
+//    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+//        if editingStyle == UITableViewCellEditingStyle.Delete {
+//            
+//            let activityIndicator = ActivityIndicator()
+//            activityIndicator.showActivityIndicator(self.view)
+//            
+//            var parameters = [String: AnyObject]()
+//            var bookmarkParameter: [String: String] = ["userId": GlobalConstant.userId()]
+//            bookmarkParameter.updateValue(bookmarks[indexPath.row].doctorId, forKey: "doctorId")
+//            parameters.updateValue(bookmarkParameter, forKey: "bookmark")
+//            
+//            Alamofire.request(.POST, "\(GlobalFlag.baseServerURL)/user/bookmark/delete", parameters: parameters, encoding: .JSON)
+//                .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
+//                    
+//                    switch result {
+//                    case .Success(_):
+//                        
+//                        self.bookmarks.removeAtIndex(indexPath.row)
+//                        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+//                        
+//                    case .Failure(let data, let error):
+//                        print("Request failed with error: \(error)")
+//                        if let data = data {
+//                            print("Response data: \(NSString(data: data, encoding: NSUTF8StringEncoding)!)")
+//                        }
+//                    }
+//                    
+//                    activityIndicator.hideActivityIndicator(self.view)
+//            }
+//        }
+//    }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         if searchBar.text?.length > 0 {

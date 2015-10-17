@@ -68,6 +68,9 @@
 		61B03F5C1BB4D9E40095E729 /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B03F5A1BB4D9E40095E729 /* BWWalkthroughViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		61B4DCCA1BB592E8001D7530 /* JSonParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B4DCC91BB592E8001D7530 /* JSonParse.swift */; settings = {ASSET_TAGS = (); }; };
 		61B4DCCC1BB59304001D7530 /* HttpWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B4DCCB1BB59304001D7530 /* HttpWrapper.swift */; settings = {ASSET_TAGS = (); }; };
+		61BDEB1E1BD1EEEA00928B21 /* MainWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BDEB1D1BD1EEEA00928B21 /* MainWeatherCell.swift */; settings = {ASSET_TAGS = (); }; };
+		61BDEB201BD1EF0700928B21 /* MainNextAppointmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BDEB1F1BD1EF0700928B21 /* MainNextAppointmentCell.swift */; settings = {ASSET_TAGS = (); }; };
+		61BDEB221BD1EF1700928B21 /* MainNextPillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BDEB211BD1EF1700928B21 /* MainNextPillCell.swift */; settings = {ASSET_TAGS = (); }; };
 		61C9651A1BC410E200E56073 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C965191BC410E200E56073 /* StringUtil.swift */; settings = {ASSET_TAGS = (); }; };
 		61C965521BC4353F00E56073 /* DoctorSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C965511BC4353F00E56073 /* DoctorSearchTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		61C965541BC4419000E56073 /* LanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C965531BC4419000E56073 /* LanguagesTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -162,6 +165,9 @@
 		61B03F5A1BB4D9E40095E729 /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughViewController.swift; sourceTree = "<group>"; };
 		61B4DCC91BB592E8001D7530 /* JSonParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSonParse.swift; sourceTree = "<group>"; };
 		61B4DCCB1BB59304001D7530 /* HttpWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpWrapper.swift; sourceTree = "<group>"; };
+		61BDEB1D1BD1EEEA00928B21 /* MainWeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWeatherCell.swift; sourceTree = "<group>"; };
+		61BDEB1F1BD1EF0700928B21 /* MainNextAppointmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNextAppointmentCell.swift; sourceTree = "<group>"; };
+		61BDEB211BD1EF1700928B21 /* MainNextPillCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNextPillCell.swift; sourceTree = "<group>"; };
 		61C965191BC410E200E56073 /* StringUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
 		61C965511BC4353F00E56073 /* DoctorSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorSearchTableViewController.swift; sourceTree = "<group>"; };
 		61C965531BC4419000E56073 /* LanguagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguagesTableViewController.swift; sourceTree = "<group>"; };
@@ -299,6 +305,7 @@
 			children = (
 				61B003661BC6EA7200D5AF18 /* AppointmentCells */,
 				6144A59A1BBF6DFF00BC7BAB /* BookmarkListCell */,
+				61BDEB1C1BD1EEC800928B21 /* MainCells */,
 				61503A541BC84076001DD864 /* PillCell */,
 				61A474041BB8E663007D59F7 /* SearchListCell */,
 				61A474091BB8E68E007D59F7 /* SearchDetailCell */,
@@ -460,6 +467,16 @@
 				61C965191BC410E200E56073 /* StringUtil.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		61BDEB1C1BD1EEC800928B21 /* MainCells */ = {
+			isa = PBXGroup;
+			children = (
+				61BDEB1F1BD1EF0700928B21 /* MainNextAppointmentCell.swift */,
+				61BDEB211BD1EF1700928B21 /* MainNextPillCell.swift */,
+				61BDEB1D1BD1EEEA00928B21 /* MainWeatherCell.swift */,
+			);
+			name = MainCells;
 			sourceTree = "<group>";
 		};
 		61C9654E1BC41F2A00E56073 /* ActivityIndicator */ = {
@@ -658,6 +675,7 @@
 				61B0036A1BC6EAB800D5AF18 /* AppointmentLocationCell.swift in Sources */,
 				61C965561BC450D700E56073 /* SpecializationTableViewController.swift in Sources */,
 				613B9F6A1BB469C100DF8DD9 /* BookmarkViewController.swift in Sources */,
+				61BDEB1E1BD1EEEA00928B21 /* MainWeatherCell.swift in Sources */,
 				613B9F6B1BB469C100DF8DD9 /* AboutViewController.swift in Sources */,
 				613910421BB9E11600A03493 /* Doctor.swift in Sources */,
 				61ABFA441BC4707B00E4CAD5 /* CitiesTableViewController.swift in Sources */,
@@ -689,6 +707,7 @@
 				6130513A1BB5F07F00A6FC7D /* Specialist.swift in Sources */,
 				616D67E31BBDD360007937B3 /* MapViewController.swift in Sources */,
 				61C965541BC4419000E56073 /* LanguagesTableViewController.swift in Sources */,
+				61BDEB201BD1EF0700928B21 /* MainNextAppointmentCell.swift in Sources */,
 				613B9F721BB46D7F00DF8DD9 /* BaseTableViewCell.swift in Sources */,
 				615109171BB6225300315CEA /* Language.swift in Sources */,
 				61ABFA4E1BC5980E00E4CAD5 /* AppointmentListTableViewController.swift in Sources */,
@@ -700,6 +719,7 @@
 				6177BF1D1BBB88E3008AF609 /* GlobalConstant.swift in Sources */,
 				61A474071BB8E678007D59F7 /* DetailViewCell.swift in Sources */,
 				61AEBB951BB320BC0034EFDA /* MainViewController.swift in Sources */,
+				61BDEB221BD1EF1700928B21 /* MainNextPillCell.swift in Sources */,
 				61B0036E1BC759B900D5AF18 /* AppleSearch.swift in Sources */,
 				613B9F681BB469C100DF8DD9 /* MenuViewController.swift in Sources */,
 				61A6A7A51BB97E59006B8FCC /* SAInboxTransitioningContainerView.swift in Sources */,
