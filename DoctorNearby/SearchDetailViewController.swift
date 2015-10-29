@@ -100,6 +100,7 @@ extension SearchDetailViewController: LiquidFloatingActionButtonDelegate {
         var parameters = [String: AnyObject]()
         var bookmarkParameter: [String: String] = ["userId": GlobalConstant.userId()]
         bookmarkParameter.updateValue(doctor.doctorId, forKey: "doctorId")
+        bookmarkParameter.updateValue(doctor.province, forKey: "province")
         parameters.updateValue(bookmarkParameter, forKey: "bookmark")
         
         Alamofire.request(.POST, "\(GlobalFlag.baseServerURL)/user/bookmark/add", parameters: parameters, encoding: .JSON)

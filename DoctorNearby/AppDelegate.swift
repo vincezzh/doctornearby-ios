@@ -33,10 +33,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSLog("Get Application Server URL error!!")
         }
     }
+    
+    func chechDefaultProvince() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if let province = userDefaults.stringForKey("defaultProvince") {
+            GlobalFlag.province = province
+        }else {
+            userDefaults.setObject(GlobalFlag.province, forKey: "defaultProvince")
+            userDefaults.synchronize()
+        }
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         initializeApplicationURL()
+        chechDefaultProvince()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         

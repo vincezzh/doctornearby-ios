@@ -77,6 +77,7 @@ class BookmarkViewController: UIViewController, UITableViewDelegate, UITableView
                             let surName = json["data"][index]["profile"]["surname"].stringValue
                             doctor.name = "\(surName), \(givenName)"
                             doctor.doctorId = json["data"][index]["_id"].stringValue
+                            doctor.province = json["data"][index]["province"].stringValue
                             doctor.contact = json["data"][index]["location"]["contactSummary"].stringValue
                             doctor.address = json["data"][index]["location"]["addressSummary"].stringValue
                             
@@ -114,7 +115,7 @@ class BookmarkViewController: UIViewController, UITableViewDelegate, UITableView
             if searchActive {
                 bookmark = filteredBookmarks[indexPath.row]
             }
-            cell.nameLabel.text = bookmark.name
+            cell.bookmark = bookmark
         }
         
         cell.layoutMargins = UIEdgeInsetsZero
@@ -123,7 +124,7 @@ class BookmarkViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 250
+        return 82
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

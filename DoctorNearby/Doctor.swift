@@ -13,6 +13,7 @@ class Doctor {
     var name: String = ""
     var address: String = ""
     var contact: String = ""
+    var province: String = ""
     let phoneWord = "Phone:"
     let extensionWord = "Ext."
 

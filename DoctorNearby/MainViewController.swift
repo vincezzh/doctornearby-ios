@@ -64,24 +64,6 @@ class MainViewController: UIViewController {
         showWalkThroughPages()
     }
     
-    func doProvinceWithData(data: String) {
-        provinceButton.titleLabel?.text = data
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "selectProvinceSegue" {
-            if let viewController = segue.destinationViewController as? CountryTableViewController {
-                viewController.selectedName = (provinceButton.titleLabel?.text)!
-                viewController.onDataAvailable = {[weak self]
-                    (data) in
-                    if let weakSelf = self {
-                        weakSelf.doProvinceWithData(data)
-                    }
-                }
-            }
-        }
-    }
-    
     func loadRecentAppointment() {
         let eventStore = EKEventStore()
         
@@ -108,16 +90,18 @@ class MainViewController: UIViewController {
         
         let calendars = store.calendarsForEntityType(EKEntityType.Event)
         for calendar in calendars {
-            let endDate = NSDate(timeIntervalSinceNow: NSTimeInterval(GlobalConstant.defaultCalendarPeriod));
-            let predicate = store.predicateForEventsWithStartDate(NSDate(), endDate: endDate, calendars: [calendar])
-            let events: [EKEvent] = store.eventsMatchingPredicate(predicate)
-            if events.count > 0 {
-                for event in events {
-                    if let notes = event.notes {
-                        if notes.contains(GlobalConstant.brandFlag) {
-                            appointmentNameLabel.text = event.title
-                            appointmentTime.text = dateFormatter.stringFromDate(event.startDate)
-                            hasEvent = true
+            if calendar.type == EKCalendarType.CalDAV {
+                let endDate = NSDate(timeIntervalSinceNow: NSTimeInterval(GlobalConstant.defaultCalendarPeriod));
+                let predicate = store.predicateForEventsWithStartDate(NSDate(), endDate: endDate, calendars: [calendar])
+                let events: [EKEvent] = store.eventsMatchingPredicate(predicate)
+                if events.count > 0 {
+                    for event in events {
+                        if let notes = event.notes {
+                            if notes.contains(GlobalConstant.brandFlag) {
+                                appointmentNameLabel.text = event.title
+                                appointmentTime.text = dateFormatter.stringFromDate(event.startDate)
+                                hasEvent = true
+                            }
                         }
                     }
                 }

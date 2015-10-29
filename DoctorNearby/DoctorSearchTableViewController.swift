@@ -10,6 +10,7 @@ import UIKit
 
 class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var selectedProvinceTextField: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var selectedLanguageTextField: UILabel!
     @IBOutlet weak var selectedGenderTextField: UILabel!
@@ -24,6 +25,7 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         self.nameTextField.delegate = self
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
+        selectedProvinceTextField.text = GlobalFlag.province
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -32,7 +34,7 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 3
+            return 4
         }else if section == 1 {
             return 2
         }else if section == 2 {
@@ -68,6 +70,10 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
     
     func doGenderWithData(data: String) {
         selectedGenderTextField.text = data
+    }
+    
+    func doProvinceWithData(data: String) {
+        selectedProvinceTextField.text = data
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -121,6 +127,16 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
                     }
                 }
             }
+        }else if segue.identifier == "showProvinceSegue" {
+            if let viewController = segue.destinationViewController as? CountryTableViewController {
+                viewController.selectedProvince = selectedProvinceTextField.text!
+                viewController.onDataAvailable = {[weak self]
+                    (data) in
+                    if let weakSelf = self {
+                        weakSelf.doProvinceWithData(data)
+                    }
+                }
+            }
         }else if segue.identifier == "showDoctorsSearchResultList" {
             
             SAInboxViewController.appearance.barTintColor = GlobalConstant.defaultColor
@@ -157,13 +173,15 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
             if selectedHospitalTextField.text != "ALL" {
                 hospital = selectedHospitalTextField.text!
             }
+            let province = selectedProvinceTextField.text!
             let parameters = [
                 "name": nameTextField.text!,
                 "gender": gender,
                 "language": language,
                 "physicianType": physicianType,
                 "location": city,
-                "hospital": hospital
+                "hospital": hospital,
+                "province": province
             ]
             viewController.parameters = parameters
             

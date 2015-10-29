@@ -160,10 +160,12 @@ class AppointmentAddTableViewController: UITableViewController {
         
         let alertController = UIAlertController(title: "Select Calendar", message: "Which calendar do you prefer to add?", preferredStyle: .Alert)
         for calendar in calendars {
-            let button = UIAlertAction(title: calendar.title, style: .Default, handler: { (action: UIAlertAction) -> Void in
-                self.insertToCalendar(store, calendar: calendar)
-            })
-            alertController.addAction(button)
+//            if calendar.type == EKCalendarType.CalDAV {
+                let button = UIAlertAction(title: calendar.title, style: .Default, handler: { (action: UIAlertAction) -> Void in
+                    self.insertToCalendar(store, calendar: calendar)
+                })
+                alertController.addAction(button)
+//            }
         }
         let buttonCancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action: UIAlertAction) -> Void in
             alertController.dismissViewControllerAnimated(true, completion: nil)

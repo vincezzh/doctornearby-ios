@@ -11,8 +11,11 @@ import UIKit
 class BookmarkListCell: UITableViewCell {
     
     static let kCellIdentifier = "BookmarkListCell"
+    var bookmark = Doctor()
 
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var contactLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +25,9 @@ class BookmarkListCell: UITableViewCell {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        nameLabel.text = bookmark.name
+        locationLabel.text = "@\(bookmark.province)"
+        contactLabel.text = bookmark.contact
     }
     
 }

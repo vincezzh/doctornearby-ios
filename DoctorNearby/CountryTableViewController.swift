@@ -10,9 +10,9 @@ import UIKit
 
 class CountryTableViewController: UITableViewController {
     
-    let allNames = ["Canada": ["British Columbia", "Ontario", "Quebec"]]
+    let allNames = ["Canada": ["Alberta", "British Columbia", "Manitoba", "New Brunswick", "Newfoundland and Labrador", "Nova Scotia", "Northwest Territories", "Nunavut", "Ontario", "Prince Edward Island", "Quebec", "Saskatchewan",  "Yukon"]]
     let activeNames = ["British Columbia", "Ontario", "Quebec"]
-    var selectedName: String = ""
+    var selectedProvince: String = ""
     var onDataAvailable : ((data: String) -> ())?
     
     struct Objects {
@@ -24,7 +24,8 @@ class CountryTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tableView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0)
+        self.tableView.scrollRectToVisible(CGRectMake(0, 0, self.tableView.bounds.width, 30), animated: false)
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
         for (key, value) in allNames {
@@ -65,9 +66,13 @@ class CountryTableViewController: UITableViewController {
         let title = objectArray[indexPath.section].sectionObjects[indexPath.row]
         cell.textLabel?.text = title
         if activeNames.contains(title) {
-            cell.textLabel?.tintColor = UIColor.blackColor()
+            cell.textLabel?.textColor = UIColor.blackColor()
         }else {
-            cell.textLabel?.tintColor = UIColor.lightGrayColor()
+            cell.textLabel?.textColor = UIColor.lightGrayColor()
+        }
+        
+        if selectedProvince == title {
+            cell.textLabel?.textColor = GlobalConstant.defaultColor
         }
         
         return cell
