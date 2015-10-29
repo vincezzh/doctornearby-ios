@@ -25,6 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }else {
                 GlobalFlag.baseServerURL = GlobalConstant.baseServerURL
             }
+            
+            if GlobalConstant.testMode {
+                GlobalFlag.baseServerURL = "http://localhost:8080/doctornearby"
+            }
         } catch {
             NSLog("Get Application Server URL error!!")
         }
