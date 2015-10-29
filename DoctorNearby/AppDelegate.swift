@@ -17,14 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func initializeApplicationURL() {
         do {
-            let jsonData = NSData(contentsOfURL: NSURL(string: "http://www.akhaltech.com/doctornearby/config.json")!)!
-            let dictionary: NSDictionary = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-            
-            if let appURL: String = dictionary["endpointURL"] as? String {
-                GlobalFlag.baseServerURL = appURL
-            }else {
-                GlobalFlag.baseServerURL = GlobalConstant.baseServerURL
-            }
+//            let jsonData = NSData(contentsOfURL: NSURL(string: "http://www.akhaltech.com/doctornearby/config.json")!)!
+//            let dictionary: NSDictionary = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+//            
+//            if let appURL: String = dictionary["endpointURL"] as? String {
+//                GlobalFlag.baseServerURL = appURL
+//            }else {
+//                GlobalFlag.baseServerURL = GlobalConstant.baseServerURL
+//            }
             
             if GlobalConstant.testMode {
                 GlobalFlag.baseServerURL = "http://localhost:8080/doctornearby"

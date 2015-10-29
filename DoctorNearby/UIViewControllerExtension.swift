@@ -44,7 +44,7 @@ extension UIViewController {
     }
     
     func setAppointmentNavigationBarItem() {
-        self.title = "90 days Appointments"
+        self.title = "In 90 days Appointments"
         self.addLeftBarButtonWithImage(UIImage(named: "menu-navi")!)
         self.addCustomRightBarButtonWithImage(UIImage(named: "add-navi")!, actionName: "addNewAppointment")
         self.slideMenuController()?.removeLeftGestures()

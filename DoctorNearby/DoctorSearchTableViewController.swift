@@ -100,6 +100,7 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
         }else if segue.identifier == "showCitiesSegue" {
             if let viewController = segue.destinationViewController as? CitiesTableViewController {
                 viewController.selectedCity = selectedCityTextField.text!
+                viewController.province = selectedProvinceTextField.text!
                 viewController.onDataAvailable = {[weak self]
                     (data) in
                     if let weakSelf = self {

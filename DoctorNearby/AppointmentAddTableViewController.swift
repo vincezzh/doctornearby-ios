@@ -15,6 +15,7 @@ class AppointmentAddTableViewController: UITableViewController {
     var endsDatePickerCellID = "endsDatePickerCell"
     var names = ["section1": ["titleCell", "locationCell"], "section2": ["startsCell", "endsCell", "alertCell"]]
     var dateFormatter = NSDateFormatter()
+    var startDate = ""
     
     struct Objects {
         var sectionName : String!
@@ -116,6 +117,12 @@ class AppointmentAddTableViewController: UITableViewController {
         let cell = tableView.cellForRowAtIndexPath(targetedCellIndexPath)
         let targetedDatePicker = sender as! UIDatePicker
         cell?.detailTextLabel?.text = dateFormatter.stringFromDate(targetedDatePicker.date)
+        
+        let rowNext: Int = objectArray[1].sectionObjects.indexOf("endsCell")!
+        let targetedCellIndexPathNext: NSIndexPath = NSIndexPath(forRow: rowNext, inSection: 1)
+        let cellNext = tableView.cellForRowAtIndexPath(targetedCellIndexPathNext)
+        let endDate = NSDate(timeInterval: 3600, sinceDate: targetedDatePicker.date)
+        cellNext?.detailTextLabel?.text = dateFormatter.stringFromDate(endDate)
     }
     
     @IBAction func changeEndsDatePicker(sender: AnyObject) {

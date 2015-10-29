@@ -12,7 +12,8 @@ class CitiesTableViewController: UITableViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
 
-    let cities: Array<String> = City.names()
+    var province = "Ontario"
+    var cities: Array<String> = []
     var filteredCities = Array<String>()
     var selectedCity: String = ""
     var searchActive : Bool = false
@@ -30,6 +31,7 @@ class CitiesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cities = City.names(province)
         self.tableView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0)
         self.tableView.scrollRectToVisible(CGRectMake(0, 0, self.tableView.bounds.width, 30), animated: false)
         searchBar.delegate = self
