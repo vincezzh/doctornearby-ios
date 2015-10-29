@@ -248,7 +248,7 @@ public class LiquidFloatingActionButton : UIView {
     }
     
     public func didTappedCell(target: LiquidFloatingCell) {
-        if let source = dataSource {
+        if let _ = dataSource {
             let cells = cellArray()
             for i in 0..<cells.count {
                 let cell = cells[i]
@@ -322,7 +322,7 @@ class CircleLiquidBaseView : ActionBarBaseView {
 
     func open(cells: [LiquidFloatingCell]) {
         stop()
-        let distance: CGFloat = self.frame.height * 1.25
+        let _: CGFloat = self.frame.height * 1.25
         displayLink = CADisplayLink(target: self, selector: Selector("didDisplayRefresh:"))
         displayLink?.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
         opening = true
@@ -335,7 +335,7 @@ class CircleLiquidBaseView : ActionBarBaseView {
     
     func close(cells: [LiquidFloatingCell]) {
         stop()
-        let distance: CGFloat = self.frame.height * 1.25
+        let _: CGFloat = self.frame.height * 1.25
         opening = false
         displayLink = CADisplayLink(target: self, selector: Selector("didDisplayRefresh:"))
         displayLink?.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
@@ -443,7 +443,7 @@ class CircleLiquidBaseView : ActionBarBaseView {
         if t < 0 {
             return 0
         }
-        var t2 = t * 2
+        var _ = t * 2
         return -1 * t * (t - 2)
     }
     
@@ -519,7 +519,7 @@ public class LiquidFloatingCell : LiquittableCircle {
     
     func update(key: CGFloat, open: Bool) {
         for subview in self.subviews {
-            if let view = subview as? UIView {
+            if let view: UIView = subview {
                 let ratio = max(2 * (key * key - 0.5), 0)
                 view.alpha = open ? ratio : -ratio
             }
