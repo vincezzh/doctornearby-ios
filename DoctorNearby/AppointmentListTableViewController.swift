@@ -109,7 +109,7 @@ class AppointmentListTableViewController: UITableViewController, UISearchBarDele
         let calendars = store.calendarsForEntityType(EKEntityType.Event)
         
         for calendar in calendars {
-//            if calendar.type == EKCalendarType.CalDAV {
+            if calendar.type == EKCalendarType.CalDAV {
                 let endDate = NSDate(timeIntervalSinceNow: NSTimeInterval(GlobalConstant.defaultCalendarPeriod));
                 let predicate = store.predicateForEventsWithStartDate(NSDate(), endDate: endDate, calendars: [calendar])
                 let events: [EKEvent] = store.eventsMatchingPredicate(predicate)
@@ -129,7 +129,7 @@ class AppointmentListTableViewController: UITableViewController, UISearchBarDele
                         }
                     }
                 }
-//            }
+            }
         }
         self.tableView.reloadData()
         GlobalFlag.needRefreshAppointment = false
