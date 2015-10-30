@@ -101,6 +101,7 @@ class MainViewController: UIViewController {
                                 appointmentNameLabel.text = event.title
                                 appointmentTime.text = dateFormatter.stringFromDate(event.startDate)
                                 hasEvent = true
+                                break;
                             }
                         }
                     }
