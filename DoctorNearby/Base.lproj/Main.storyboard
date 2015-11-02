@@ -928,12 +928,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pwu-qb-vY4">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pwu-qb-vY4">
                                                     <rect key="frame" x="8" y="7" width="584" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Pwu-qb-vY4" secondAttribute="bottom" constant="7" id="Bpo-7m-RMN"/>
+                                                <constraint firstItem="Pwu-qb-vY4" firstAttribute="leading" secondItem="bpW-6z-HxJ" secondAttribute="leading" constant="8" id="Rgb-WJ-l8x"/>
+                                                <constraint firstItem="Pwu-qb-vY4" firstAttribute="top" secondItem="bpW-6z-HxJ" secondAttribute="top" constant="7" id="S4s-fh-KFo"/>
+                                                <constraint firstAttribute="trailing" secondItem="Pwu-qb-vY4" secondAttribute="trailing" constant="8" id="bbh-wN-n4y"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bq3-do-s51">
