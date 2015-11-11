@@ -288,12 +288,16 @@ extension MainViewController: CLLocationManagerDelegate {
                                 self.weatherImage.image = UIImage(named: "snow")
                             }else if weather.contains("Cloudy") {
                                 self.weatherImage.image = UIImage(named: "cloudy")
+                            }else if weather.contains("Clouds") {
+                                self.weatherImage.image = UIImage(named: "clouds")
                             }else if weather.contains("Rain") {
-                                self.weatherImage.image = UIImage(named: "rainy")
+                                self.weatherImage.image = UIImage(named: "rain")
                             }else if weather.contains("Sun") {
-                                self.weatherImage.image = UIImage(named: "sunny")
+                                self.weatherImage.image = UIImage(named: "sun")
                             }else if weather.contains("Fog") {
                                 self.weatherImage.image = UIImage(named: "fog")
+                            }else if weather.contains("Overcast") {
+                                self.weatherImage.image = UIImage(named: "overcast")
                             }else {
                                 self.weatherImage.image = UIImage(named: "weather")
                             }

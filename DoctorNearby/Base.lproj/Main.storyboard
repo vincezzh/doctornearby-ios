@@ -311,7 +311,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QaC-wH-Qbm">
                                 <rect key="frame" x="0.0" y="72" width="600" height="396"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunny" translatesAutoresizingMaskIntoConstraints="NO" id="70J-lC-8Gd">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather" translatesAutoresizingMaskIntoConstraints="NO" id="70J-lC-8Gd">
                                         <rect key="frame" x="210" y="158" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="KCX-Oi-N0q"/>
@@ -1829,6 +1829,6 @@
     <resources>
         <image name="close-icon" width="72" height="72"/>
         <image name="right-arrow" width="72" height="72"/>
-        <image name="sunny" width="300" height="300"/>
+        <image name="weather" width="256" height="256"/>
     </resources>
 </document>
