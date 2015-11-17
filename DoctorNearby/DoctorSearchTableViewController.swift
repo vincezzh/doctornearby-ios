@@ -11,7 +11,8 @@ import UIKit
 class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var selectedProvinceTextField: UILabel!
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var selectedLanguageTextField: UILabel!
     @IBOutlet weak var selectedGenderTextField: UILabel!
     @IBOutlet weak var selectedSpecialistTextField: UILabel!
@@ -23,7 +24,8 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
         super.viewDidLoad()
         self.setSearchNavigationBarItem()
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
-        self.nameTextField.delegate = self
+        self.lastNameTextField.delegate = self
+        self.firstNameTextField.delegate = self
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
         selectedProvinceTextField.text = GlobalFlag.province
     }
@@ -34,7 +36,7 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 4
+            return 5
         }else if section == 1 {
             return 2
         }else if section == 2 {
@@ -74,6 +76,7 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
     
     func doProvinceWithData(data: String) {
         selectedProvinceTextField.text = data
+        selectedCityTextField.text = "ALL"
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -176,7 +179,8 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
             }
             let province = selectedProvinceTextField.text!
             let parameters = [
-                "name": nameTextField.text!,
+                "surname": lastNameTextField.text!,
+                "givenname": firstNameTextField.text!,
                 "gender": gender,
                 "language": language,
                 "physicianType": physicianType,
