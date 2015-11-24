@@ -9,6 +9,7 @@
 import Foundation
 
 class Doctor {
+    var id: String = ""
     var doctorId: String = ""
     var name: String = ""
     var address: String = ""

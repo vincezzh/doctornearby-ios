@@ -66,7 +66,8 @@ class SearchListViewController: SAInboxViewController {
                             let givenName = json["data"][index]["profile"]["givenName"].stringValue
                             let surName = json["data"][index]["profile"]["surname"].stringValue
                             doctor.name = "\(surName), \(givenName)"
-                            doctor.doctorId = json["data"][index]["profile"]["id"].stringValue
+                            doctor.id = json["data"][index]["profile"]["id"].stringValue
+                            doctor.doctorId = json["data"][index]["_id"].stringValue
                             doctor.province = json["data"][index]["province"].stringValue
                             doctor.contact = json["data"][index]["location"]["contactSummary"].stringValue
                             doctor.address = json["data"][index]["location"]["addressSummary"].stringValue
@@ -110,7 +111,7 @@ extension SearchListViewController: UITableViewDataSource {
         if let cell = cell as? ListViewCell {
             let doctor = doctors[indexPath.row]
             cell.nameLabel.text = doctor.name
-            cell.idLabel.text = doctor.doctorId
+            cell.idLabel.text = doctor.id
             cell.contactLabel.text = doctor.contact
             cell.addressLabel.text = doctor.address
         }
