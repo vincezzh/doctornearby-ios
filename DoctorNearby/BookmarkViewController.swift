@@ -76,7 +76,7 @@ class BookmarkViewController: UIViewController, UITableViewDelegate, UITableView
                             let givenName = json["data"][index]["profile"]["givenName"].stringValue
                             let surName = json["data"][index]["profile"]["surname"].stringValue
                             doctor.name = "\(surName), \(givenName)"
-                            doctor.doctorId = json["data"][index]["_id"].stringValue
+                            doctor.doctorId = json["data"][index]["profile"]["id"].stringValue
                             doctor.province = json["data"][index]["province"].stringValue
                             doctor.contact = json["data"][index]["location"]["contactSummary"].stringValue
                             doctor.address = json["data"][index]["location"]["addressSummary"].stringValue
