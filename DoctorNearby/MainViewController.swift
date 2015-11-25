@@ -31,6 +31,7 @@ class MainViewController: UIViewController {
     var dateFormatter = NSDateFormatter()
     var country = ""
     var city = ""
+    var hasLoadedWeather = false
     
     var timer = NSTimer()
     let timeInterval: NSTimeInterval = 30
@@ -238,8 +239,8 @@ extension MainViewController: LiquidFloatingActionButtonDelegate {
 
 extension MainViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        if city == "" {
+        if !hasLoadedWeather {
+            hasLoadedWeather = true
             let location: CLLocation = manager.location!
             let geoCoder = CLGeocoder()
             
@@ -248,7 +249,7 @@ extension MainViewController: CLLocationManagerDelegate {
                 if let placeMark: CLPlacemark = placemarks![0] {
                     if let tempCity = placeMark.addressDictionary!["City"] as? NSString {
                         self.city = tempCity.stringByReplacingOccurrencesOfString(" ", withString: "%20")
-                        self.locationTextfield.text = self.city
+                        self.locationTextfield.text = tempCity as String
                     }
                     if let tempCountry = placeMark.addressDictionary!["Country"] as? NSString {
                         self.country = tempCountry.stringByReplacingOccurrencesOfString(" ", withString: "%20")

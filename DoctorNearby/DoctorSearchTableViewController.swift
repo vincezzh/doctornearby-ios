@@ -178,9 +178,11 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
                 hospital = selectedHospitalTextField.text!
             }
             let province = selectedProvinceTextField.text!
+            let lastName = lastNameTextField.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            let firstName = firstNameTextField.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             let parameters = [
-                "surname": lastNameTextField.text!,
-                "givenname": firstNameTextField.text!,
+                "surname": lastName,
+                "givenname": firstName,
                 "gender": gender,
                 "language": language,
                 "physicianType": physicianType,
