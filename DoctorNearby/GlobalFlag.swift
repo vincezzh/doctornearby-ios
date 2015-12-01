@@ -15,5 +15,6 @@ struct GlobalFlag {
     static var needRefreshAppointment = false
     static var needRefreshPill = false
     static var province = "Ontario"
+    static var deviceToken = ""
     
 }

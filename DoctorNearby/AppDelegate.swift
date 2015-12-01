@@ -48,11 +48,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             userDefaults.synchronize()
         }
     }
+    
+    func registerRemoteNotification() {
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings);
+        UIApplication.sharedApplication().registerForRemoteNotifications();
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         initializeApplicationURL()
         chechDefaultProvince()
+        registerRemoteNotification()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -71,6 +78,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         return true
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
+        
+        let deviceTokenString: String = ( deviceToken.description as NSString )
+            .stringByTrimmingCharactersInSet( characterSet )
+            .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
+        
+        GlobalFlag.deviceToken = deviceTokenString
     }
 
     func applicationWillResignActive(application: UIApplication) {

@@ -122,7 +122,8 @@ class PillAddTableViewController: UITableViewController {
             "userId": GlobalConstant.userId(),
             "name": getLabelText("medicineCell"),
             "periodMinutes": caculateRepeatTimeInMinutes(),
-            "startTime": getDateFromString("eatTimeCell")
+            "startTime": getDateFromString("eatTimeCell"),
+            "deviceToken": GlobalFlag.deviceToken
         ]
 
         if (medicineParameters["name"] as! String).trim() == "" {
