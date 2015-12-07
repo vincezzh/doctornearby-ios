@@ -51,14 +51,14 @@ class MainViewController: UIViewController {
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
-        
-        loadRecentAppointment()
-        loadRecentPill()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.setNavigationBarItem()
+        
+        loadRecentAppointment()
+        loadRecentPill()
     }
     
     @IBAction func showWalkthrough(){
@@ -181,12 +181,12 @@ class MainViewController: UIViewController {
 
 extension MainViewController: BWWalkthroughViewControllerDelegate {
     func chechIfShowWalkThrough() {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        if !userDefaults.boolForKey("walkthroughPresented") {
+//        let userDefaults = NSUserDefaults.standardUserDefaults()
+//        if !userDefaults.boolForKey("walkthroughPresented") {
             showWalkthrough()
-            userDefaults.setBool(true, forKey: "walkthroughPresented")
-            userDefaults.synchronize()
-        }
+//            userDefaults.setBool(true, forKey: "walkthroughPresented")
+//            userDefaults.synchronize()
+//        }
     }
     
     func showWalkThroughPages() {
