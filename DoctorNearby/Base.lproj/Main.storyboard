@@ -42,8 +42,8 @@
                                     <constraint firstAttribute="height" constant="37" id="4lN-PL-0zO"/>
                                     <constraint firstAttribute="width" constant="56" id="dmM-BG-7Em"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Close">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                <state key="normal" title="Go">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -79,7 +79,7 @@
                                 </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="lQZ-al-Z3p">
-                                <rect key="frame" x="281" y="513" width="39" height="37"/>
+                                <rect key="frame" x="281" y="443" width="39" height="37"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -88,7 +88,7 @@
                             <constraint firstItem="VUB-vo-g4d" firstAttribute="top" secondItem="tOS-xy-5qJ" secondAttribute="bottom" constant="30" id="9dc-TK-fuc"/>
                             <constraint firstItem="lQZ-al-Z3p" firstAttribute="centerY" secondItem="I4v-Ob-10z" secondAttribute="centerY" id="OyZ-wI-2yO"/>
                             <constraint firstItem="lQZ-al-Z3p" firstAttribute="centerX" secondItem="I4v-Ob-10z" secondAttribute="centerX" id="R4L-wm-JqH"/>
-                            <constraint firstItem="VUB-vo-g4d" firstAttribute="top" secondItem="lQZ-al-Z3p" secondAttribute="bottom" constant="50" id="SAZ-id-k9n"/>
+                            <constraint firstItem="VUB-vo-g4d" firstAttribute="top" secondItem="lQZ-al-Z3p" secondAttribute="bottom" constant="120" id="SAZ-id-k9n"/>
                             <constraint firstAttribute="trailing" secondItem="RlV-8y-Vns" secondAttribute="trailing" constant="20" id="Zvv-Mh-253"/>
                             <constraint firstItem="VUB-vo-g4d" firstAttribute="top" secondItem="RlV-8y-Vns" secondAttribute="bottom" constant="30" id="imq-6O-rMC"/>
                             <constraint firstItem="tOS-xy-5qJ" firstAttribute="leading" secondItem="I4v-Ob-10z" secondAttribute="leading" constant="20" id="mPi-GQ-i3K"/>
@@ -123,15 +123,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor" translatesAutoresizingMaskIntoConstraints="NO" id="9oQ-GK-Ibb">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="computer" translatesAutoresizingMaskIntoConstraints="NO" id="9oQ-GK-Ibb">
+                                <rect key="frame" x="50" y="20" width="500" height="460"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Computer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMo-z2-k1e">
+                                <rect key="frame" x="205" y="481" width="190" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="ezw-qL-auC"/>
+                                    <constraint firstAttribute="height" constant="36" id="luI-Qb-UlH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9oQ-GK-Ibb" firstAttribute="top" secondItem="JdI-zZ-xjL" secondAttribute="bottom" id="0eK-Wh-das"/>
-                            <constraint firstItem="nuN-sf-VhJ" firstAttribute="top" secondItem="9oQ-GK-Ibb" secondAttribute="bottom" id="BjG-xG-fva"/>
-                            <constraint firstAttribute="trailing" secondItem="9oQ-GK-Ibb" secondAttribute="trailing" id="f6L-mA-Jgz"/>
-                            <constraint firstItem="9oQ-GK-Ibb" firstAttribute="leading" secondItem="pwq-Jp-E2R" secondAttribute="leading" id="wcy-vz-svg"/>
+                            <constraint firstItem="nuN-sf-VhJ" firstAttribute="top" secondItem="rMo-z2-k1e" secondAttribute="bottom" constant="83" id="7no-gR-ZAS"/>
+                            <constraint firstItem="nuN-sf-VhJ" firstAttribute="top" secondItem="9oQ-GK-Ibb" secondAttribute="bottom" constant="120" id="BjG-xG-fva"/>
+                            <constraint firstItem="rMo-z2-k1e" firstAttribute="centerX" secondItem="pwq-Jp-E2R" secondAttribute="centerX" id="VhR-Pd-Vkr"/>
+                            <constraint firstAttribute="trailing" secondItem="9oQ-GK-Ibb" secondAttribute="trailing" constant="50" id="f6L-mA-Jgz"/>
+                            <constraint firstItem="9oQ-GK-Ibb" firstAttribute="leading" secondItem="pwq-Jp-E2R" secondAttribute="leading" constant="50" id="wcy-vz-svg"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -151,15 +164,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nurse" translatesAutoresizingMaskIntoConstraints="NO" id="PR7-aY-8Y5">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone-1" translatesAutoresizingMaskIntoConstraints="NO" id="PR7-aY-8Y5">
+                                <rect key="frame" x="0.0" y="20" width="600" height="460"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Just iPhone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="890-8u-AGy">
+                                <rect key="frame" x="216" y="481" width="168" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="aYU-1y-Ovt"/>
+                                    <constraint firstAttribute="width" constant="168" id="u7a-zb-d8b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zNt-sI-zng" firstAttribute="top" secondItem="PR7-aY-8Y5" secondAttribute="bottom" id="2cZ-6b-fdD"/>
+                            <constraint firstItem="zNt-sI-zng" firstAttribute="top" secondItem="PR7-aY-8Y5" secondAttribute="bottom" constant="120" id="2cZ-6b-fdD"/>
                             <constraint firstItem="PR7-aY-8Y5" firstAttribute="top" secondItem="KG7-N0-TDe" secondAttribute="bottom" id="UNk-Q9-Vg9"/>
+                            <constraint firstItem="zNt-sI-zng" firstAttribute="top" secondItem="890-8u-AGy" secondAttribute="bottom" constant="83" id="Zxe-TN-Kdb"/>
                             <constraint firstAttribute="trailing" secondItem="PR7-aY-8Y5" secondAttribute="trailing" id="d1g-xB-RSX"/>
                             <constraint firstItem="PR7-aY-8Y5" firstAttribute="leading" secondItem="n9c-F7-vf9" secondAttribute="leading" id="gxv-NV-ZBj"/>
+                            <constraint firstItem="890-8u-AGy" firstAttribute="centerX" secondItem="n9c-F7-vf9" secondAttribute="centerX" id="xds-eM-oyG"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -179,14 +205,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor_logo" translatesAutoresizingMaskIntoConstraints="NO" id="NQv-3p-rKU">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor" translatesAutoresizingMaskIntoConstraints="NO" id="NQv-3p-rKU">
+                                <rect key="frame" x="0.0" y="20" width="600" height="460"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="That's enough" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Law-bl-Tf5">
+                                <rect key="frame" x="198" y="480" width="205" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="0Sb-LD-vr7"/>
+                                    <constraint firstAttribute="width" constant="205" id="cLq-gV-cfT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MW5-YZ-yZD" firstAttribute="top" secondItem="NQv-3p-rKU" secondAttribute="bottom" id="1iJ-we-kEC"/>
+                            <constraint firstItem="MW5-YZ-yZD" firstAttribute="top" secondItem="NQv-3p-rKU" secondAttribute="bottom" constant="120" id="1iJ-we-kEC"/>
                             <constraint firstAttribute="trailing" secondItem="NQv-3p-rKU" secondAttribute="trailing" id="BwU-Yf-Osj"/>
+                            <constraint firstItem="Law-bl-Tf5" firstAttribute="centerX" secondItem="lkZ-P7-LuT" secondAttribute="centerX" id="Ge9-i9-iAR"/>
                             <constraint firstItem="NQv-3p-rKU" firstAttribute="top" secondItem="Wei-mL-Iqp" secondAttribute="bottom" id="eTR-NH-rQr"/>
+                            <constraint firstItem="MW5-YZ-yZD" firstAttribute="top" secondItem="Law-bl-Tf5" secondAttribute="bottom" constant="83" id="fiI-Gy-dia"/>
                             <constraint firstItem="NQv-3p-rKU" firstAttribute="leading" secondItem="lkZ-P7-LuT" secondAttribute="leading" id="nCB-BF-FcP"/>
                         </constraints>
                     </view>
@@ -1862,9 +1901,9 @@ Zhehan Zhang, Founder, Doctor Nearby</mutableString>
     </scenes>
     <resources>
         <image name="close-icon" width="72" height="72"/>
+        <image name="computer" width="640" height="500"/>
         <image name="doctor" width="600" height="800"/>
-        <image name="doctor_logo" width="600" height="686"/>
-        <image name="nurse" width="600" height="997"/>
+        <image name="phone-1" width="512" height="512"/>
         <image name="right-arrow" width="72" height="72"/>
         <image name="weather" width="256" height="256"/>
     </resources>
