@@ -81,13 +81,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        let characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
-        
-        let deviceTokenString: String = ( deviceToken.description as NSString )
-            .stringByTrimmingCharactersInSet( characterSet )
-            .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
-        
+        let deviceTokenString: String = convertDeviceTokenToString(deviceToken)
         GlobalFlag.deviceToken = deviceTokenString
+    }
+    
+    private func convertDeviceTokenToString(deviceToken:NSData) -> String {
+        //  Convert binary Device Token to a String (and remove the <,> and white space charaters).
+        var deviceTokenStr = deviceToken.description.stringByReplacingOccurrencesOfString(">", withString: "")
+        deviceTokenStr = deviceTokenStr.stringByReplacingOccurrencesOfString("<", withString: "")
+        deviceTokenStr = deviceTokenStr.stringByReplacingOccurrencesOfString(" ", withString: "")
+        
+        // Our API returns token in all uppercase, regardless how it was originally sent.
+        // To make the two consistent, I am uppercasing the token string here.
+        deviceTokenStr = deviceTokenStr.uppercaseString
+        return deviceTokenStr
     }
 
     func applicationWillResignActive(application: UIApplication) {

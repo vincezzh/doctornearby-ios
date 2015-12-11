@@ -560,7 +560,12 @@
 				TargetAttributes = {
 					61AEBB8E1BB320BC0034EFDA = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = G5QNQJ28E6;
+						DevelopmentTeam = 3DX4V9XK3E;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					61AEBBA51BB320BC0034EFDA = {
 						CreatedOnToolsVersion = 7.0;
@@ -884,7 +889,7 @@
 				INFOPLIST_FILE = DoctorNearby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.akhaltech.DoctorNearby;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akhaltech.DoctorNearby.DoctorNearby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -900,7 +905,7 @@
 				INFOPLIST_FILE = DoctorNearby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.akhaltech.DoctorNearby;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akhaltech.DoctorNearby.DoctorNearby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
