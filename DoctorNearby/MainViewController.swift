@@ -207,7 +207,6 @@ extension MainViewController: BWWalkthroughViewControllerDelegate {
     }
     
     func walkthroughPageDidChange(pageNumber: Int) {
-        print("Current Page \(pageNumber)")
     }
     
     func walkthroughCloseButtonPressed() {
