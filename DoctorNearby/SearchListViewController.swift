@@ -66,7 +66,7 @@ class SearchListViewController: SAInboxViewController {
                             let givenName = json["data"][index]["profile"]["givenName"].stringValue
                             let surName = json["data"][index]["profile"]["surname"].stringValue
                             doctor.name = "\(surName), \(givenName)"
-                            doctor.id = json["data"][index]["profile"]["id"].stringValue
+                            doctor.id = json["data"][index]["doctorId"].stringValue
                             doctor.doctorId = json["data"][index]["_id"].stringValue
                             doctor.province = json["data"][index]["province"].stringValue
                             doctor.contact = json["data"][index]["location"]["contactSummary"].stringValue
