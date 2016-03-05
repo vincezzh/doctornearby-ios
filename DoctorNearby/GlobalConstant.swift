@@ -19,7 +19,7 @@ struct GlobalConstant {
     static let defaultCalendar = "Calendar"
     static let defaultCalendarPeriod = 60 * 60 * 24 * 90 // 90 days
     
-    static let defaultColor = UIColor(red: 129 / 255.0, green: 168 / 255.0, blue: 93 / 255.0, alpha: 1.0)
+    static let defaultColor = UIColor(red: 67 / 255.0, green: 157 / 255.0, blue: 129 / 255.0, alpha: 1.0)
     static let cellSelectedColor = UIColor(red: 225 / 255.0, green: 224 / 255.0, blue: 193 / 255.0, alpha: 1.0)
     static let buttonColors: [UIColor] = [
             UIColor(red: 253 / 255.0, green: 45 / 255.0, blue: 58 / 255.0, alpha: 1.0),

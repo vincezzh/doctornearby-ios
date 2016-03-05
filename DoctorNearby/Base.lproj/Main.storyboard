@@ -269,7 +269,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.43137254899999999" green="0.61176470589999998" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.26279469979999998" green="0.61707794859999998" blue="0.50641556560000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="BPP-IK-lsh" firstAttribute="leading" secondItem="qW7-Or-HAF" secondAttribute="leading" constant="8" id="F7T-Hj-hlu"/>
                                     <constraint firstAttribute="height" constant="44" id="O4R-ph-5On"/>
@@ -307,7 +307,7 @@
                                         </variation>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.43137254899999999" green="0.61176470589999998" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.26279469979999998" green="0.61707794859999998" blue="0.50641556560000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="PNK-Jw-IIo" firstAttribute="leading" secondItem="cJw-yx-Dcs" secondAttribute="trailing" constant="62" id="Eum-le-smT"/>
                                     <constraint firstItem="PNK-Jw-IIo" firstAttribute="leading" secondItem="cJw-yx-Dcs" secondAttribute="trailing" constant="20" id="Fdq-1p-u0a"/>
@@ -340,7 +340,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.43137254901960786" green="0.61176470588235299" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.26279469979999998" green="0.61707794859999998" blue="0.50641556560000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="aKN-Th-VsR" firstAttribute="centerX" secondItem="fU4-VM-VDF" secondAttribute="centerX" id="Lk5-ZY-axX"/>
                                     <constraint firstItem="aKN-Th-VsR" firstAttribute="centerY" secondItem="fU4-VM-VDF" secondAttribute="centerY" id="a0i-cy-lK7"/>
