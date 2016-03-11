@@ -1459,6 +1459,7 @@
                         <outlet property="selectedLanguageTextField" destination="tXI-Ym-Fba" id="942-Ip-2jk"/>
                         <outlet property="selectedProvinceTextField" destination="Xrp-bz-64l" id="kFg-H2-4aU"/>
                         <outlet property="selectedSpecialistTextField" destination="6jM-dP-TWd" id="Fxy-Xe-kn7"/>
+                        <outlet property="specializationCell" destination="zwp-Eq-xLI" id="DCY-GN-uoU"/>
                         <segue destination="PcZ-Ss-nVl" kind="presentation" identifier="showDoctorsSearchResultList" id="aXv-F1-zQi"/>
                     </connections>
                 </tableViewController>

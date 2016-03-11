@@ -12,6 +12,7 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
     
     var isSpecialistSelected = false
 
+    @IBOutlet weak var specializationCell: UITableViewCell!
     @IBOutlet weak var selectedProvinceTextField: UILabel!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -34,7 +35,6 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
         self.addressTextField.delegate = self
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
         selectedProvinceTextField.text = GlobalFlag.province
-        selectedSpecialistTextField.textColor = UIColor.lightGrayColor()
     }
     
     @IBAction func selectPhysicianTypeSegment(sender: AnyObject) {
@@ -43,11 +43,10 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
             selectedSpecialistTextField.text! = "ALL"
         }else if physicianTypeSegment.selectedSegmentIndex == 1 {
             isSpecialistSelected = false
-            selectedSpecialistTextField.textColor = UIColor.lightGrayColor()
         }else if physicianTypeSegment.selectedSegmentIndex == 2 {
             isSpecialistSelected = true
-            selectedSpecialistTextField.textColor = UIColor.darkGrayColor()
         }
+        self.tableView.reloadData()
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -58,7 +57,11 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
         if section == 0 {
             return 7
         }else if section == 1 {
-            return 2
+            if isSpecialistSelected {
+                return 2
+            }else {
+                return 1
+            }
         }else if section == 2 {
             return 1
         }else if section == 3{
