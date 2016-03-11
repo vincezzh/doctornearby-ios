@@ -1078,8 +1078,8 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="t1L-Nw-XaQ"/>
                                                     <exclude reference="Baq-lT-lum"/>
+                                                    <exclude reference="t1L-Nw-XaQ"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
