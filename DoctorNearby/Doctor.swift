@@ -15,8 +15,23 @@ class Doctor {
     var address: String = ""
     var contact: String = ""
     var province: String = ""
+    var specialties: [String] = []
     let phoneWord = "Phone:"
     let extensionWord = "Ext."
+    
+    func displaySpecialties() -> String {
+        var specialtyString = ""
+        if specialties.count > 0 {
+            for index in 0...specialties.count-1 {
+                if index == 0 {
+                    specialtyString = specialties[index]
+                }else {
+                    specialtyString = "\(specialtyString), \(specialties[index])"
+                }
+            }
+        }
+        return specialtyString
+    }
 
     func phoneNumber() -> String {
         var phone = ""

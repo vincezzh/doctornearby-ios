@@ -137,7 +137,7 @@ extension MapViewController: LiquidFloatingActionButtonDelegate {
     func addBookmark() {
         var parameters = [String: AnyObject]()
         var bookmarkParameter: [String: String] = ["userId": GlobalConstant.userId()]
-        bookmarkParameter.updateValue(doctor.doctorId, forKey: "doctorId")
+        bookmarkParameter.updateValue(doctor.id, forKey: "doctorId")
         bookmarkParameter.updateValue(doctor.province, forKey: "province")
         parameters.updateValue(bookmarkParameter, forKey: "bookmark")
         

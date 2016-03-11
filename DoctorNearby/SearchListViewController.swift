@@ -66,11 +66,20 @@ class SearchListViewController: SAInboxViewController {
                             let givenName = json["data"][index]["profile"]["givenName"].stringValue
                             let surName = json["data"][index]["profile"]["surname"].stringValue
                             doctor.name = "\(surName), \(givenName)"
-                            doctor.id = json["data"][index]["doctorId"].stringValue
-                            doctor.doctorId = json["data"][index]["_id"].stringValue
+                            doctor.id = json["data"][index]["_id"].stringValue
+                            doctor.doctorId = json["data"][index]["doctorId"].stringValue
                             doctor.province = json["data"][index]["province"].stringValue
                             doctor.contact = json["data"][index]["location"]["contactSummary"].stringValue
                             doctor.address = json["data"][index]["location"]["addressSummary"].stringValue
+                            let specialtyList = json["data"][index]["specialtyList"]
+                            if(specialtyList.count > 0) {
+                                var specialties: [String] = []
+                                for index in 0...specialtyList.count-1 {
+                                    let specialty = specialtyList[index]["name"].stringValue
+                                    specialties.append(specialty)
+                                }
+                                doctor.specialties = specialties
+                            }
                             
                             self.doctors.append(doctor)
                             count++
@@ -111,7 +120,7 @@ extension SearchListViewController: UITableViewDataSource {
         if let cell = cell as? ListViewCell {
             let doctor = doctors[indexPath.row]
             cell.nameLabel.text = doctor.name
-            cell.idLabel.text = doctor.id
+            cell.specialtiesLabel.text = doctor.displaySpecialties()
             cell.contactLabel.text = doctor.contact
             cell.addressLabel.text = doctor.address
         }

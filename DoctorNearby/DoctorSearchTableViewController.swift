@@ -9,10 +9,14 @@
 import UIKit
 
 class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate, UINavigationControllerDelegate {
+    
+    var isSpecialistSelected = false
 
     @IBOutlet weak var selectedProvinceTextField: UILabel!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var selectedLanguageTextField: UILabel!
     @IBOutlet weak var selectedGenderTextField: UILabel!
     @IBOutlet weak var selectedSpecialistTextField: UILabel!
@@ -26,8 +30,24 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         self.lastNameTextField.delegate = self
         self.firstNameTextField.delegate = self
+        self.phoneNumberTextField.delegate = self
+        self.addressTextField.delegate = self
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
         selectedProvinceTextField.text = GlobalFlag.province
+        selectedSpecialistTextField.textColor = UIColor.lightGrayColor()
+    }
+    
+    @IBAction func selectPhysicianTypeSegment(sender: AnyObject) {
+        if physicianTypeSegment.selectedSegmentIndex == 0 {
+            isSpecialistSelected = false
+            selectedSpecialistTextField.text! = "ALL"
+        }else if physicianTypeSegment.selectedSegmentIndex == 1 {
+            isSpecialistSelected = false
+            selectedSpecialistTextField.textColor = UIColor.lightGrayColor()
+        }else if physicianTypeSegment.selectedSegmentIndex == 2 {
+            isSpecialistSelected = true
+            selectedSpecialistTextField.textColor = UIColor.darkGrayColor()
+        }
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -36,7 +56,7 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 5
+            return 7
         }else if section == 1 {
             return 2
         }else if section == 2 {
@@ -91,12 +111,14 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
                 }
             }
         }else if segue.identifier == "showSpecialistsSegue" {
-            if let viewController = segue.destinationViewController as? SpecializationTableViewController {
-                viewController.selectedSpecialist = selectedSpecialistTextField.text!
-                viewController.onDataAvailable = {[weak self]
-                    (data) in
-                    if let weakSelf = self {
-                        weakSelf.doSpecialistsWithData(data)
+            if isSpecialistSelected {
+                if let viewController = segue.destinationViewController as? SpecializationTableViewController {
+                    viewController.selectedSpecialist = selectedSpecialistTextField.text!
+                    viewController.onDataAvailable = {[weak self]
+                        (data) in
+                        if let weakSelf = self {
+                            weakSelf.doSpecialistsWithData(data)
+                        }
                     }
                 }
             }
@@ -160,7 +182,7 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
             var physicianType = ""
             if physicianTypeSegment.selectedSegmentIndex == 1 {
                 physicianType = "Family Medicine"
-            }else if physicianTypeSegment.selectedSegmentIndex == 2 {
+            }else {
                 if selectedSpecialistTextField.text! != "ALL" {
                     physicianType = selectedSpecialistTextField.text!
                 }
@@ -180,6 +202,8 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
             let province = selectedProvinceTextField.text!
             let lastName = lastNameTextField.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             let firstName = firstNameTextField.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            let phoneNumber = phoneNumberTextField.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            let address = addressTextField.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             let parameters = [
                 "surname": lastName,
                 "givenname": firstName,
@@ -188,7 +212,9 @@ class DoctorSearchTableViewController: UITableViewController, UIPopoverPresentat
                 "physicianType": physicianType,
                 "location": city,
                 "hospital": hospital,
-                "province": province
+                "province": province,
+                "phoneNumber": phoneNumber,
+                "address": address
             ]
             viewController.parameters = parameters
             

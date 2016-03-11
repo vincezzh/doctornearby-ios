@@ -38,7 +38,7 @@ class DetailViewCell: UITableViewCell {
         let activityIndicator = ActivityIndicator()
         activityIndicator.showActivityIndicator(self)
         
-        Alamofire.request(.GET, "\(GlobalFlag.baseServerURL)/doctor/\(doctor.doctorId)/profile", parameters: nil, encoding: .JSON)
+        Alamofire.request(.GET, "\(GlobalFlag.baseServerURL)/doctor/\(doctor.id)/profile", parameters: nil, encoding: .JSON)
             .responseData { (request: NSURLRequest?, response: NSHTTPURLResponse?, result: Result<NSData>) -> Void in
                 
                 switch result {

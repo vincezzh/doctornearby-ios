@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -27,32 +27,32 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctor Nearby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vER-dF-xVd">
-                                        <rect key="frame" x="198" y="326" width="152" height="27"/>
+                                        <rect key="frame" x="198" y="326" width="172" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="bNZ-iV-NEx"/>
-                                            <constraint firstAttribute="width" constant="152" id="pla-fZ-om7"/>
+                                            <constraint firstAttribute="width" constant="172" id="pla-fZ-om7"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="23"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shift your life" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfE-9n-mwU">
-                                        <rect key="frame" x="259" y="355" width="91" height="21"/>
+                                        <rect key="frame" x="269" y="355" width="91" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="91" id="FC9-I6-iDC"/>
                                             <constraint firstAttribute="height" constant="21" id="unR-gg-t3X"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.30354334346982664" green="0.71276134506833033" blue="0.58493978033068073" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="pyz-7h-NAR" firstAttribute="leading" secondItem="SDz-Zk-eKr" secondAttribute="leading" constant="50" id="LCZ-uH-Emy"/>
-                                    <constraint firstAttribute="trailing" secondItem="tfE-9n-mwU" secondAttribute="trailing" constant="50" id="LJ1-4h-Nie"/>
+                                    <constraint firstAttribute="trailing" secondItem="tfE-9n-mwU" secondAttribute="trailing" constant="40" id="LJ1-4h-Nie"/>
                                     <constraint firstAttribute="height" constant="400" id="LOK-vu-GBY"/>
-                                    <constraint firstAttribute="trailing" secondItem="vER-dF-xVd" secondAttribute="trailing" constant="50" id="O1s-Qb-b9C"/>
+                                    <constraint firstAttribute="trailing" secondItem="vER-dF-xVd" secondAttribute="trailing" constant="30" id="O1s-Qb-b9C"/>
                                     <constraint firstItem="vER-dF-xVd" firstAttribute="top" secondItem="pyz-7h-NAR" secondAttribute="bottom" constant="2" id="QKN-CS-PyU"/>
                                     <constraint firstAttribute="trailing" secondItem="pyz-7h-NAR" secondAttribute="trailing" constant="50" id="Skt-M4-NWW"/>
                                     <constraint firstItem="pyz-7h-NAR" firstAttribute="top" secondItem="SDz-Zk-eKr" secondAttribute="top" constant="24" id="bYG-nf-jDW"/>
@@ -61,7 +61,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" red="0.30354334350000001" green="0.7127613451" blue="0.58493978030000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="SDz-Zk-eKr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Ogd-np-1Hi"/>

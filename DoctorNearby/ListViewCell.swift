@@ -14,7 +14,7 @@ class ListViewCell: UITableViewCell {
     static let kCellIdentifier = "ListViewCell"
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var specialtiesLabel: UILabel!
     @IBOutlet weak var contactLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     
